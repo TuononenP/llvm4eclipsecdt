@@ -1,3 +1,4 @@
+#summary Contains information about the requirements to use the LLVM toolchain support plugin
 
 = Introduction =
 
