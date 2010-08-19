@@ -654,13 +654,11 @@
             isAbstract="true"
             isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm"
-            osList="all"
             secondaryOutputs="cdt.managedbuild.tool.llvm.c.linker.output.exe.bc"
             targetTool="cdt.managedbuild.tool.llvm.cpp.linker;cdt.managedbuild.tool.llvm.c.linker;cdt.managedbuild.tool.llvm.archiver">
          <builder
                id="cdt.managedbuild.target.llvm.builder.base"
                isAbstract="true"
-               name="%ToolName.builder.llvm"
                superClass="org.eclipse.cdt.build.core.internal.builder">
          </builder>
          <tool
@@ -725,6 +723,7 @@
          </tool>
       </toolChain>      
       <toolChain
+            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.clang.base"
             isAbstract="true"
             name="%ToolChainName.llvm.clang"
@@ -776,11 +775,8 @@
             configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.gnu.base"
             isAbstract="true"
-            isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm.gnu"
-            secondaryOutputs="cdt.managedbuild.tool.llvm.c.linker.output.exe.bc"
-            superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.cpp.linker;cdt.managedbuild.tool.llvm.c.linker;cdt.managedbuild.tool.llvm.archiver">
+            superClass="cdt.managedbuild.toolchain.llvm.base">
          <tool
                id="cdt.managedbuild.tool.llvm.gnu.c.compiler.base"
                isAbstract="true"
