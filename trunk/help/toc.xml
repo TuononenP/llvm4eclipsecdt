@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="LLVM with Clang for Eclipse plugin">
+	<topic label="Usage" href="help/usage.html">
+		<topic label="General about the plugin" href="help/general.html"/>
+		<topic label="Firing it up" href="help/first_run.html"/>
+		<topic label="LLVM specific information and options" href="help/llvm_specific.html">
+		</topic>
+	</topic>
+</toc>

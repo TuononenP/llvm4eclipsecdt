@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="scannerconfig" size="1289,719" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D3130303020636F6D2E6E736E2E72742E7377732E7377742E6364742E6D616E616765646275696C6465722E6C6C766D2E75692F7074756F6E6F6E65">
+  <children xsi:type="editmodel:ClassEditModel" name="LLVMScannerInfoCollector" location="450,50" size="239,30" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/LLVMScannerInfoCollector" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ManagedClangScannerInfoConsoleParser" location="50,50" size="380,158" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedClangScannerInfoConsoleParser" runTimeClassModel="startup(Lorg.eclipse.core.resources.IProject;Lorg.eclipse.cdt.make.core.scannerconfig.IScannerInfoCollector;),processLine(Ljava.lang.String;),shutdown(),isManagedBuildOn(),fManagedBuildOnState,doCalcManagedBuildOnState()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="197,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="fManagedBuildOnState" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedClangScannerInfoConsoleParser#fManagedBuildOnState"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="357,90">
+      <children xsi:type="editmodel:MethodEditModel" name="processLine" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedClangScannerInfoConsoleParser#processLine(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="shutdown" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedClangScannerInfoConsoleParser#shutdown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startup" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedClangScannerInfoConsoleParser#startup(Lorg.eclipse.core.resources.IProject;Lorg.eclipse.cdt.make.core.scannerconfig.IScannerInfoCollector;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isManagedBuildOn" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedClangScannerInfoConsoleParser#isManagedBuildOn()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="doCalcManagedBuildOnState" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedClangScannerInfoConsoleParser#doCalcManagedBuildOnState()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" interactive="false" level="-1" showScope="InPackage" properties="wireOptions=4;Product=eUML2;displayOptions=1"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+</editmodel:ClassDiagramEditModel>
