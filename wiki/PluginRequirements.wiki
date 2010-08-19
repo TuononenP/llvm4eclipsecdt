@@ -1,4 +1,3 @@
-#summary Plugin requirements
 
 = Introduction =
 
