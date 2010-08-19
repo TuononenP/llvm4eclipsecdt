@@ -8,7 +8,6 @@
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
  *******************************************************************************/
-
 package org.eclipse.cdt.managedbuilder.llvm.util;
 
 import java.io.File;

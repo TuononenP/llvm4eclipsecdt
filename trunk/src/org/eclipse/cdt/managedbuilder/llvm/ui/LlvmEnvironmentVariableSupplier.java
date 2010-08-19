@@ -23,7 +23,7 @@ import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
 import org.eclipse.core.runtime.Path;
 
 /**
- * @author  Leo Hippelainen Based originally on MingwEnvironmentVariableSupplier.
+ * @author  Leo Hippelainen
  * @author  Petri Tuononen
  * @noextend  This class is not intended to be subclassed by clients.
  * 
