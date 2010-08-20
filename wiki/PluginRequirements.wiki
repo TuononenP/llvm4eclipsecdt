@@ -2,7 +2,7 @@
 
 = Introduction =
 
-LLVM toolchain plugin for Eclipse CDT has certain requirements that must be met.
+LLVM toolchain plugin for Eclipse CDT has certain requirements that must be met. The plugin development is aimed for the newest CDT release and the sources depend on the newest CDT build. However support for older CDT versions are maintained by creating plugin jar packets that are modified to work with older versions.
 
 = Details =
 
