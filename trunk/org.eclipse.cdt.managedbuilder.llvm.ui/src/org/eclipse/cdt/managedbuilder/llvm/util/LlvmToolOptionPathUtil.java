@@ -36,7 +36,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
  * TODO: Changes to the include paths etc. will not be reflected in the index until it is rebuilt.      
  *       
  */
-public class LlvmPathUtil {
+public class LlvmToolOptionPathUtil {
 	
 	//tool input extensions
 	private static final String assemblerInputType = "ll";

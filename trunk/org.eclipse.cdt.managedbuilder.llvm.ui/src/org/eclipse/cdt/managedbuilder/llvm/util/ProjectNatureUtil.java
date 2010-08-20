@@ -21,7 +21,7 @@ public class ProjectNatureUtil {
 	 */
 	public static void addProjectNature() {
 		//get all projects in the workspace
-		IProject[] projects = LlvmPathUtil.getProjectsInWorkspace();
+		IProject[] projects = LlvmToolOptionPathUtil.getProjectsInWorkspace();
 		//first project in the workspace
 		IProject project = projects[0];
 		try {
