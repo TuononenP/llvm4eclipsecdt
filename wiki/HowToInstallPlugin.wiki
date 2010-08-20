@@ -2,11 +2,10 @@
 
 = Introduction =
 
-Bear in mind that in order to make this plugin to work, you need to check that your computer environment meets the specified requisites mentioned in the Wiki plugin requisites page.
+Bear in mind that in order to make this plugin to work, you need to check that your computer environment meets the specified requisites mentioned on the Wiki plugin requirements page.
 
 = Details =
 
    * Download the jar file from the Downloads section from this project website.
    * Copy the jar packet inside the Eclipse installation directory's plugins folder.
    * You may need to start/restart eclipse with a -clean command to delete Eclipse's cache and make the new plugin visible for the IDE.
-
