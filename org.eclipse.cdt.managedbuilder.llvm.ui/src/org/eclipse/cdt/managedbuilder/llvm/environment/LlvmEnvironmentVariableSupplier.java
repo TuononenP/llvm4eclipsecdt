@@ -8,7 +8,7 @@
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
  *******************************************************************************/
-package org.eclipse.cdt.managedbuilder.llvm.ui;
+package org.eclipse.cdt.managedbuilder.llvm.environment;
 
 import java.io.File;
 import java.util.HashMap;

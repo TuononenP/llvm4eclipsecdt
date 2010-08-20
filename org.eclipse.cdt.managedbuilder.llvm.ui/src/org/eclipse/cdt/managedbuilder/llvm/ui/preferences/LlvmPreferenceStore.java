@@ -11,7 +11,7 @@
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
 import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmUIPlugin;
-import org.eclipse.cdt.managedbuilder.llvm.util.LlvmPathUtil;
+import org.eclipse.cdt.managedbuilder.llvm.util.LlvmToolOptionPathUtil;
 import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
 import org.eclipse.jface.preference.IPreferenceStore;
 
@@ -87,7 +87,7 @@ public class LlvmPreferenceStore {
      * @return A String array containing all Preference store values
 	 */
 	public static String[] getPreferenceStoreValueAsArray(String name) {
-		return LlvmPathUtil.stringToArray(name);
+		return LlvmToolOptionPathUtil.stringToArray(name);
 	}
 	
 	/**
@@ -237,7 +237,7 @@ public class LlvmPreferenceStore {
 				//if more than one value
 				if (exValArray.length > 1) {
 					//remove the value from the array
-					exValArray = LlvmPathUtil.removePathFromExistingPathList(exValArray, value);
+					exValArray = LlvmToolOptionPathUtil.removePathFromExistingPathList(exValArray, value);
 					//if the array isn't empty
 					if (exValArray.length > 0) {
 						//append all values to the StringBuffer excluding the removed one
