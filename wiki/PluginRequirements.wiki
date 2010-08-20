@@ -6,9 +6,9 @@ LLVM toolchain plugin for Eclipse CDT has certain requirements that must be met.
 
 = Details =
 
-   * Eclipse CDT 7.1.0 or newer is recommended
-   * Java 5 JRE or newer
-   * LLVM with Clang (follow the instructions on http://clang.llvm.org/get_started.html)
-   * llvm-gcc compiler
-   * LD_LIBRARY_PATH system environment variable containing path to libstdc++ library
-   * PATH system environment variable containing path to LLVM with Clang binaries
+   * Eclipse CDT 7.0.1 is the recommended minimum CDT version, but the plugin is developed to compile on the latest stable CDT available
+   * Java 5 JRE or newer (also a Eclipse requisition)
+   * LLVM with Clang (follow the build instructions on http://clang.llvm.org/get_started.html)
+   * llvm-gcc compiler (if you're planning to use LLVM with GCC toolchain)
+   * LD_LIBRARY_PATH system environment variable containing path to libstdc++ library (in order that C++ Standard Library can be found)
+   * PATH system environment variable containing path to LLVM with Clang binaries (in order for LLVM tool executables to be found)
