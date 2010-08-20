@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
-import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmUIPlugin;
+import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmPlugin;
 import org.eclipse.jface.preference.*;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.IWorkbench;
@@ -43,7 +43,7 @@ public class LlvmPreferencePage
 	 * Sets a preference store to use the LLVM preference store.
 	 */
 	public LlvmPreferencePage() {
-		setPreferenceStore(LlvmUIPlugin.getDefault().getPreferenceStore());
+		setPreferenceStore(LlvmPlugin.getDefault().getPreferenceStore());
 		setDescription("Preferences for LLVM tool chain.");
 	}
 

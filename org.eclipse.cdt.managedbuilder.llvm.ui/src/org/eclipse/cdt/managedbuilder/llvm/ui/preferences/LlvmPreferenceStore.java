@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
-import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmUIPlugin;
+import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmPlugin;
 import org.eclipse.cdt.managedbuilder.llvm.util.LlvmToolOptionPathUtil;
 import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -29,7 +29,7 @@ public class LlvmPreferenceStore {
 	 * @return LLVM Preference store.
 	 */
 	public static IPreferenceStore getPreferenceStore() {
-		return LlvmUIPlugin.getDefault().getPreferenceStore();	
+		return LlvmPlugin.getDefault().getPreferenceStore();	
 	}
 	
 	/**
