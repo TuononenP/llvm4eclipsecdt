@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
-import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmPlugin;
+import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmUIPlugin;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 
@@ -27,7 +27,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
 	public void initializeDefaultPreferences() {
-		IPreferenceStore store = LlvmPlugin.getDefault().getPreferenceStore();
+		IPreferenceStore store = LlvmUIPlugin.getDefault().getPreferenceStore();
 		store.setDefault(PreferenceConstants.P_LLVM_PATH, "");
 		store.setDefault(PreferenceConstants.P_LLVM_INCLUDE_PATH, "");
 		store.setDefault(PreferenceConstants.P_LLVM_LIBRARY_PATH, "");

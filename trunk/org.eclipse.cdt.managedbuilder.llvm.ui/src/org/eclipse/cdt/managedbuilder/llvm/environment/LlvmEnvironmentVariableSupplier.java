@@ -17,7 +17,7 @@ import org.eclipse.cdt.managedbuilder.core.IConfiguration;
 import org.eclipse.cdt.managedbuilder.envvar.IBuildEnvironmentVariable;
 import org.eclipse.cdt.managedbuilder.envvar.IConfigurationEnvironmentVariableSupplier;
 import org.eclipse.cdt.managedbuilder.envvar.IEnvironmentVariableProvider;
-//import org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier;
+import org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier;
 import org.eclipse.cdt.managedbuilder.llvm.ui.preferences.LlvmPreferenceStore;
 import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
 import org.eclipse.core.runtime.Path;
@@ -63,7 +63,7 @@ public class LlvmEnvironmentVariableSupplier implements
 		//if bin path exists
 		if (binPath != null && binPath.length()!=0) {
 			String pathStr = binPath;
-			//clang on Windows requires also MinGW GCCLlvmEnvironmentVariableSupplier
+			//clang on Windows requires also MinGW GCC
 			//if OS is Windows (Windows specific settings)
 			if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) {
 				try {
@@ -71,13 +71,13 @@ public class LlvmEnvironmentVariableSupplier implements
 					IBuildEnvironmentVariable mingwPath = llvmEnvironmentVariables
 							.get(ENV_VAR_NAME_PATH);
 					//if mingw path not found
-//					if (mingwPath == null) {
-//						//try to find mingw path from MingwEnvironmentVariableSupplier
-//						IConfigurationEnvironmentVariableSupplier mingwEnvironmentVariables = 
-//							new MingwEnvironmentVariableSupplier();
-//						mingwPath = mingwEnvironmentVariables.getVariable(
-//								ENV_VAR_NAME_PATH, null, null);
-//					}
+					if (mingwPath == null) {
+						//try to find mingw path from MingwEnvironmentVariableSupplier
+						IConfigurationEnvironmentVariableSupplier mingwEnvironmentVariables = 
+							new MingwEnvironmentVariableSupplier();
+						mingwPath = mingwEnvironmentVariables.getVariable(
+								ENV_VAR_NAME_PATH, null, null);
+					}
 					//if mingw found
 					if (mingwPath != null) {
 						//form full path

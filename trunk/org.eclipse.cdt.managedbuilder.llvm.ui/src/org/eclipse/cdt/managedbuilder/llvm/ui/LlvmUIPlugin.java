@@ -32,13 +32,13 @@ import org.osgi.framework.BundleContext;
  * @noextend  This class is not intended to be subclassed by clients.
  * @noinstantiate  This class is not intended to be instantiated by clients.
  */
-public class LlvmPlugin extends AbstractUIPlugin { 
+public class LlvmUIPlugin extends AbstractUIPlugin { 
 
 	//The plug-in ID
 	public static final String PLUGIN_ID = "org.eclipse.cdt.managedbuilder.llvm.ui";
 
 	//The shared instance
-	private static LlvmPlugin plugin;
+	private static LlvmUIPlugin plugin;
 	
 	//Resource bundle
 	private ResourceBundle resourceBundle;
@@ -52,7 +52,7 @@ public class LlvmPlugin extends AbstractUIPlugin {
 	/**
 	 * Constructor.
 	 */
-	public LlvmPlugin() {
+	public LlvmUIPlugin() {
 		super();
 		plugin = this;
 	}
@@ -81,7 +81,7 @@ public class LlvmPlugin extends AbstractUIPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static LlvmPlugin getDefault() {
+	public static LlvmUIPlugin getDefault() {
 		return plugin;
 	}
 
@@ -90,7 +90,7 @@ public class LlvmPlugin extends AbstractUIPlugin {
 	 * or 'key' if not found.
 	 */
 	public static String getResourceString(String key) {
-		ResourceBundle bundle = LlvmPlugin.getDefault().getResourceBundle();
+		ResourceBundle bundle = LlvmUIPlugin.getDefault().getResourceBundle();
 		try {
 			return (bundle != null) ? bundle.getString(key) : key;
 		} catch (MissingResourceException e) {
@@ -155,7 +155,7 @@ public class LlvmPlugin extends AbstractUIPlugin {
 	 * @return String e.g. LLVM assembler
 	 */
 	public static String getPropertyString(String var) {
-		PropertyResourceBundle properties = LlvmPlugin.getDefault().getProperties();
+		PropertyResourceBundle properties = LlvmUIPlugin.getDefault().getProperties();
 		return properties.getString(var);
 	}
 
