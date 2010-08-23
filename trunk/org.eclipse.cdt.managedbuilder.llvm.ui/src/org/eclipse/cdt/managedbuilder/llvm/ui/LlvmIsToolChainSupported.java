@@ -12,7 +12,6 @@ package org.eclipse.cdt.managedbuilder.llvm.ui;
 
 import org.eclipse.cdt.managedbuilder.core.IManagedIsToolChainSupported;
 import org.eclipse.cdt.managedbuilder.core.IToolChain;
-import org.eclipse.cdt.managedbuilder.llvm.environment.LlvmEnvironmentVariableSupplier;
 import org.osgi.framework.Version;
 
 /**
