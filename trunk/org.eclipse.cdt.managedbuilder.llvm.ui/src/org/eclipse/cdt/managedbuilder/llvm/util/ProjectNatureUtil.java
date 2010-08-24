@@ -14,6 +14,11 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.runtime.CoreException;
 
+/**
+ * Methods that deal with project nature.
+ * 
+ * @author Petri Tuononen
+ */
 public class ProjectNatureUtil {
 
 	/**

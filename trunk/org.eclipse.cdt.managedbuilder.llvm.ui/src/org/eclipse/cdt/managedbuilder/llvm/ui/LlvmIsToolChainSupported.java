@@ -15,9 +15,9 @@ import org.eclipse.cdt.managedbuilder.core.IToolChain;
 import org.osgi.framework.Version;
 
 /**
- * @author Leo Hippelï¿½inen
  * Based on MingwIsToolChainSupported.
- *
+ *  
+ * @author Leo Hippeläinen
  */
 public class LlvmIsToolChainSupported implements IManagedIsToolChainSupported {
 
@@ -40,7 +40,7 @@ public class LlvmIsToolChainSupported implements IManagedIsToolChainSupported {
 	 * Return a boolean value that informs if the LLVM Toolchain is supported.
 	 */
 	public boolean isSupported(IToolChain toolChain,
-			Version version, String instance) { //Version is supported from CDT 7.1.0
+			Version version, String instance) { //Version is supported from CDT 7.1.0 //Use PluginVersionIdentifier with older CDT versions.
 		return supported;
 	}
 
