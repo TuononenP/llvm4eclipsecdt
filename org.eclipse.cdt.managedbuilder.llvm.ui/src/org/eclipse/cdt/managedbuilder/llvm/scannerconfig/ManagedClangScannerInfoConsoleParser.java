@@ -24,8 +24,7 @@ import org.eclipse.core.resources.IProject;
  * Copy/pasted from org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser
  * because that class cannot be referenced to due to restrictions in the exported packages definition.
  * 
- * @author Leo Hippel√§inen
- *
+ * @author Leo Hippel‰inen
  */
 @SuppressWarnings("restriction")
 public class ManagedClangScannerInfoConsoleParser

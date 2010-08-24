@@ -13,7 +13,7 @@ package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 /**
  * Constant definitions for plug-in preferences
  * 
- * @author Leo Hippelï¿½inen
+ * @author Leo Hippeläinen
  */
 public class PreferenceConstants {
 

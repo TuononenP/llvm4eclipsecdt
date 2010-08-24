@@ -20,6 +20,7 @@ import org.eclipse.cdt.managedbuilder.scannerconfig.IManagedScannerInfoCollector
  * information in POSIX format and that the Scanner will be able to search for 
  * files using this format.
  * 
+ * @author Leo Hippeläinen
  */
 @SuppressWarnings("restriction")
 public class LLVMScannerInfoCollector
