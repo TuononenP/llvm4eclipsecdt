@@ -11,6 +11,7 @@
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
 import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier;
+import org.eclipse.cdt.managedbuilder.llvm.util.LlvmToolOptionPathUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DirectoryDialog;
@@ -62,10 +63,10 @@ public class IncludePathListEditor extends LlvmListEditor {
 					}
 				}					
 			}
-			//add a new include path to llvm preference store
+			//add a new include path to LLVM preference store
 			LlvmPreferenceStore.appendIncludePath(dir);
-			//add a new include path to llvm assembler's option
-//			LlvmPathUtil.addLlvmIncludePath(dir);
+			//add a new include path to LLVM assembler's option
+			LlvmToolOptionPathUtil.addLlvmIncludePath(dir);
 			//inform LLVM environment variable supplier that there has been a change
 			LlvmEnvironmentVariableSupplier.invalidatePaths();
 			return dir;
@@ -82,10 +83,10 @@ public class IncludePathListEditor extends LlvmListEditor {
 		List list = getList();
         setPresentsDefaultValue(false);
         int index = list.getSelectionIndex();
-        //remove an include path from the llvm preference store
+        //remove an include path from the LLVM preference store
         LlvmPreferenceStore.removeIncludePath(list.getItem(index).toString());
-        //remove an include path from the llvm assembler's option
-//        LlvmPathUtil.removeLlvmIncludePath(list.getItem(index).toString());
+        //remove an include path from the LLVM assembler's option
+        LlvmToolOptionPathUtil.removeLlvmIncludePath(list.getItem(index).toString());
 		//inform LLVM environment variable supplier that there has been a change
 		LlvmEnvironmentVariableSupplier.invalidatePaths();
         if (index >= 0) {

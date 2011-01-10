@@ -11,6 +11,7 @@
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
 import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier;
+import org.eclipse.cdt.managedbuilder.llvm.util.LlvmToolOptionPathUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DirectoryDialog;
@@ -60,10 +61,10 @@ public class LibraryPathListEditor extends LlvmListEditor {
 					}
 				}					
 			}
-			//add a new library search path to llvm preference store
+			//add a new library search path to LLVM preference store
 			LlvmPreferenceStore.appendLibraryPath(dir);
-			//add a new library path to llvm linker's option
-//			LlvmPathUtil.addLlvmLibSearchPath(dir);
+			//add a new library path to LLVM linker's option
+			LlvmToolOptionPathUtil.addLlvmLibSearchPath(dir);
 			//inform LLVM environment variable supplier that there has been a change
 			LlvmEnvironmentVariableSupplier.invalidatePaths();
 			return dir;
@@ -80,10 +81,10 @@ public class LibraryPathListEditor extends LlvmListEditor {
 		List list = getList();
         setPresentsDefaultValue(false);
         int index = list.getSelectionIndex();
-        //remove a library path from the llvm preference store
+        //remove a library path from the LLVM preference store
         LlvmPreferenceStore.removeLibraryPath(list.getItem(index).toString());
-        //remove a library path from llvm linker's option
-//        LlvmPathUtil.removeLlvmLibSearchPath(list.getItem(index).toString());
+        //remove a library path from LLVM linker's option
+        LlvmToolOptionPathUtil.removeLlvmLibSearchPath(list.getItem(index).toString());
 		//inform LLVM environment variable supplier that there has been a change
 		LlvmEnvironmentVariableSupplier.invalidatePaths();
         if (index >= 0) {
