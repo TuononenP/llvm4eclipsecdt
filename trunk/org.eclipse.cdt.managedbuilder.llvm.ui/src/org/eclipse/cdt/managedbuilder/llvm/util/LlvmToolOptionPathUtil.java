@@ -66,35 +66,6 @@ public class LlvmToolOptionPathUtil {
 	}
 	
 	/**
-	 * Adds new Library and Library search path directory to LLVM linker's Libraries and
-	 * Library search path Options for every project in the workspace that use
-	 * LLVM Toolchain and for for every build configuration.
-	 * 
-	 * @param lib Library name for the LLVM linker's Libraries Option
-	 * @param libDir Library search path directory for LLVM linker's Library search path Option
-	 * @deprecated use addLlvmLib() and addLlvmLibSearchPath() instead
-	 */
-	public static void addLlvmLibraryPath(String lib, String libDir) {
-		addPathToToolOption(lib, LIB);
-		addPathToToolOption(libDir, LIB_PATH);
-	}
-	
-	/**
-	 * Removes a Library and Library search path directory from LLVM linker's Libraries and
-	 * Library search path Options for every project in the workspace that use
-	 * LLVM Toolchain and for for every build configuration.
-	 * 
-	 * @param lib Library name for the LLVM linker's Libraries Option
-	 * @param libDir Library search path directory for LLVM linker's Library search path Option
-	 * @deprecated use removeLlvmLib() and removeLlvmLibSearchPath() instead
-	 */
-	
-	public static void removeLlvmLibraryPath(String lib, String libDir) {
-		removePathFromToolOption(lib, LIB);
-		removePathFromToolOption(libDir, LIB_PATH);
-	}
-	
-	/**
 	 * Adds a new Library to LLVM linker's Libraries Option for every project
 	 * in the workspace that use LLVM Toolchain and for for every build configuration.
 	 * 
@@ -478,7 +449,7 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static void removeLibraryFromToolOption(IConfiguration cf, ITool cfTool, IOption option, String removeLibrary) {
 		try {
-			//remove a library to linker's Libraries option.
+			//remove a library from linker's Libraries option.
 			removeInputFromToolOption(cf, cfTool, option, removeLibrary, option.getLibraries());
 		} catch (BuildException e) {
 			//show error
@@ -496,13 +467,13 @@ public class LlvmToolOptionPathUtil {
 	 * @param newSearchPath Library search path
 	 */
 	private static void addLibrarySearchPathToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newSearchPath) {
-//		try {
+		try {
 			//add a new library path to linker's Library search path option.
-//			addInputToToolOption(cf, cfTool, option, newSearchPath, option.getLibraryPaths());
-//		} catch (BuildException e) {
-//			//show error
-//			e.printStackTrace();
-//		}
+			addInputToToolOption(cf, cfTool, option, newSearchPath, option.getLibraryPaths());
+		} catch (BuildException e) {
+			//show error
+			e.printStackTrace();
+		}
 	}
 
 	//Works only if Eclipse Bugzilla Bug 321040 fix is applied
@@ -515,13 +486,13 @@ public class LlvmToolOptionPathUtil {
 	 * @param removeSearchPath Library search path
 	 */
 	private static void removeLibrarySearchPathFromToolOption(IConfiguration cf, ITool cfTool, IOption option, String removeSearchPath) {
-//		try {
-//			//remove a library path to linker's Library search path option.
-//			removeInputFromToolOption(cf, cfTool, option, removeSearchPath, option.getLibraryPaths());
-//		} catch (BuildException e) {
-//			//show error
-//			e.printStackTrace();
-//		}
+		try {
+			//remove a library path from linker's Library search path option.
+			removeInputFromToolOption(cf, cfTool, option, removeSearchPath, option.getLibraryPaths());
+		} catch (BuildException e) {
+			//show error
+			e.printStackTrace();
+		}
 	}
 	
 	/**

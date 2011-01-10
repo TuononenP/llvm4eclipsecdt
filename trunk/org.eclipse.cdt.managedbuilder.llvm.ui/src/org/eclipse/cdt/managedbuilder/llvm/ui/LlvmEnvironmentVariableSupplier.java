@@ -372,14 +372,14 @@ public class LlvmEnvironmentVariableSupplier implements
 			//if the newPath isn't empty
 			if((newPath.trim()).length()!=0) {
 				//set new value to the preference store
-				if (name.equalsIgnoreCase(ENV_VAR_NAME_INCLUDE_PATH)) {
-					LlvmPreferenceStore.setIncludePath(newPath);
-				} else if (name.equalsIgnoreCase(ENV_VAR_NAME_LIBRARY_PATH)) {
-					LlvmPreferenceStore.setLibraryPath(newPath);
-				} else if (name.equalsIgnoreCase(ENV_VAR_NAME_LIBRARIES)) {
-					LlvmPreferenceStore.setLibrary(newPath);
-				}
-				//add new libraries for the LLVM environment variable
+//				if (name.equalsIgnoreCase(ENV_VAR_NAME_INCLUDE_PATH)) {
+//					LlvmPreferenceStore.setIncludePath(newPath);
+//				} else if (name.equalsIgnoreCase(ENV_VAR_NAME_LIBRARY_PATH)) {
+//					LlvmPreferenceStore.setLibraryPath(newPath);
+//				} else if (name.equalsIgnoreCase(ENV_VAR_NAME_LIBRARIES)) {
+//					LlvmPreferenceStore.setLibrary(newPath);
+//				}
+				//add new values to the LLVM environment variable
 				llvmEnvironmentVariables.put(name, new LlvmBuildEnvironmentVariable(
 						name, newPath, IBuildEnvironmentVariable.ENVVAR_APPEND));				
 			}
