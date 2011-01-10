@@ -337,6 +337,7 @@ public class LlvmEnvironmentVariableSupplier implements
 	}
 	
 	/**
+	 * Append a new LLVM environment variable to existing list.
 	 * 
 	 * @param name Name of the preference
 	 * @param oldPath Old paths/preference values
@@ -370,9 +371,15 @@ public class LlvmEnvironmentVariableSupplier implements
 		if (newPath!=null) {
 			//if the newPath isn't empty
 			if((newPath.trim()).length()!=0) {
-				//set new libraries for the preference store
-				LlvmPreferenceStore.setLibrary(newPath);
-				//add new libraries for the llvm environment variable
+				//set new value to the preference store
+				if (name.equalsIgnoreCase(ENV_VAR_NAME_INCLUDE_PATH)) {
+					LlvmPreferenceStore.setIncludePath(newPath);
+				} else if (name.equalsIgnoreCase(ENV_VAR_NAME_LIBRARY_PATH)) {
+					LlvmPreferenceStore.setLibraryPath(newPath);
+				} else if (name.equalsIgnoreCase(ENV_VAR_NAME_LIBRARIES)) {
+					LlvmPreferenceStore.setLibrary(newPath);
+				}
+				//add new libraries for the LLVM environment variable
 				llvmEnvironmentVariables.put(name, new LlvmBuildEnvironmentVariable(
 						name, newPath, IBuildEnvironmentVariable.ENVVAR_APPEND));				
 			}
@@ -401,10 +408,10 @@ public class LlvmEnvironmentVariableSupplier implements
 	}
 	
 	/**
-	 * Get combined system environment variable path and llvm preference store variable path.
+	 * Get combined system environment variable path and LLVM preference store variable path.
 	 * 
-	 * @param envName Llvm environment variable name
-	 * @return String containing combined system environment variable path and llvm preference store variable path
+	 * @param envName LLVM environment variable name
+	 * @return String containing combined system environment variable path and LLVM preference store variable path
 	 */
 	private static String getSysEnvPathAndPreferenceStorePath(String envName) {
 		StringBuffer sB = new StringBuffer();
