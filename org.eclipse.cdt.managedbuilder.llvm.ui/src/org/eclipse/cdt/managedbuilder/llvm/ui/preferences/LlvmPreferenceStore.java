@@ -137,6 +137,24 @@ public class LlvmPreferenceStore {
 	}
 	
 	/**
+	 * Get existing paths from the Preference store.
+	 * 
+	 * @param name the name of the preference
+	 * @return paths 
+	 */
+	private static String getExistingPaths(String name) {
+		String paths = "";
+		if (name.equals(PreferenceConstants.P_LLVM_INCLUDE_PATH)) {
+			paths = getIncludePath();
+		} else if (name.equals(PreferenceConstants.P_LLVM_LIBRARY_PATH)) {
+			paths = getLibraryPath();
+		} else if (name.equals(PreferenceConstants.P_LLVM_LIBRARIES)) {
+			paths = getLibraries();
+		}	
+		return paths;
+	}
+	
+	/**
 	 * Append a new value to the Preference store if it doesn't already exists.
 	 * 
 	 * @param name the name of the preference
@@ -145,14 +163,8 @@ public class LlvmPreferenceStore {
 	public static void appendValue(String name, String value) {
 		StringBuffer sB = new StringBuffer();
 		String paths = null;
-		//append existing path to the string buffer
-		if (name.equals(PreferenceConstants.P_LLVM_INCLUDE_PATH)) {
-			paths = getIncludePath();
-		} else if (name.equals(PreferenceConstants.P_LLVM_LIBRARY_PATH)) {
-			paths = getLibraryPath();
-		} else if (name.equals(PreferenceConstants.P_LLVM_LIBRARIES)) {
-			paths = getLibraries();
-		}
+		//get existing paths
+		paths = getExistingPaths(name);
 		//if values exist
 		if (paths.length()!=0) {
 			//if the value is reasonable
@@ -211,7 +223,7 @@ public class LlvmPreferenceStore {
 	}
 	
 	/**
-	 * Remove a value from the llvm preference store.
+	 * Remove a value from the LLVM preference store.
 	 * 
 	 * @param name Name of the preference
 	 * @param value Value to remove from the preference store
@@ -221,13 +233,7 @@ public class LlvmPreferenceStore {
 		String existingValues = null;
 		String newValue = null;
 		//get existing values
-		if (name.equals(PreferenceConstants.P_LLVM_INCLUDE_PATH)) {
-			existingValues = getIncludePath();
-		} else if (name.equals(PreferenceConstants.P_LLVM_LIBRARY_PATH)) {
-			existingValues = getLibraryPath();
-		} else if (name.equals(PreferenceConstants.P_LLVM_LIBRARIES)) {
-			existingValues = getLibraries();
-		}
+		existingValues = getExistingPaths(name);
 		//if the String contains the value
 		if (existingValues.contains(value)) {
 			//if many values i.e. contains path separator
@@ -263,27 +269,27 @@ public class LlvmPreferenceStore {
 	}
 	
 	/**
-	 * Remove a include path from the llvm preference store.
+	 * Remove a include path from the LLVM preference store.
 	 * 
-	 * @param path The include path to be removed from the llvm preference store.
+	 * @param path The include path to be removed from the LLVM preference store.
 	 */
 	public static void removeIncludePath(String path) {
 		removeValue(PreferenceConstants.P_LLVM_INCLUDE_PATH, path);
 	}
 	
 	/**
-	 * Remove a library path from the llvm preference store.
+	 * Remove a library path from the LLVM preference store.
 	 * 
-	 * @param path The library path to be removed from the llvm preference store.
+	 * @param path The library path to be removed from the LLVM preference store.
 	 */
 	public static void removeLibraryPath(String path) {
 		removeValue(PreferenceConstants.P_LLVM_LIBRARY_PATH, path);
 	}
 	
 	/**
-	 * Remove a library from the llvm preference store. 
+	 * Remove a library from the LLVM preference store. 
 	 * 
-	 * @param lib The library to be removed from the llvm preference store.
+	 * @param lib The library to be removed from the LLVM preference store.
 	 */
 	public static void removeLibrary(String lib) {
 		removeValue(PreferenceConstants.P_LLVM_LIBRARIES, lib);
