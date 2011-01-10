@@ -184,7 +184,7 @@ public class LlvmEnvironmentVariableSupplier implements
 	}
 	
 	/**
-	 * This is to be called if some of the preference paths is changed.
+	 * This is to be called if some of the preference paths have changed.
 	 */
 	public static void invalidatePaths() {
 		preferencesChanged = true;

@@ -486,6 +486,7 @@ public class LlvmToolOptionPathUtil {
 		}
 	}
 	
+	//Works only if Eclipse Bugzilla Bug 321040 fix is applied
 	/**
 	 * Adds new Library search path for the Linker's Library search path Option.
 	 * 
@@ -504,6 +505,7 @@ public class LlvmToolOptionPathUtil {
 //		}
 	}
 
+	//Works only if Eclipse Bugzilla Bug 321040 fix is applied
 	/**
 	 * Removes a Library search path from the Linker's Library search path Option.
 	 * 
