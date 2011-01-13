@@ -11,6 +11,7 @@ This page instructs how to set up the LLVM plugin development environment.
    * Make sure that PDE (Plug-in Development Environment) is installed. Should be included in Eclipse SDK.
    * Download and install (preferably latest) C/C++ Development Tools and C/C++ Development Tools SDK which are included in CDT master feature pack (http://download.eclipse.org/tools/cdt/builds).
    In Eclipse navigate Help -> Install New Software... -> Add -> Archive... and select the CDT master zip file. Name the software site and click ok. Now select the newly created software site and install C/C++ Development Tools and C/C++ Development Tools SDK. It's very important to install SDK as well.
+   * Install Subversion revision control system for your operating system.
    * Install Subversive or Subclipse Subversion client plugin for Eclipse. Subversive is already included in Eclipse update site, but for Subclipse one must add the software site manually which can be found from the Subclipse website (http://subclipse.tigris.org).
    * Install SVN Connector.
    * Open SVN repositories view and checkout llvm4eclipsecdt.
