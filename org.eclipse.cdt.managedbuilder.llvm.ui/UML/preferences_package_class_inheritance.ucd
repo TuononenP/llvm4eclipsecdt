@@ -147,7 +147,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <diagramOptions xsi:type="options:ClassDiagramOptions" interactive="false" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
   <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
     <leftRuler/>
     <topRuler/>

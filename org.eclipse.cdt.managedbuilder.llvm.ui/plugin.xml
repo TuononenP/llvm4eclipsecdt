@@ -206,9 +206,14 @@
                category="llvm.lib.category.general"
                defaultValue="r"
                id="llvm.both.lib.option.flags"
-               name="%Option.Posix.Archiver.Flags"
+               name="%Option.Llvm.Archiver.Flags"
                valueType="string">
          </option>
+         <optionCategory
+               id="llvm.lib.category.options"
+               name="%OptionCategory.Options"
+               owner="cdt.managedbuild.tool.llvm.archiver">
+         </optionCategory>
          <inputType
                buildVariable="BCS"
                dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
@@ -286,6 +291,104 @@
                id="cdt.managedbuild.tool.llvm.assembler.output"
                outputs="bc">
          </outputType>
+      </tool>
+      <tool
+            command="llc"
+            errorParsers="org.eclipse.cdt.core.GASErrorParser"
+            id="cdt.managedbuild.tool.llvm.llc"
+            isAbstract="true"
+            name="%ToolName.llc.llvm"
+            natureFilter="both"
+            outputFlag="-o">
+         <optionCategory
+               id="llvm.llc.category.general"
+               name="%OptionCategory.General"
+               owner="cdt.managedbuild.tool.llvm.llc">
+         </optionCategory>
+         <option
+               category="llvm.llc.category.general"
+               id="llvm.both.llc.option.flags"
+               name="%Option.Llvm.Llc.Flags"
+               valueType="string">
+         </option>
+         <optionCategory
+               id="llvm.llc.category.options"
+               name="%OptionCategory.Options"
+               owner="cdt.managedbuild.tool.llvm.llc">
+         </optionCategory>
+         <option
+               category="llvm.llc.category.options"
+               command="c"
+               id="llvm.both.llc.option.emitc"
+               name="%Option.Llvm.Llc.EmitC"
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.llc.category.options"
+               command="-march=${value}"
+               id="llvm.both.llc.option.arch"
+               name="%Option.Llvm.Llc.Arch"
+               valueType="string">
+         </option>
+         <inputType
+               buildVariable="BCS"
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
+               id="cdt.managedbuild.tool.llvm.llc.input"
+               multipleOfType="true"
+               sourceContentType="org.eclipse.cdt.managedbuilder.llvm.ui.llvmBytecode"
+               sources="bc">
+            <additionalInput
+                  kind="additionalinputdependency"
+                  paths="$(USER_OBJS)">
+            </additionalInput>
+            <additionalInput
+                  kind="additionalinput"
+                  paths="$(LIBS)">
+            </additionalInput>
+         </inputType>
+         <outputType
+               id="cdt.managedbuild.tool.llvm.llc.output"
+               outputs="s">
+         </outputType>
+      </tool>
+      <tool
+            command="lli"
+            errorParsers="org.eclipse.cdt.core.GASErrorParser"
+            id="cdt.managedbuild.tool.llvm.lli"
+            isAbstract="true"
+            name="%ToolName.lli.llvm"
+            natureFilter="both">
+         <optionCategory
+               id="llvm.lli.category.general"
+               name="%OptionCategory.General"
+               owner="cdt.managedbuild.tool.llvm.lli">
+         </optionCategory>
+         <option
+               category="llvm.lli.category.general"
+               id="llvm.both.lli.option.flags"
+               name="%Option.Llvm.Lli.Flags"
+               valueType="string">
+         </option>
+         <optionCategory
+               id="llvm.lli.category.options"
+               name="%OptionCategory.Options"
+               owner="cdt.managedbuild.tool.llvm.lli">
+         </optionCategory>
+         <option
+               category="llvm.lli.category.options"
+               command="-force-interpreter=${value}"
+               defaultValue="false"
+               id="llvm.both.lli.option.interpreter"
+               name="%Option.Llvm.Lli.ForceInterpreter"
+               valueType="boolean">
+         </option>
+         <inputType
+               buildVariable="BCS"
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
+               id="cdt.managedbuild.tool.llvm.lli.input"
+               sourceContentType="org.eclipse.cdt.managedbuilder.llvm.ui.llvmBytecode"
+               sources="bc">
+         </inputType>
       </tool>
       <tool
             errorParsers="org.eclipse.cdt.core.GCCErrorParser"

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="llvm_project_dependencies_low_level_with_class_dependencies" size="1040,816" id="." metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030206F72672E65636C697073652E6364742E6D616E616765646275696C6465722E6C6C766D2E75692F70657065">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="llvm_project_dependencies_low_level_with_class_dependencies" size="1040,816" id="." metadata="uml2-1.0" initialized="true" scrolledY="50" tag="1000" key="32303037303533312D31303030206F72672E65636C697073652E6364742E6D616E616765646275696C6465722E6C6C766D2E75692F70657065">
   <children xsi:type="editmodel:PackageEditModel" name="org.eclipse.cdt.managedbuilder.llvm.makegen" location="814,515" size="439,154" id="org.eclipse.cdt.managedbuilder.llvm.makegen">
     <children xsi:type="editmodel:ClassEditModel" name="ClangDependencyCalculator2" location="70,103" size="264,30" id="org.eclipse.cdt.managedbuilder.llvm.makegen/ClangDependencyCalculator2" runTimeClassModel="">
-      <children xsi:type="editmodel:CompartmentEditModel"/>
-      <children xsi:type="editmodel:CompartmentEditModel"/>
-      <children xsi:type="editmodel:CompartmentEditModel"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.makegen/ClangDependencyCalculator2-Standard::Instantiate->org.eclipse.cdt.managedbuilder.llvm.makegen/ClangDependencyCalculator2Commands" source="//@children.0/@children.0" target="//@children.0/@children.1" targetEnd="//@children.0/@children.0/@sourceConnections.0/@children.2" label="//@children.0/@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
         <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="73,13" anchorKind="MiddlePart"/>
         <children xsi:type="editmodel:AssociationEndEditModel" location="131,0" attachSource="true"/>
@@ -33,8 +33,8 @@
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
     </children>
   </children>
-  <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.3/@sourceConnections.1 //@children.4/@sourceConnections.1" name="org.eclipse.cdt.managedbuilder.llvm.util" location="805,160" size="454,138" id="org.eclipse.cdt.managedbuilder.llvm.util">
-    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@children.5/@sourceConnections.0 //@children.2/@children.1/@sourceConnections.0" name="LlvmPathUtil" location="153,94" size="140,30" id="org.eclipse.cdt.managedbuilder.llvm.util/LlvmPathUtil" runTimeClassModel="">
+  <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.3/@sourceConnections.1 //@children.4/@sourceConnections.1" name="org.eclipse.cdt.managedbuilder.llvm.util" location="805,160" size="454,145" id="org.eclipse.cdt.managedbuilder.llvm.util">
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@children.5/@sourceConnections.0 //@children.2/@children.1/@sourceConnections.0" name="LlvmPathUtil" location="153,94" size="140,30" runTimeClassModel="">
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
@@ -44,8 +44,8 @@
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.util/ProjectNatureUtil-Standard::Call->org.eclipse.cdt.managedbuilder.llvm.util/LlvmPathUtil" source="//@children.2/@children.1" target="//@children.2/@children.0" targetEnd="//@children.2/@children.1/@sourceConnections.0/@children.2" label="//@children.2/@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-        <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="34,13" anchorKind="MiddlePart"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.2/@children.1" target="//@children.2/@children.0" targetEnd="//@children.2/@children.1/@sourceConnections.0/@children.2" label="//@children.2/@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
         <children xsi:type="editmodel:AssociationEndEditModel" location="60,30" attachSource="true"/>
         <children xsi:type="editmodel:AssociationEndEditModel" location="79,0"/>
       </sourceConnections>
@@ -163,8 +163,8 @@
       <children xsi:type="editmodel:CompartmentEditModel"/>
       <children xsi:type="editmodel:CompartmentEditModel"/>
       <children xsi:type="editmodel:CompartmentEditModel"/>
-      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.ui.preferences/LlvmPreferenceStore-Standard::Call->org.eclipse.cdt.managedbuilder.llvm.util/LlvmPathUtil" source="//@children.3/@children.5" target="//@children.2/@children.0" targetEnd="//@children.3/@children.5/@sourceConnections.0/@children.2" label="//@children.3/@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-        <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="34,13" anchorKind="MiddlePart"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.3/@children.5" target="//@children.2/@children.0" targetEnd="//@children.3/@children.5/@sourceConnections.0/@children.2" label="//@children.3/@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
         <children xsi:type="editmodel:AssociationEndEditModel" location="183,0" attachSource="true"/>
         <children xsi:type="editmodel:AssociationEndEditModel" location="0,28"/>
       </sourceConnections>
@@ -205,7 +205,7 @@
     <sourceConnections xsi:type="editmodel:DependencyEditModel" id="org.eclipse.cdt.managedbuilder.llvm.ui.preferences-Standard::Call->org.eclipse.cdt.managedbuilder.llvm.util" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="34,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="473,0" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="92,136"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="92,142"/>
     </sourceConnections>
   </children>
   <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.3/@sourceConnections.0" name="org.eclipse.cdt.managedbuilder.llvm.ui" location="15,15" size="726,276" id="org.eclipse.cdt.managedbuilder.llvm.ui">
@@ -215,7 +215,7 @@
       <children xsi:type="editmodel:CompartmentEditModel"/>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
     </children>
-    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@children.3/@sourceConnections.0 //@children.4/@children.2/@sourceConnections.0 //@children.3/@children.0/@sourceConnections.1 //@children.3/@children.1/@sourceConnections.1 //@children.3/@children.2/@sourceConnections.1" name="LlvmEnvironmentVariableSupplier" location="21,46" size="302,30" id="org.eclipse.cdt.managedbuilder.llvm.ui/LlvmEnvironmentVariableSupplier" runTimeClassModel="">
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@children.2/@sourceConnections.0 //@children.3/@children.0/@sourceConnections.1 //@children.3/@children.1/@sourceConnections.1 //@children.3/@children.2/@sourceConnections.1" name="LlvmEnvironmentVariableSupplier" location="21,46" size="302,30" id="org.eclipse.cdt.managedbuilder.llvm.ui/LlvmEnvironmentVariableSupplier" runTimeClassModel="">
       <children xsi:type="editmodel:CompartmentEditModel"/>
       <children xsi:type="editmodel:CompartmentEditModel"/>
       <children xsi:type="editmodel:CompartmentEditModel"/>
@@ -225,7 +225,7 @@
         <children xsi:type="editmodel:AssociationEndEditModel" location="102,0"/>
       </sourceConnections>
       <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.ui/LlvmEnvironmentVariableSupplier-Standard::Call->org.eclipse.cdt.managedbuilder.llvm.ui/LlvmBuildEnvironmentVariable*org.eclipse.cdt.managedbuilder.llvm.ui/LlvmEnvironmentVariableSupplier-Standard::Instantiate->org.eclipse.cdt.managedbuilder.llvm.ui/LlvmBuildEnvironmentVariable*org.eclipse.cdt.managedbuilder.llvm.ui/LlvmEnvironmentVariableSupplier-Soyatec::Import->org.eclipse.cdt.managedbuilder.llvm.ui/LlvmBuildEnvironmentVariable" source="//@children.4/@children.1" target="//@children.4/@children.0" targetEnd="//@children.4/@children.1/@sourceConnections.1/@children.2" label="//@children.4/@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
-        <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Instantiate, Import»" size="140,13" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Import, Call»" size="140,13" anchorKind="MiddlePart"/>
         <children xsi:type="editmodel:AssociationEndEditModel" location="302,15" attachSource="true"/>
         <children xsi:type="editmodel:AssociationEndEditModel" location="0,14"/>
       </sourceConnections>
@@ -251,11 +251,6 @@
       <children xsi:type="editmodel:CompartmentEditModel"/>
       <children xsi:type="editmodel:CompartmentEditModel"/>
       <children xsi:type="editmodel:CompartmentEditModel"/>
-      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.ui/LlvmUIPlugin-Standard::Instantiate->org.eclipse.cdt.managedbuilder.llvm.ui/LlvmEnvironmentVariableSupplier" source="//@children.4/@children.3" target="//@children.4/@children.1" targetEnd="//@children.4/@children.3/@sourceConnections.0/@children.2" label="//@children.4/@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" location="440,196" size="73,13" automaticRelocationAllowed="false" locationOnWireFromSource="-87.89834147916442" distanceFromWire="24.553646678491667" anchorKind="MiddlePart"/>
-        <children xsi:type="editmodel:AssociationEndEditModel" location="28,0" attachSource="true"/>
-        <children xsi:type="editmodel:AssociationEndEditModel" location="194,30"/>
-      </sourceConnections>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
     </children>
     <children xsi:type="editmodel:ClassEditModel" name="ProjectNature" location="142,225" size="147,30" id="org.eclipse.cdt.managedbuilder.llvm.ui/ProjectNature" runTimeClassModel="">

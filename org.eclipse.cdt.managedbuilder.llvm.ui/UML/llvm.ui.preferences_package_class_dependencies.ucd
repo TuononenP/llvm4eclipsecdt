@@ -134,8 +134,8 @@
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.ui.preferences/LlvmPreferencePage-Standard::Instantiate->org.eclipse.cdt.managedbuilder.llvm.ui.preferences/LibraryPathListEditor*org.eclipse.cdt.managedbuilder.llvm.ui.preferences/LlvmPreferencePage-Soyatec::Import->org.eclipse.cdt.managedbuilder.llvm.ui.preferences/LibraryPathListEditor" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.2/@children.2" label="//@children.6/@sourceConnections.2/@children.0" sourceEnd="//@children.6/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Import»" size="114,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="201,37" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,67"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="201,36" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,66"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
