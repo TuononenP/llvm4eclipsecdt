@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/llvm4eclipsecdt_0.2.0.jar" id="llvm4eclipsecdt" version="0.2.0" os="linux,win32">
+      <category name="llvm4eclipsecdt"/>
+   </feature>
+   <category-def name="llvm4eclipsecdt" label="LLVM plugin for Eclipse CDT"/>
+</site>
