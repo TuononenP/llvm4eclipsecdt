@@ -33,7 +33,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
  * 
  * @author Petri Tuononen
  * 
- * TODO: Changes to the include paths etc. will not be reflected in the index until it is rebuilt.      
  */
 public class LlvmToolOptionPathUtil {
 	
