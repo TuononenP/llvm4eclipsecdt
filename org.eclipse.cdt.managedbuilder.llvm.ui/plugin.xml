@@ -388,8 +388,18 @@
                buildVariable="BCS"
                dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
                id="cdt.managedbuild.tool.llvm.lli.input"
+               multipleOfType="true"
+               primaryInput="true"
                sourceContentType="org.eclipse.cdt.managedbuilder.llvm.ui.llvmBytecode"
                sources="bc">
+            <additionalInput
+                  kind="additionalinputdependency"
+                  paths="$(USER_OBJS)">
+            </additionalInput>
+            <additionalInput
+                  kind="additionalinput"
+                  paths="$(LIBS)">
+            </additionalInput>
          </inputType>
       </tool>
       <tool
@@ -792,47 +802,13 @@
             isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm.with.static.compiler"
             superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.archiver">
+            targetTool="cdt.managedbuild.tool.llvm.llc.base;cdt.managedbuild.tool.llvm.archiver">
          <tool
-               id="cdt.managedbuild.tool.llvm.c.llc.base"
+               id="cdt.managedbuild.tool.llvm.llc.base"
                isAbstract="true"
-               name="%ToolName.llc.llvm.c"
-               natureFilter="cnature"
+               name="%ToolName.llc.llvm"
+               natureFilter="both"
                superClass="cdt.managedbuild.tool.llvm.llc">
-            <enablement
-                  type="ALL">
-               <not>
-                  <checkBuildProperty
-                        property="org.eclipse.cdt.build.core.buildArtefactType"
-                        value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
-                  </checkBuildProperty>
-               </not>
-            </enablement>
-         </tool>
-         <tool
-               id="cdt.managedbuild.tool.llvm.cpp.llc.base"
-               isAbstract="true"
-               name="%ToolName.llc.llvm.cpp"
-               natureFilter="ccnature"
-               superClass="cdt.managedbuild.tool.llvm.llc">
-            <enablement
-                  type="ALL">
-               <not>
-                  <checkBuildProperty
-                        property="org.eclipse.cdt.build.core.buildArtefactType"
-                        value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
-                  </checkBuildProperty>
-               </not>
-            </enablement>
-            <option
-                  defaultValue="-lstdc++"
-                  id="llvm.both.llc.base.option.flags"
-                  isAbstract="true"
-                  name="%Option.Posix.Static.Compiler.Flags"
-                  resourceFilter="all"
-                  superClass="llvm.both.llc.option.flags"
-                  valueType="string">
-            </option>
          </tool>
       </toolChain>
       <toolChain
@@ -843,11 +819,12 @@
             isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm.with.jit"
             superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.archiver">
+            targetTool="cdt.managedbuild.tool.llvm.lli.base;cdt.managedbuild.tool.llvm.archiver">
          <tool
                id="cdt.managedbuild.tool.llvm.lli.base"
                isAbstract="true"
                name="%ToolName.lli.llvm"
+               natureFilter="both"
                superClass="cdt.managedbuild.tool.llvm.lli">
          </tool>
       </toolChain>
@@ -2509,12 +2486,8 @@
                      superClass="cdt.managedbuild.target.llvm.builder.base">
                </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.c.llc.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.c.llc.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.cpp.llc.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.cpp.llc.base">
+                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.llc.base">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.exe.debug"
@@ -2540,12 +2513,8 @@
                      superClass="cdt.managedbuild.target.llvm.builder.base">
                </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.c.llc.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.c.llc.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.cpp.llc.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.cpp.llc.base">
+                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.llc.base">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.exe.release"
@@ -2579,12 +2548,8 @@
                      superClass="cdt.managedbuild.target.llvm.builder.base">
                </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.c.llc.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.c.llc.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.cpp.llc.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.cpp.llc.base">
+                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.llc.base">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.so.debug"
@@ -2610,12 +2575,8 @@
                      superClass="cdt.managedbuild.target.llvm.builder.base">
                </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.c.llc.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.c.llc.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.cpp.llc.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.cpp.llc.base">
+                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.llc.base">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.so.release"
@@ -2649,12 +2610,8 @@
                      superClass="cdt.managedbuild.target.llvm.builder.base">
                </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.c.llc.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.c.llc.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.cpp.llc.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.cpp.llc.base">
+                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.llc.base">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.lib.debug"
@@ -2680,12 +2637,8 @@
                      superClass="cdt.managedbuild.target.llvm.builder.base">
                </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.c.llc.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.c.llc.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.cpp.llc.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.cpp.llc.base">
+                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.llc.base">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.lib.release"
