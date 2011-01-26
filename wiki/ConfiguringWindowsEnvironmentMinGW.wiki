@@ -49,6 +49,8 @@ Step 23. Uncompress the binary binutils MinGW package into your LLVM-GCC binary 
 
 Step 24. Add LLVM-GCC's "bin" directory to your PATH environment variable. e.g. C:/llvm-gcc/bin
 
+Now LLVM toolchains should be visible in Eclipse CDT as long as LLVM, Clang, LLVM-GCC and MinGW binaries are in PATH.
+
 = Links =
 http://llvm.org/docs/GettingStarted.html <br />
 http://www.mingw.org/wiki/Getting_Started <br />
