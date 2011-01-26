@@ -50,5 +50,6 @@ Step 23. Uncompress the binary binutils MinGW package into your LLVM-GCC binary 
 Step 24. Add LLVM-GCC's "bin" directory to your PATH environment variable. e.g. C:/llvm-gcc/bin
 
 = Links =
+http://llvm.org/docs/GettingStarted.html
 http://www.mingw.org/wiki/Getting_Started <br />
 http://www.mingw.org/wiki/InstallationHOWTOforMinGW
