@@ -1026,7 +1026,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.jit.linux.base"
-            name="%ToolChainName.llvm.static.jit.linux"
+            name="%ToolChainName.llvm.jit.linux"
             osList="linux,hpux,aix,qnx"
             superClass="cdt.managedbuild.toolchain.llvm.jit.base">
          <targetPlatform
@@ -1041,7 +1041,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.jit.win32.base"
-            name="%ToolChainName.llvm.static.jit.win32"
+            name="%ToolChainName.llvm.jit.win32"
             osList="win32"
             superClass="cdt.managedbuild.toolchain.llvm.jit.base">
          <targetPlatform
@@ -2487,7 +2487,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.llc.base">
+                     superClass="cdt.managedbuild.tool.llvm.llc">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.exe.debug"
@@ -2514,7 +2514,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.llc.base">
+                     superClass="cdt.managedbuild.tool.llvm.llc">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.exe.release"
@@ -2549,7 +2549,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.llc.base">
+                     superClass="cdt.managedbuild.tool.llvm.llc">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.so.debug"
@@ -2576,7 +2576,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.llc.base">
+                     superClass="cdt.managedbuild.tool.llvm.llc">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.so.release"
@@ -2611,7 +2611,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.llc.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.llc.base">
+                     superClass="cdt.managedbuild.tool.llvm.llc">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.lib.debug"
@@ -2697,7 +2697,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.lli.exe.debug"
-                     superClass="cdt.managedbuild.toolchain.llvm.jit.basecdt.managedbuild.tool.llvm.llc.base">
+                     superClass="cdt.managedbuild.tool.llvm.lli">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.exe.debug"
@@ -2724,7 +2724,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.lli.exe.release"
-                     superClass="cdt.managedbuild.toolchain.llvm.jit.base">
+                     superClass="cdt.managedbuild.tool.llvm.lli">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.exe.release"
@@ -2759,7 +2759,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.lli.so.debug"
-                     superClass="cdt.managedbuild.toolchain.llvm.jit.base">
+                     superClass="cdt.managedbuild.tool.llvm.lli">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.debug"
@@ -2786,7 +2786,7 @@
                </builder>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.lli.so.release"
-                     superClass="cdt.managedbuild.toolchain.llvm.jit.base">
+                     superClass="cdt.managedbuild.tool.llvm.lli">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.release"
@@ -2820,8 +2820,8 @@
                      superClass="cdt.managedbuild.target.llvm.builder.base">
                </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.llc.lib.debug"
-                     superClass="cdt.managedbuild.toolchain.llvm.jit.base">
+                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.lib.debugebug"
+                     superClass="cdt.managedbuild.tool.llvm.lli">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.lib.debug"
@@ -2847,8 +2847,8 @@
                      superClass="cdt.managedbuild.target.llvm.builder.base">
                </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.llc.lib.release"
-                     superClass="cdt.managedbuild.toolchain.llvm.jit.base">
+                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.lib.releaseease"
+                     superClass="cdt.managedbuild.tool.llvm.lli">
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.lib.release"
