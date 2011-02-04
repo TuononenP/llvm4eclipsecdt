@@ -437,7 +437,7 @@
                category="llvm.llc.category.options"
                command="--stats"
                id="llvm.both.llc.option.printStats"
-               name="%Option.Llvm.Llc.printStats"
+               name="%Option.Llvm.printStats"
                tip="Print statistics recorded by code-generation passes."
                valueType="boolean">
          </option>
@@ -460,28 +460,28 @@
                valueType="enumerated">
             <enumeratedOptionValue
                   command="-O0"
-                  id="llvm.c_cpp.compiler.optimization.level.none"
+                  id="llvm.llc.option.optimization.level.none"
                   name="%Option.Posix.Optimize.None">
             </enumeratedOptionValue>
             <enumeratedOptionValue
                   command="-O1"
-                  id="llvm.c_cpp.compiler.optimization.level.optimize"
+                  id="llvm.llc.option.optimization.level.optimize"
                   name="%Option.Posix.Optimize.Optimize">
             </enumeratedOptionValue>
             <enumeratedOptionValue
                   command="-O2"
-                  id="llvm.c_cpp.compiler.optimization.level.more"
+                  id="llvm.llc.option.optimization.level.more"
                   isDefault="true"
                   name="%Option.Posix.Optimize.More">
             </enumeratedOptionValue>
             <enumeratedOptionValue
                   command="-O3"
-                  id="llvm.c_cpp.compiler.optimization.level.most"
+                  id="llvm.llc.option.optimization.level.most"
                   name="%Option.Posix.Optimize.Most">
             </enumeratedOptionValue>
             <enumeratedOptionValue
                   command="-O4"
-                  id="llvm.c_cpp.compiler.optimization.level.runtime"
+                  id="llvm.llc.option.optimization.level.runtime"
                   name="%Option.Posix.Optimize.Runtime">
             </enumeratedOptionValue>
             <enablement
@@ -570,10 +570,101 @@
          </optionCategory>
          <option
                category="llvm.lli.category.options"
-               command="-force-interpreter=${value}"
-               defaultValue="false"
+               command="-stats"
+               id="llvm.both.lli.option.printStats"
+               name="%Option.Llvm.printStats"
+               tip="Print statistics from the code-generation passes."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.lli.category.options"
                id="llvm.both.lli.option.interpreter"
                name="%Option.Llvm.Lli.ForceInterpreter"
+               valueType="enumerated">
+            <enumeratedOptionValue
+                  command="-force-interpreter=true"
+                  id="llvm.both.lli.option.interpreter.true"
+                  name="true">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
+                  command="-force-interpreter=false"
+                  id="llvm.both.lli.option.interpreter.false"
+                  isDefault="true"
+                  name="false">
+            </enumeratedOptionValue>
+         </option>
+         <optionCategory
+               id="llvm.lli.category.FloatingPointOptions"
+               name="%OptionCategory.FloatingPointOptions"
+               owner="cdt.managedbuild.tool.llvm.lli">
+         </optionCategory>
+         <option
+               category="llvm.lli.category.FloatingPointOptions"
+               command="-soft-float"
+               id="llvm.lli.category.FloatingPointOptions.soft-float"
+               name="%Option.Llvm.Lli.soft-float"
+               resourceFilter="all"
+               tip="Causes lli to generate software floating point library calls instead of equivalent hardware instructions."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.lli.category.FloatingPointOptions"
+               command="-enable-unsafe-fp-math"
+               id="llvm.lli.category.FloatingPointOptions.enable-unsafe-fp-math"
+               name="%Option.Llvm.Lli.enable-unsafe-fp-math"
+               resourceFilter="all"
+               tip="Causes lli to enable optimizations that may decrease floating point precision."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.lli.category.FloatingPointOptions"
+               command="-disable-excess-fp-precision"
+               id="llvm.lli.category.FloatingPointOptions.disable-excess-fp-precision"
+               name="%Option.Llvm.Lli.disable-excess-fp-precision"
+               resourceFilter="all"
+               tip="Disable optimizations that may increase floating point precision."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.lli.category.FloatingPointOptions"
+               command="-enable-finite-only-fp-math"
+               id="llvm.lli.category.FloatingPointOptions.enable-finite-only-fp-math"
+               name="%Option.Llvm.Lli.enable-finite-only-fp-math"
+               resourceFilter="all"
+               tip="Enable optimizations that assumes only finite floating point math. That is, there is no NAN or Inf values."
+               valueType="boolean">
+         </option>
+         <optionCategory
+               id="llvm.lli.category.CodeGenerationOptions"
+               name="%OptionCategory.CodeGenerationOptions"
+               owner="cdt.managedbuild.tool.llvm.lli">
+         </optionCategory>
+         <option
+               category="llvm.lli.category.CodeGenerationOptions"
+               command="-disable-post-RA-scheduler"
+               id="llvm.lli.category.CodeGenerationOptions.enable-correct-eh-support"
+               name="%Option.Llvm.Lli.enable-correct-eh-support"
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.lli.category.CodeGenerationOptions"
+               command="-jit-enable-eh"
+               id="llvm.lli.category.CodeGenerationOptions.jit-enable-eh"
+               name="%Option.Llvm.Lli.jit-enable-eh"
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.lli.category.CodeGenerationOptions"
+               command="-disable-post-RA-scheduler"
+               id="llvm.lli.category.CodeGenerationOptions.disable-post-RA-scheduler"
+               name="%Option.Llvm.Lli.disable-post-RA-scheduler"
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.lli.category.CodeGenerationOptions"
+               command="-disable-spill-fusing"
+               id="llvm.lli.category.CodeGenerationOptions.disable-spill-fusing"
+               name="%Option.Llvm.Lli.disable-spill-fusing"
                valueType="boolean">
          </option>
          <inputType
