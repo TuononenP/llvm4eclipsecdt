@@ -17,7 +17,7 @@
             isAbstract="true"
             name="%ToolName.linker.llvm.c"
             natureFilter="both"
-            outputFlag="-o&quot; &quot;">
+            outputFlag="-oot; &quot;">
          <supportedProperties>
             <property
                   id="org.eclipse.cdt.build.core.buildArtefactType">
@@ -41,6 +41,22 @@
                defaultValue="false"
                id="llvm.c.link.option.strip"
                name="%Option.Posix.Linker.Strip"
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.c.link.category.general"
+               command="-stats"
+               defaultValue="false"
+               id="llvm.c.link.option.stats"
+               name="%Option.Posix.Linker.Stats"
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.c.link.category.general"
+               command="-v"
+               defaultValue="false"
+               id="llvm.c.link.option.verbose"
+               name="%Option.Posix.Linker.Verbose"
                valueType="boolean">
          </option>
          <optionCategory
