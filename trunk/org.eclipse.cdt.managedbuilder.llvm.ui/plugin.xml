@@ -318,7 +318,7 @@
          <option
                category="llvm.lib.category.options"
                command="t"
-               id="llvm.lib.option.delete"
+               id="llvm.lib.option.print.contents"
                isAbstract="false"
                name="%Option.Posix.Archiver.print.contents"
                resourceFilter="all"
@@ -410,6 +410,17 @@
             name="%ToolName.llc.llvm"
             natureFilter="both"
             outputFlag="-o">
+         <supportedProperties>
+            <property
+                  id="org.eclipse.cdt.build.core.buildType">
+               <value
+                     id="org.eclipse.cdt.build.core.buildType.debug">
+               </value>
+               <value
+                     id="org.eclipse.cdt.build.core.buildType.release">
+               </value>
+            </property>
+         </supportedProperties>
          <optionCategory
                id="llvm.llc.category.general"
                name="%OptionCategory.General"
@@ -552,6 +563,17 @@
             isAbstract="true"
             name="%ToolName.lli.llvm"
             natureFilter="both">
+         <supportedProperties>
+            <property
+                  id="org.eclipse.cdt.build.core.buildType">
+               <value
+                     id="org.eclipse.cdt.build.core.buildType.debug">
+               </value>
+               <value
+                     id="org.eclipse.cdt.build.core.buildType.release">
+               </value>
+            </property>
+         </supportedProperties>
          <optionCategory
                id="llvm.lli.category.general"
                name="%OptionCategory.General"
@@ -1080,44 +1102,11 @@
       <toolChain
             archList="all"
             configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
-            id="cdt.managedbuild.toolchain.llvm.with.static.compiler.base"
-            isAbstract="true"
-            isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
-            name="%ToolChainName.llvm.with.static.compiler"
-            superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.llc.base;cdt.managedbuild.tool.llvm.archiver">
-         <tool
-               id="cdt.managedbuild.tool.llvm.llc.base"
-               isAbstract="true"
-               name="%ToolName.llc.llvm"
-               natureFilter="both"
-               superClass="cdt.managedbuild.tool.llvm.llc">
-         </tool>
-      </toolChain>
-      <toolChain
-            archList="all"
-            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
-            id="cdt.managedbuild.toolchain.llvm.jit.base"
-            isAbstract="true"
-            isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
-            name="%ToolChainName.llvm.jit"
-            superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.lli.base;cdt.managedbuild.tool.llvm.archiver">
-         <tool
-               id="cdt.managedbuild.tool.llvm.lli.base"
-               isAbstract="true"
-               name="%ToolName.lli.llvm"
-               natureFilter="both"
-               superClass="cdt.managedbuild.tool.llvm.lli">
-         </tool>
-      </toolChain>
-      <toolChain
-            archList="all"
-            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.with.linker.base"
             isAbstract="true"
             isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm.with.linker"
+            osList="all"
             secondaryOutputs="cdt.managedbuild.tool.llvm.c.linker.output.exe.bc"
             superClass="cdt.managedbuild.toolchain.llvm.base"
             targetTool="cdt.managedbuild.tool.llvm.cpp.linker;cdt.managedbuild.tool.llvm.c.linker;cdt.managedbuild.tool.llvm.archiver">
@@ -1278,6 +1267,24 @@
       </toolChain>
       <toolChain
             archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
+            id="cdt.managedbuild.toolchain.llvm.with.static.compiler.base"
+            isAbstract="true"
+            isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
+            name="%ToolChainName.llvm.with.static.compiler"
+            osList="all"
+            superClass="cdt.managedbuild.toolchain.llvm.base"
+            targetTool="cdt.managedbuild.tool.llvm.llc.base;cdt.managedbuild.tool.llvm.archiver">
+         <tool
+               id="cdt.managedbuild.tool.llvm.llc.base"
+               isAbstract="true"
+               name="%ToolName.llc.llvm"
+               natureFilter="both"
+               superClass="cdt.managedbuild.tool.llvm.llc">
+         </tool>
+      </toolChain>
+      <toolChain
+            archList="all"
             id="cdt.managedbuild.toolchain.llvm.static.compiler.linux.base"
             name="%ToolChainName.llvm.static.compiler.linux"
             osList="linux,hpux,aix,qnx"
@@ -1305,6 +1312,24 @@
                name="%PlatformName.Dbg"
                osList="win32">
          </targetPlatform>
+      </toolChain>
+      <toolChain
+            archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
+            id="cdt.managedbuild.toolchain.llvm.jit.base"
+            isAbstract="true"
+            isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
+            name="%ToolChainName.llvm.jit"
+            osList="all"
+            superClass="cdt.managedbuild.toolchain.llvm.base"
+            targetTool="cdt.managedbuild.tool.llvm.lli.base;cdt.managedbuild.tool.llvm.archiver">
+         <tool
+               id="cdt.managedbuild.tool.llvm.lli.base"
+               isAbstract="true"
+               name="%ToolName.lli.llvm"
+               natureFilter="both"
+               superClass="cdt.managedbuild.tool.llvm.lli">
+         </tool>
       </toolChain>
       <toolChain
             archList="all"
@@ -2938,222 +2963,6 @@
       </projectType>
       <configuration
             cleanCommand="rm -rf"
-            id="cdt.managedbuild.config.llvm.jit.linux.base">
-         <enablement
-               attribute="artifactExtension"
-               extensionAdjustment="false"
-               type="CONTAINER_ATTRIBUTE"
-               value="so">
-            <checkBuildProperty
-                  property="org.eclipse.cdt.build.core.buildArtefactType"
-                  value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
-            </checkBuildProperty>
-         </enablement>
-         <enablement
-               attribute="artifactExtension"
-               extensionAdjustment="false"
-               type="CONTAINER_ATTRIBUTE"
-               value="a">
-            <checkBuildProperty
-                  property="org.eclipse.cdt.build.core.buildArtefactType"
-                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
-            </checkBuildProperty>
-         </enablement>
-      </configuration>
-      <projectType
-            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
-            id="cdt.managedbuild.target.llvm.jit.linux.exe"
-            isAbstract="false"
-            isTest="false">
-         <configuration
-               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
-               cleanCommand="rm -rf"
-               id="cdt.managedbuild.config.llvm.jit.linux.exe.debug"
-               name="%ConfigName.Dbg"
-               parent="cdt.managedbuild.config.llvm.jit.linux.base">
-            <toolChain
-                  id="cdt.managedbuild.toolchain.llvm.jit.linux.exe.debug"
-                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
-               <targetPlatform
-                     archList="all"
-                     id="cdt.managedbuild.target.llvm.jit.linux.platform.exe.debug"
-                     osList="linux,hpux,aix,qnx"
-                     superClass="cdt.managedbuild.target.llvm.platform.base">
-               </targetPlatform>
-               <builder
-                     id="cdt.managedbuild.target.llvm.jit.linux.builder.exe.debug"
-                     superClass="cdt.managedbuild.target.llvm.builder.base">
-               </builder>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.lli">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-            </toolChain>
-         </configuration>
-         <configuration
-               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
-               cleanCommand="rm -rf"
-               id="cdt.managedbuild.config.llvm.jit.linux.exe.release"
-               name="%ConfigName.Rel"
-               parent="cdt.managedbuild.config.llvm.jit.linux.base">
-            <toolChain
-                  id="cdt.managedbuild.toolchain.llvm.jit.linux.exe.release"
-                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
-               <targetPlatform
-                     archList="all"
-                     id="cdt.managedbuild.target.llvm.jit.linux.platform.exe.release"
-                     osList="linux,hpux,aix,qnx"
-                     superClass="cdt.managedbuild.target.llvm.platform.base">
-               </targetPlatform>
-               <builder
-                     id="cdt.managedbuild.target.llvm.jit.linux.builder.exe.release"
-                     superClass="cdt.managedbuild.target.llvm.builder.base">
-               </builder>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.lli">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-            </toolChain>
-         </configuration>
-      </projectType>
-      <projectType
-            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
-            id="cdt.managedbuild.target.llvm.jit.linux.so"
-            isAbstract="false"
-            isTest="false">
-         <configuration
-               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
-               cleanCommand="rm -rf"
-               id="cdt.managedbuild.config.llvm.jit.linux.so.debug"
-               name="%ConfigName.Dbg"
-               parent="cdt.managedbuild.config.llvm.jit.linux.base">
-            <toolChain
-                  id="cdt.managedbuild.toolchain.llvm.jit.linux.so.debug"
-                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
-               <targetPlatform
-                     archList="all"
-                     id="cdt.managedbuild.target.llvm.jit.linux.platform.so.debug"
-                     osList="linux,hpux,aix,qnx"
-                     superClass="cdt.managedbuild.target.llvm.platform.base">
-               </targetPlatform>
-               <builder
-                     id="cdt.managedbuild.target.llvm.jit.linux.builder.so.debug"
-                     superClass="cdt.managedbuild.target.llvm.builder.base">
-               </builder>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.lli">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-            </toolChain>
-         </configuration>
-         <configuration
-               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
-               cleanCommand="rm -rf"
-               id="cdt.managedbuild.config.llvm.jit.linux.so.release"
-               name="%ConfigName.Rel"
-               parent="cdt.managedbuild.config.llvm.jit.linux.base">
-            <toolChain
-                  id="cdt.managedbuild.toolchain.llvm.ji.linux.so.release"
-                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
-               <targetPlatform
-                     archList="all"
-                     id="cdt.managedbuild.target.llvm.jit.linux.platform.so.release"
-                     osList="linux,hpux,aix,qnx"
-                     superClass="cdt.managedbuild.target.llvm.platform.base">
-               </targetPlatform>
-               <builder
-                     id="cdt.managedbuild.target.llvm.jit.linux.builder.so.release"
-                     superClass="cdt.managedbuild.target.llvm.builder.base">
-               </builder>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.lli">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-            </toolChain>
-         </configuration>
-      </projectType>
-      <projectType
-            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib"
-            id="cdt.managedbuild.target.llvm.jit.linux.lib"
-            isAbstract="false"
-            isTest="false">
-         <configuration
-               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
-               cleanCommand="rm -rf"
-               id="cdt.managedbuild.config.llvm.jit.linux.lib.debug"
-               name="%ConfigName.Dbg"
-               parent="cdt.managedbuild.config.llvm.jit.linux.base">
-            <toolChain
-                  id="cdt.managedbuild.toolchain.llvm.jit.linux.lib.debug"
-                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
-               <targetPlatform
-                     archList="all"
-                     id="cdt.managedbuild.target.llvm.jit.linux.platform.lib.debug"
-                     osList="linux,hpux,aix,qnx"
-                     superClass="cdt.managedbuild.target.llvm.platform.base">
-               </targetPlatform>
-               <builder
-                     id="cdt.managedbuild.target.llvm.jit.linux.builder.lib.debug"
-                     superClass="cdt.managedbuild.target.llvm.builder.base">
-               </builder>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.lib.debugebug"
-                     superClass="cdt.managedbuild.tool.llvm.lli">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-            </toolChain>
-         </configuration>
-         <configuration
-               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
-               cleanCommand="rm -rf"
-               id="cdt.managedbuild.config.llvm.jit.linux.lib.release"
-               name="%ConfigName.Rel"
-               parent="cdt.managedbuild.config.llvm.jit.linux.base">
-            <toolChain
-                  id="cdt.managedbuild.toolchain.llvm.jit.linux.lib.release"
-                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
-               <targetPlatform
-                     archList="all"
-                     id="cdt.managedbuild.target.llvm.jit.linux.platform.lib.release"
-                     osList="linux,hpux,aix,qnx"
-                     superClass="cdt.managedbuild.target.llvm.platform.base">
-               </targetPlatform>
-               <builder
-                     id="cdt.managedbuild.target.llvm.jit.linux.builder.lib.release"
-                     superClass="cdt.managedbuild.target.llvm.builder.base">
-               </builder>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.lib.releaseease"
-                     superClass="cdt.managedbuild.tool.llvm.lli">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-            </toolChain>
-         </configuration>
-      </projectType>
-      <configuration
-            cleanCommand="rm -rf"
             id="cdt.managedbuild.config.llvm.static.compiler.win32.base">
          <enablement
                attribute="artifactExtension"
@@ -3363,6 +3172,222 @@
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <configuration
+            cleanCommand="rm -rf"
+            id="cdt.managedbuild.config.llvm.jit.linux.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="so">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
+            </checkBuildProperty>
+         </enablement>
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
+            id="cdt.managedbuild.target.llvm.jit.linux.exe"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.jit.linux.exe.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.jit.linux.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.jit.linux.exe.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.jit.linux.platform.exe.debug"
+                     osList="linux,hpux,aix,qnx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.jit.linux.builder.exe.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.lli">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.jit.linux.exe.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.jit.linux.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.jit.linux.exe.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.jit.linux.platform.exe.release"
+                     osList="linux,hpux,aix,qnx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.jit.linux.builder.exe.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.lli">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
+            id="cdt.managedbuild.target.llvm.jit.linux.so"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.jit.linux.so.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.jit.linux.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.jit.linux.so.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.jit.linux.platform.so.debug"
+                     osList="linux,hpux,aix,qnx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.jit.linux.builder.so.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.lli">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.jit.linux.so.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.jit.linux.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.ji.linux.so.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.jit.linux.platform.so.release"
+                     osList="linux,hpux,aix,qnx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.jit.linux.builder.so.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.lli">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib"
+            id="cdt.managedbuild.target.llvm.jit.linux.lib"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.jit.linux.lib.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.jit.linux.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.jit.linux.lib.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.jit.linux.platform.lib.debug"
+                     osList="linux,hpux,aix,qnx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.jit.linux.builder.lib.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.lib.debugebug"
+                     superClass="cdt.managedbuild.tool.llvm.lli">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.jit.linux.lib.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.jit.linux.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.jit.linux.lib.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.jit.linux.platform.lib.release"
+                     osList="linux,hpux,aix,qnx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.jit.linux.builder.lib.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.lli.lib.releaseease"
+                     superClass="cdt.managedbuild.tool.llvm.lli">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
             </toolChain>
