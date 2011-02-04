@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="LLVM plug-in for Eclipse CDT" url="https://code.google.com/p/llvm4eclipsecdt/">
-      LLVM plugin for Eclipse CDT provides LLVM toolchain support for Eclipse CDT. It can compile C and C++ program code with Clang or llvm-gcc front-ends using LLVM as a back-end. LLVM tools such as assembler, archiver, linker, static compiler (llc), JIT/Interpreter (lli) are featured and can be configured via graphical user interface (Project-&gt;Properties-&gt;C/C++ Build-&gt;Settings). Plugin supports Linux and Windows with MinGW and Cygwin.
-   </description>
    <feature url="features/llvm4eclipsecdt_0.2.0.3.jar" id="llvm4eclipsecdt" version="0.2.0.3" os="linux,win32"/>
-   <category-def name="llvm4eclipsecdt" label="LLVM plugin for Eclipse CDT"/>
+   <category-def name="llvm4eclipsecdt" label="LLVM plugin for Eclipse CDT">
+      <description>
+         LLVM plugin for Eclipse CDT provides LLVM toolchain support for Eclipse CDT. It can compile C and C++ program code with Clang or llvm-gcc front-ends using LLVM as a back-end. LLVM tools such as assembler, archiver, linker, static compiler (llc), JIT/Interpreter (lli) are featured and can be configured via graphical user interface (Project-&gt;Properties-&gt;C/C++ Build-&gt;Settings). Plugin supports Linux and Windows with MinGW and Cygwin.
+      </description>
+   </category-def>
 </site>
