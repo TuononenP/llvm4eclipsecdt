@@ -17,7 +17,7 @@
             isAbstract="true"
             name="%ToolName.linker.llvm.c"
             natureFilter="both"
-            outputFlag="-o">
+            outputFlag="-o&quot; &quot;">
          <supportedProperties>
             <property
                   id="org.eclipse.cdt.build.core.buildArtefactType">
@@ -37,14 +37,6 @@
          </optionCategory>
          <option
                category="llvm.c.link.category.general"
-               command="-s"
-               defaultValue="false"
-               id="llvm.c.link.option.strip"
-               name="%Option.Posix.Linker.Strip"
-               valueType="boolean">
-         </option>
-         <option
-               category="llvm.c.link.category.general"
                command="-stats"
                defaultValue="false"
                id="llvm.c.link.option.stats"
@@ -57,6 +49,7 @@
                defaultValue="false"
                id="llvm.c.link.option.verbose"
                name="%Option.Posix.Linker.Verbose"
+               tip="In this mode the linker will print additional information about the actions it takes, programs it executes, etc."
                valueType="boolean">
          </option>
          <optionCategory
@@ -81,10 +74,64 @@
                valueType="libPaths">
          </option>
          <optionCategory
-               id="llvm.c.link.category.other"
-               name="%OptionCategory.Misc"
+               id="llvm.c.link.category.optimizations"
+               name="%OptionCategory.Optimizations"
                owner="cdt.managedbuild.tool.llvm.c.linker">
          </optionCategory>
+         <option
+               category="llvm.c.link.category.optimizations"
+               command="-strip-all"
+               defaultValue="false"
+               id="llvm.c.link.option.strip.debug"
+               name="%Option.Posix.Linker.Strip"
+               tip="Strip all debug and symbol information from the executable to make it smaller."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.c.link.category.optimizations"
+               command="-strip-debug"
+               defaultValue="false"
+               id="llvm.c.link.option.strip"
+               name="%Option.Posix.Linker.Strip.Debug"
+               tip="Strip all debug information from the executable to make it smaller."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.c.link.category.optimizations"
+               command="-verify-each"
+               defaultValue="false"
+               id="llvm.c.link.option.verification"
+               name="%Option.Posix.Linker.Verification"
+               tip="Run the verification pass after each of the passes to verify intermediate results."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.c.link.category.optimizations"
+               command="-disable-internalize"
+               defaultValue="false"
+               id="llvm.c.link.option.disable_internalize"
+               name="%Option.Posix.Linker.DisableInternalize"
+               tip="Do not mark all symbols as internal."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.c.link.category.optimizations"
+               command="-disable-opt"
+               defaultValue="false"
+               id="llvm.c.link.option.disable_optimization"
+               name="%Option.Posix.Linker.DisableOptimization"
+               tip="Completely disable optimization."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.c.link.category.optimizations"
+               command="-disable-inlining"
+               defaultValue="false"
+               id="llvm.c.link.option.disable_inhiling"
+               name="%Option.Posix.Linker.DisableInhiling"
+               tip="Do not run the inlining pass. Functions will not be inlined into other functions."
+               valueType="boolean">
+         </option>
          <option
                category="llvm.c.link.category.other"
                id="llvm.c.link.option.ldflags"
@@ -95,16 +142,38 @@
                category="llvm.c.link.category.llvmOptions"
                command="-native"
                defaultValue="false"
-               id="org.eclipse.cdt.managedbuilder.llvm.ui.option2"
+               id="llvm.c.link.option.native"
                isAbstract="false"
                name="%Option.Posix.Linker.native"
                resourceFilter="all"
+               tip="Generate a native machine code executable."
                valueType="boolean">
             <enablement
                   attribute="defaultValue"
                   extensionAdjustment="false"
                   type="CONTAINER_ATTRIBUTE"
                   value="true">
+               <checkBuildProperty
+                     property="org.eclipse.cdt.build.core.buildArtefactType"
+                     value="org.eclipse.cdt.build.core.buildArtefactType.exe">
+               </checkBuildProperty>
+            </enablement>
+         </option>
+         <option
+               category="llvm.c.link.category.llvmOptions"
+               command="-native-cbe"
+               defaultValue="false"
+               id="llvm.c.link.option.nativeCBackEnd"
+               isAbstract="false"
+               name="%Option.Posix.Linker.nativeCBackend"
+               resourceFilter="all"
+               tip="Generate a native machine code executable with the LLVM C backend. Uses the C backend to generate code for the program instead of an LLVM native code generator."
+               valueType="boolean">
+            <enablement
+                  attribute="defaultValue"
+                  extensionAdjustment="false"
+                  type="CONTAINER_ATTRIBUTE"
+                  value="false">
                <checkBuildProperty
                      property="org.eclipse.cdt.build.core.buildArtefactType"
                      value="org.eclipse.cdt.build.core.buildArtefactType.exe">
@@ -130,6 +199,7 @@
                id="llvm.c.link.option.linkaslibrary"
                isAbstract="false"
                name="%Option.Posix.Linker.link_as_library"
+               tip="Link the bitcode files together as a library, not an executable. In this mode, undefined symbols will be permitted."
                valueType="boolean">
             <enablement
                   attribute="defaultValue"
@@ -142,6 +212,11 @@
                </checkBuildProperty>
             </enablement>
          </option>
+         <optionCategory
+               id="llvm.c.link.category.other"
+               name="%OptionCategory.Misc"
+               owner="cdt.managedbuild.tool.llvm.c.linker">
+         </optionCategory>
          <inputType
                buildVariable="BCS"
                dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
