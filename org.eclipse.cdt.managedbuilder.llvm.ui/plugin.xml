@@ -305,6 +305,25 @@
                name="%OptionCategory.Options"
                owner="cdt.managedbuild.tool.llvm.archiver">
          </optionCategory>
+         <option
+               category="llvm.lib.category.options"
+               command="d"
+               id="llvm.lib.option.delete"
+               isAbstract="false"
+               name="%Option.Posix.Archiver.delete"
+               resourceFilter="all"
+               tip="Print the table of contents."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.lib.category.options"
+               command="t"
+               id="llvm.lib.option.delete"
+               isAbstract="false"
+               name="%Option.Posix.Archiver.print.contents"
+               resourceFilter="all"
+               valueType="boolean">
+         </option>
          <inputType
                buildVariable="BCS"
                dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
@@ -416,10 +435,92 @@
          </option>
          <option
                category="llvm.llc.category.options"
+               command="--stats"
+               id="llvm.both.llc.option.printStats"
+               name="%Option.Llvm.Llc.printStats"
+               tip="Print statistics recorded by code-generation passes."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.llc.category.options"
                command="-march=${value}"
                id="llvm.both.llc.option.arch"
                name="%Option.Llvm.Llc.Arch"
                valueType="string">
+         </option>
+         <optionCategory
+               id="llvm.llc.category.options.optimization"
+               name="%OptionCategory.Optimize"
+               owner="cdt.managedbuild.tool.llvm.llc">
+         </optionCategory>
+         <option
+               category="llvm.llc.category.options.optimization"
+               id="llvm.llc.option.optimization.level"
+               name="%Option.Posix.OptLevel"
+               valueType="enumerated">
+            <enumeratedOptionValue
+                  command="-O0"
+                  id="llvm.c_cpp.compiler.optimization.level.none"
+                  name="%Option.Posix.Optimize.None">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
+                  command="-O1"
+                  id="llvm.c_cpp.compiler.optimization.level.optimize"
+                  name="%Option.Posix.Optimize.Optimize">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
+                  command="-O2"
+                  id="llvm.c_cpp.compiler.optimization.level.more"
+                  isDefault="true"
+                  name="%Option.Posix.Optimize.More">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
+                  command="-O3"
+                  id="llvm.c_cpp.compiler.optimization.level.most"
+                  name="%Option.Posix.Optimize.Most">
+            </enumeratedOptionValue>
+            <enumeratedOptionValue
+                  command="-O4"
+                  id="llvm.c_cpp.compiler.optimization.level.runtime"
+                  name="%Option.Posix.Optimize.Runtime">
+            </enumeratedOptionValue>
+            <enablement
+                  attribute="value"
+                  extensionAdjustment="false"
+                  type="CONTAINER_ATTRIBUTE"
+                  value="llvm.c_cpp.compiler.optimization.level.most">
+               <checkBuildProperty
+                     property="org.eclipse.cdt.build.core.buildType"
+                     value="org.eclipse.cdt.build.core.buildType.release">
+               </checkBuildProperty>
+            </enablement>
+            <enablement
+                  attribute="value"
+                  extensionAdjustment="false"
+                  type="CONTAINER_ATTRIBUTE"
+                  value="llvm.c_cpp.compiler.optimization.level.none">
+               <checkBuildProperty
+                     property="org.eclipse.cdt.build.core.buildType"
+                     value="org.eclipse.cdt.build.core.buildType.debug">
+               </checkBuildProperty>
+            </enablement>
+         </option>
+         <option
+               category="llvm.llc.category.options.optimization"
+               command="--disable-excess-fp-precision"
+               id="llvm.llc.option.optimization.disableExcessPrecisionOptimization"
+               isAbstract="false"
+               name="%Option.Llvm.llc.optimization.disableExcessPrecisionOptimization"
+               tip="Disable optimizations that may produce excess precision for floating point. Note that this option can dramatically slow down code on some systems (e.g. X86)."
+               valueType="boolean">
+         </option>
+         <option
+               category="llvm.llc.category.options.optimization"
+               command="--disable-fp-elim"
+               id="llvm.llc.option.optimization.disableFramePointerElimOptimization"
+               isAbstract="false"
+               name="%Option.Llvm.llc.optimization.disableFramePointerEliminationOptimization"
+               valueType="boolean">
          </option>
          <inputType
                buildVariable="BCS"
