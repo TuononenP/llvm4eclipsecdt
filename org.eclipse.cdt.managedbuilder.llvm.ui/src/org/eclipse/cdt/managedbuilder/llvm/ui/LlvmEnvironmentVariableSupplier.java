@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.Path;
  * 
  * Contains LLVM environment variables.
  */
+@SuppressWarnings("restriction")
 public class LlvmEnvironmentVariableSupplier implements
 		IConfigurationEnvironmentVariableSupplier {
 
