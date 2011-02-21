@@ -1237,7 +1237,9 @@
       </toolChain>
       <toolChain
             archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.cygwin.GnuCygwinConfigurationEnvironmentSupplier"
             id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base"
+            isToolChainSupported="org.eclipse.cdt.managedbuilder.gnu.cygwin.IsGnuCygwinToolChainSupported"
             name="%ToolChainName.llvm.gnu.win32.cygwin"
             osList="win32"
             superClass="cdt.managedbuild.toolchain.llvm.gnu.base">
@@ -1252,7 +1254,9 @@
       </toolChain>
       <toolChain
             archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.base"
+            isToolChainSupported="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwIsToolChainSupported"
             name="%ToolChainName.llvm.gnu.win32.mingw"
             osList="win32"
             superClass="cdt.managedbuild.toolchain.llvm.gnu.base">
@@ -1646,7 +1650,7 @@
                attribute="artifactExtension"
                extensionAdjustment="false"
                type="CONTAINER_ATTRIBUTE"
-               value="so">
+               value="dll">
             <checkBuildProperty
                   property="org.eclipse.cdt.build.core.buildArtefactType"
                   value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
@@ -2194,13 +2198,14 @@
          </configuration>
       </projectType>
       <configuration
+            artifactExtension="exe"
             cleanCommand="rm -rf"
             id="cdt.managedbuild.config.llvm.gnu.win32.cygwin.base">
          <enablement
                attribute="artifactExtension"
                extensionAdjustment="false"
                type="CONTAINER_ATTRIBUTE"
-               value="so">
+               value="dll">
             <checkBuildProperty
                   property="org.eclipse.cdt.build.core.buildArtefactType"
                   value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
@@ -2470,13 +2475,14 @@
          </configuration>
       </projectType>
       <configuration
+            artifactExtension="exe"
             cleanCommand="rm -rf"
             id="cdt.managedbuild.config.llvm.gnu.win32.mingw.base">
          <enablement
                attribute="artifactExtension"
                extensionAdjustment="false"
                type="CONTAINER_ATTRIBUTE"
-               value="so">
+               value="dll">
             <checkBuildProperty
                   property="org.eclipse.cdt.build.core.buildArtefactType"
                   value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
@@ -2968,7 +2974,7 @@
                attribute="artifactExtension"
                extensionAdjustment="false"
                type="CONTAINER_ATTRIBUTE"
-               value="so">
+               value="dll">
             <checkBuildProperty
                   property="org.eclipse.cdt.build.core.buildArtefactType"
                   value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
@@ -3400,7 +3406,7 @@
                attribute="artifactExtension"
                extensionAdjustment="false"
                type="CONTAINER_ATTRIBUTE"
-               value="so">
+               value="dll">
             <checkBuildProperty
                   property="org.eclipse.cdt.build.core.buildArtefactType"
                   value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
