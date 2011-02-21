@@ -726,7 +726,7 @@
          </supportedProperties>
          <envVarBuildPath
                pathType="buildpathInclude"
-               variableList="CPATH">
+               variableList="CPATH, CPLUS_INCLUDE_PATH">
          </envVarBuildPath>
          <optionCategory
                id="llvm.c_cpp.compiler.category.preprocessor"
