@@ -34,13 +34,17 @@ public class LlvmIsToolChainSupported implements IManagedIsToolChainSupported {
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.cdt.managedbuilder.core.IManagedIsToolChainSupported#isSupported(org.eclipse.cdt.managedbuilder.core.IToolChain,
-	 * org.eclipse.core.runtime.PluginVersionIdentifier, java.lang.String)
+	 * org.osgi.framework.Version, java.lang.String)
 	 */
 	/**
 	 * Return a boolean value that informs if the LLVM Toolchain is supported.
 	 */
 	public boolean isSupported(IToolChain toolChain,
-			Version version, String instance) { //Version is supported from CDT 7.1.0 //Use PluginVersionIdentifier with older CDT versions.
+			/*
+			 * Version is supported from CDT 7.1.0.
+			 * Use org.osgi.framework.PluginVersionIdentifier with older CDT versions.
+			 */
+			Version version, String instance) {
 		return supported;
 	}
 
