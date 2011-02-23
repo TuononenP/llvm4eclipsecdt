@@ -17,6 +17,7 @@ import org.eclipse.cdt.managedbuilder.core.IConfiguration;
 import org.eclipse.cdt.managedbuilder.envvar.IBuildEnvironmentVariable;
 import org.eclipse.cdt.managedbuilder.envvar.IConfigurationEnvironmentVariableSupplier;
 import org.eclipse.cdt.managedbuilder.envvar.IEnvironmentVariableProvider;
+import org.eclipse.cdt.managedbuilder.gnu.cygwin.GnuCygwinConfigurationEnvironmentSupplier;
 import org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier;
 import org.eclipse.cdt.managedbuilder.llvm.ui.preferences.LlvmPreferenceStore;
 import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
@@ -68,21 +69,33 @@ public class LlvmEnvironmentVariableSupplier implements
 			//if OS is Windows (Windows specific settings)
 			if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) {
 				try {
-					//try to find mingw path from PATH
-					IBuildEnvironmentVariable mingwPath = llvmEnvironmentVariables
+					//try to find mingw or cygwin path from PATH environment variable
+					IBuildEnvironmentVariable envPath = llvmEnvironmentVariables
 							.get(ENV_VAR_NAME_PATH);
-					//if mingw path not found
-					if (mingwPath == null) {
+					IBuildEnvironmentVariable mingwPath=null, cygwinPath=null;
+					//if path is empty
+					if (envPath == null) {
 						//try to find mingw path from MingwEnvironmentVariableSupplier
 						IConfigurationEnvironmentVariableSupplier mingwEnvironmentVariables = 
 							new MingwEnvironmentVariableSupplier();
 						mingwPath = mingwEnvironmentVariables.getVariable(
 								ENV_VAR_NAME_PATH, null, null);
+						//try to find cygwin path from GnuCygwinConfigurationEnvironmentSupplier
+						IConfigurationEnvironmentVariableSupplier cygwinEnvironmentVariables =
+							new GnuCygwinConfigurationEnvironmentSupplier();
+						cygwinPath = cygwinEnvironmentVariables.getVariable(
+								ENV_VAR_NAME_PATH, null, null);
+
 					}
 					//if mingw found
 					if (mingwPath != null) {
 						//form full path
 						pathStr = pathStr + System.getProperty("path.separator") + mingwPath.getValue();
+					}
+					//if cygwin found
+					if (cygwinPath != null) {
+						//form full path
+						pathStr = pathStr + System.getProperty("path.separator") + cygwinPath.getValue();
 					}
 				} catch (Exception e) {
 					//TODO: Emit proper error message and enter it to Eclipse error log.
