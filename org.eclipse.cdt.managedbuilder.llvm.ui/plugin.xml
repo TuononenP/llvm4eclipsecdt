@@ -4590,7 +4590,7 @@
             id="llvmAssembly"
             name="%Language.LlvmAssembly">
          <contentType
-               id="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblyCode">
+               id="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblySource">
          </contentType>
       </language>
    </extension>
