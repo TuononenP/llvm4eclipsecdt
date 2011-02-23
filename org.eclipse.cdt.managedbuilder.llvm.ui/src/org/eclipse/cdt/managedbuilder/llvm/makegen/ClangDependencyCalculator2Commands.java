@@ -17,7 +17,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 
 /**
- * @author Leo Hippeläinen
+ * @author Leo Hippelainen
  */
 public class ClangDependencyCalculator2Commands extends
 		DefaultGCCDependencyCalculator2Commands {

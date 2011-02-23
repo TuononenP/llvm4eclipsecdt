@@ -34,7 +34,7 @@ public class ProjectNature implements IProjectNature {
 	 * Deconfigure those projects which have this project nature.
 	 */
 	public void deconfigure() throws CoreException {
-		// Remove the nature-specific information here.
+		// Remove the nature-specific information.
 	}
 
 	/**

@@ -28,7 +28,7 @@ import org.eclipse.ui.IWorkbench;
  * the main plug-in class. That way, preferences can
  * be accessed directly via the preference store.
  * 
- * @author Leo Hippeläinen
+ * @author Leo Hippelainen
  * @author Petri Tuononen
  * 
  * TODO: Append new value to a PreferenceStore variable and not replace it (other than bin dir).

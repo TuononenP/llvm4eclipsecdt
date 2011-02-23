@@ -17,7 +17,7 @@ import org.osgi.framework.Version;
 /**
  * Based on MingwIsToolChainSupported.
  *  
- * @author Leo Hippeläinen
+ * @author Leo Hippelainen
  */
 public class LlvmIsToolChainSupported implements IManagedIsToolChainSupported {
 

@@ -475,9 +475,9 @@ public class LlvmToolOptionPathUtil {
 		}
 	}
 
-	//Works only if Eclipse Bugzilla Bug 321040 fix is applied
 	/**
 	 * Removes a Library search path from the Linker's Library search path Option.
+	 * Since CDT 8.0 (Bugzilla Bug 321040)
 	 * 
 	 * @param cf IConfiguration Build configuration
 	 * @param cfTool ITool Tool

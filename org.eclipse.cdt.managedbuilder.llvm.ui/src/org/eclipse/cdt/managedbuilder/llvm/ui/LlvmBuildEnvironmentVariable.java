@@ -15,7 +15,7 @@ import org.eclipse.cdt.managedbuilder.envvar.IBuildEnvironmentVariable;
 /**
  * Implemented type that contains BuildEnvironmentalVariables.
  * 
- * @author Leo Hippeläinen
+ * @author Leo Hippelainen
  */
 public class LlvmBuildEnvironmentVariable implements IBuildEnvironmentVariable {
 
