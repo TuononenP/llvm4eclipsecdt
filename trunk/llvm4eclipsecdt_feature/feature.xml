@@ -2,7 +2,7 @@
 <feature
       id="llvm4eclipsecdt"
       label="llvm4eclipsecdt"
-      version="0.2.0.6"
+      version="0.2.0.7"
       provider-name="Nokia Siemens Networks"
       os="linux, macosx, win32">
 
