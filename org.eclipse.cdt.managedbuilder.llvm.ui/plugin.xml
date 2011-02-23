@@ -11,6 +11,7 @@
       <tool
             advancedInputCategory="true"
             command="llvm-ld"
+            commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX} ${OUTPUT} ${INPUTS}"
             errorParsers="org.eclipse.cdt.core.GLDErrorParser"
             id="cdt.managedbuild.tool.llvm.c.linker"
             isAbstract="true"
