@@ -991,13 +991,6 @@
                sourceContentType="org.eclipse.cdt.core.cSource"
                sources="c">
          </inputType>
-         <option
-               id="org.eclipse.cdt.managedbuilder.llvm.ui.option"
-               isAbstract="false"
-               name="%option.name"
-               resourceFilter="all"
-               valueType="string">
-         </option>
       </tool>
       <tool
             command="clang++"
@@ -1169,7 +1162,7 @@
                name="%ToolName.compiler.llvm.cpp"
                superClass="cdt.managedbuild.tool.llvm.cpp.compiler">
          </tool>
-      </toolChain>
+      </toolChain>         
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.clang.linux.base"
@@ -1184,7 +1177,22 @@
                name="%PlatformName.Dbg"
                osList="linux,hpux,aix,qnx">
          </targetPlatform>
-      </toolChain>            
+      </toolChain>
+      <toolChain
+            archList="all"
+            id="cdt.managedbuild.toolchain.llvm.clang.macosx.base"
+            name="%ToolChainName.llvm.macosx"
+            osList="macosx"
+            superClass="cdt.managedbuild.toolchain.llvm.clang.base">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.MachO64"
+               id="cdt.managedbuild.target.llvm.macosx.platform.base"
+               isAbstract="true"
+               name="%PlatformName.Dbg"
+               osList="macosx">
+         </targetPlatform>
+      </toolChain>              
       <toolChain
             archList="all"
             configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier"
@@ -1235,6 +1243,21 @@
                osList="linux,hpux,aix,qnx">
          </targetPlatform>
       </toolChain>
+      <toolChain
+            archList="all"
+            id="cdt.managedbuild.toolchain.llvm.gnu.macosx.base"
+            name="%ToolChainName.llvm.gnu.macosx"
+            osList="macosx"
+            superClass="cdt.managedbuild.toolchain.llvm.gnu.base">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.MachO64"
+               id="cdt.managedbuild.target.llvm.gnu.macosx.platform.base"
+               isAbstract="true"
+               name="%PlatformName.Dbg"
+               osList="macosx">
+         </targetPlatform>
+      </toolChain>      
       <toolChain
             archList="all"
             configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.cygwin.GnuCygwinConfigurationEnvironmentSupplier"
@@ -1304,6 +1327,21 @@
       </toolChain>
       <toolChain
             archList="all"
+            id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base"
+            name="%ToolChainName.llvm.static.compiler.macosx"
+            osList="macosx"
+            superClass="cdt.managedbuild.toolchain.llvm.with.static.compiler.base">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.MachO64"
+               id="cdt.managedbuild.target.llvm.static.compiler.macosx.platform.base"
+               isAbstract="true"
+               name="%PlatformName.Dbg"
+               osList="macosx">
+         </targetPlatform>
+      </toolChain>
+      <toolChain
+            archList="all"
             id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base"
             name="%ToolChainName.llvm.static.compiler.win32"
             osList="win32"
@@ -1348,6 +1386,21 @@
                isAbstract="true"
                name="%PlatformName.Dbg"
                osList="linux,hpux,aix,qnx">
+         </targetPlatform>
+      </toolChain>
+      <toolChain
+            archList="all"
+            id="cdt.managedbuild.toolchain.llvm.jit.macosx.base"
+            name="%ToolChainName.llvm.jit.macosx"
+            osList="macosx"
+            superClass="cdt.managedbuild.toolchain.llvm.jit.base">
+         <targetPlatform
+               archList="all"
+               binaryParser="org.eclipse.cdt.core.MachO64"
+               id="cdt.managedbuild.target.llvm.jit.macosx.platform.base"
+               isAbstract="true"
+               name="%PlatformName.Dbg"
+               osList="macosx">
          </targetPlatform>
       </toolChain>
       <toolChain
@@ -1445,7 +1498,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.linux.exe.release"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.linux.platform.exe.release"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.platform.base">
                </targetPlatform>
                <builder
@@ -1490,7 +1545,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.linux.so.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.linux.platform.so.debug"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.platform.base">
                </targetPlatform>
                <builder
@@ -1529,7 +1586,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.linux.so.release"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.linux.platform.so.release"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.platform.base">
                </targetPlatform>
                <builder
@@ -1574,7 +1633,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.linux.lib.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.linux.platform.lib.debug"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.platform.base">
                </targetPlatform>
                <builder
@@ -1613,7 +1674,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.linux.lib.release"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.linux.platform.lib.release"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.platform.base">
                </targetPlatform>
                <builder
@@ -1638,6 +1701,292 @@
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.linux.assembler.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <configuration
+            cleanCommand="rm -rf"
+            id="cdt.managedbuild.config.llvm.clang.macosx.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="so">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
+            </checkBuildProperty>
+         </enablement>
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
+            id="cdt.managedbuild.target.llvm.clang.macosx.exe"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.clang.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.clang.macosx.exe.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.clang.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+               <targetPlatform
+                     archList="al"
+                     id="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.release"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
+            id="cdt.managedbuild.target.llvm.clang.macosx.so"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.clang.macosx.so.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.clang.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.clang.macosx.so.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+               <targetPlatform
+                     id="cdt.managedbuild.target.llvm.clang.macosx.platform.so.debug"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.clang.macosx.builder.so.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.clang.macosx.so.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.clang.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.clang.macosx.so.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.clang.macosx.platform.so.release"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.clang.macosx.builder.so.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib"
+            id="cdt.managedbuild.target.llvm.clang.macosx.lib"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.clang.macosx.lib.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.clang.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.clang.macosx.lib.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.clang.macosx.platform.lib.debug"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.clang.macosx.builder.lib.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.clang.macosx.lib.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.clang.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.clang.macosx.lib.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.clang.macosx.platform.lib.release"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.clang.macosx.builder.lib.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
             </toolChain>
@@ -1682,7 +2031,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.win32.exe.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.win32.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.win32.platform.exe.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.win32.platform.base">
                </targetPlatform>
                <builder
@@ -1721,7 +2072,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.win32.exe.release"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.win32.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.win32.platform.exe.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.win32.platform.base">
                </targetPlatform>
                <builder
@@ -1766,7 +2119,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.win32.so.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.win32.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.win32.platform.so.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.win32.platform.base">
                </targetPlatform>
                <builder
@@ -1805,7 +2160,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.win32.so.release"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.win32.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.win32.platform.so.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.win32.platform.base">
                </targetPlatform>
                <builder
@@ -1850,7 +2207,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.win32.lib.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.win32.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.win32.platform.lib.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.win32.platform.base">
                </targetPlatform>
                <builder
@@ -1889,7 +2248,9 @@
                   id="cdt.managedbuild.toolchain.llvm.clang.win32.lib.release"
                   superClass="cdt.managedbuild.toolchain.llvm.clang.win32.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.clang.win32.platform.lib.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.win32.platform.base">
                </targetPlatform>
                <builder
@@ -1958,7 +2319,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.linux.exe.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.linux.platform.exe.debug"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.gnu.linux.platform.base">
                </targetPlatform>
                <builder
@@ -1997,7 +2360,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.linux.exe.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.linux.platform.exe.release"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.gnu.linux.platform.base">
                </targetPlatform>
                <builder
@@ -2042,7 +2407,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.linux.so.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.linux.platform.so.debug"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.gnu.linux.platform.base">
                </targetPlatform>
                <builder
@@ -2082,7 +2449,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.linux.so.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.linux.platform.so.release"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.gnu.linux.platform.base">
                </targetPlatform>
                <builder
@@ -2127,7 +2496,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.linux.lib.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.linux.platform.lib.debug"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.gnu.linux.platform.base">
                </targetPlatform>
                <builder
@@ -2167,7 +2538,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.linux.lib.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.linux.platform.lib.release"
+                     osList="linux,hpux,aix,qnx"
                      superClass="cdt.managedbuild.target.llvm.gnu.linux.platform.base">
                </targetPlatform>
                <builder
@@ -2192,6 +2565,294 @@
                </tool>
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.linux.assembler.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <configuration
+            cleanCommand="rm -rf"
+            id="cdt.managedbuild.config.llvm.gnu.macosx.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="so">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
+            </checkBuildProperty>
+         </enablement>
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
+            id="cdt.managedbuild.target.llvm.gnu.macosx.exe"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.gnu.macosx.exe.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.gnu.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.gnu.macosx.exe.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.platform.exe.debug"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.gnu.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.builder.exe.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.compiler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.gcc.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.compiler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.g++.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.linker.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.linker.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.gnu.macosx.exe.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.gnu.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.gnu.macosx.exe.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
+               <targetPlatform
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.platform.exe.release"
+                     superClass="cdt.managedbuild.target.llvm.gnu.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.builder.exe.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.compiler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.gcc.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.compiler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.g++.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.linker.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.linker.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
+            id="cdt.managedbuild.target.llvm.gnu.macosx.so"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.gnu.macosx.so.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.gnu.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.gnu.macosx.so.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.platform.so.debug"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.gnu.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.builder.so.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.compiler.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.gcc.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.compiler.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.g++.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.linker.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.linker.so.debug"
+                     isAbstract="true"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.gnu.macosx.so.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.gnu.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.gnu.macosx.so.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.platform.so.release"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.gnu.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.builder.so.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.compiler.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.gcc.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.compiler.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.g++.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.linker.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.linker.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib"
+            id="cdt.managedbuild.target.llvm.gnu.macosx.lib"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.gnu.macosx.lib.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.gnu.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.gnu.macosx.lib.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.platform.lib.debug"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.gnu.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.builder.lib.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.compiler.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.gcc.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.compiler.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.g++.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.linker.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.linker.lib.debug"
+                     isAbstract="true"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.gnu.macosx.lib.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.gnu.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.gnu.macosx.lib.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.platform.lib.release"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.gnu.macosx.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.gnu.macosx.builder.lib.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.compiler.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.gcc.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.compiler.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.g++.compiler">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.c.linker.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.c.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.cpp.linker.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
             </toolChain>
@@ -2237,7 +2898,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.exe.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.exe.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.base">
                </targetPlatform>
                <builder
@@ -2276,7 +2939,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.exe.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.exe.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.base">
                </targetPlatform>
                <builder
@@ -2321,7 +2986,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.so.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.so.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.base">
                </targetPlatform>
                <builder
@@ -2360,7 +3027,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.so.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.so.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.base">
                </targetPlatform>
                <builder
@@ -2405,7 +3074,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.lib.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.lib.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.base">
                </targetPlatform>
                <builder
@@ -2444,7 +3115,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.lib.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.lib.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.cygwin.platform.base">
                </targetPlatform>
                <builder
@@ -2514,7 +3187,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.exe.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.exe.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.base">
                </targetPlatform>
                <builder
@@ -2553,7 +3228,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.exe.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.exe.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.base">
                </targetPlatform>
                <builder
@@ -2598,7 +3275,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.so.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.so.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.base">
                </targetPlatform>
                <builder
@@ -2637,7 +3316,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.so.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.so.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.base">
                </targetPlatform>
                <builder
@@ -2682,7 +3363,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.lib.debug"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.lib.debug"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.base">
                </targetPlatform>
                <builder
@@ -2721,7 +3404,9 @@
                   id="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.lib.release"
                   superClass="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.base">
                <targetPlatform
+                     archList="all"
                      id="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.lib.release"
+                     osList="win32"
                      superClass="cdt.managedbuild.target.llvm.gnu.win32.mingw.platform.base">
                </targetPlatform>
                <builder
@@ -3614,7 +4299,223 @@
                </tool>
             </toolChain>
          </configuration>
-      </projectType> 
+      </projectType>
+      <configuration
+            cleanCommand="rm -rf"
+            id="cdt.managedbuild.config.llvm.static.compiler.macosx.base">
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="so">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.sharedLib">
+            </checkBuildProperty>
+         </enablement>
+         <enablement
+               attribute="artifactExtension"
+               extensionAdjustment="false"
+               type="CONTAINER_ATTRIBUTE"
+               value="a">
+            <checkBuildProperty
+                  property="org.eclipse.cdt.build.core.buildArtefactType"
+                  value="org.eclipse.cdt.build.core.buildArtefactType.staticLib">
+            </checkBuildProperty>
+         </enablement>
+      </configuration>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
+            id="cdt.managedbuild.target.llvm.static.compiler.macosx.exe"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.static.compiler.macosx.exe.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.static.compiler.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.exe.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.platform.exe.debug"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.builder.exe.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.llc.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.llc">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.static.compiler.macosx.exe.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.static.compiler.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.exe.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.platform.exe.release"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.builder.exe.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.llc.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.llc">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
+            id="cdt.managedbuild.target.llvm.static.compiler.macosx.so"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.static.compiler.macosx.so.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.static.compiler.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.so.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.platform.so.debug"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.builder.so.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.llc.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.llc">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.so.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.static.compiler.macosx.so.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.static.compiler.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.so.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.platform.so.release"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.builder.so.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.llc.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.llc">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.so.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib"
+            id="cdt.managedbuild.target.llvm.static.compiler.macosx.lib"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.static.compiler.macosx.lib.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.static.compiler.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.lib.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.platform.lib.debug"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.builder.lib.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.llc.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.llc">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.lib.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.static.compiler.macosx.lib.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.static.compiler.macosx.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.lib.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.platform.lib.release"
+                     osList="macosx"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.static.compiler.macosx.builder.lib.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.llc.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.llc.base">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.lib.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
@@ -3780,10 +4681,16 @@
                id="cdt.managedbuild.toolchain.llvm.clang.linux.base">
          </toolChain>
          <toolChain
+               id="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+         </toolChain>
+         <toolChain
                id="cdt.managedbuild.toolchain.llvm.clang.win32.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
+         </toolChain>
+         <toolChain
+               id="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
@@ -3795,10 +4702,16 @@
                id="cdt.managedbuild.toolchain.llvm.static.compiler.linux.base">
          </toolChain>
          <toolChain
+               id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+         </toolChain>
+         <toolChain
                id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+         </toolChain>
+         <toolChain
+               id="cdt.managedbuild.toolchain.llvm.jit.macosx.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.jit.win32.base">
@@ -3810,10 +4723,16 @@
                id="cdt.managedbuild.toolchain.llvm.clang.linux.base">
          </toolChain>
          <toolChain
+               id="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+         </toolChain>
+         <toolChain
                id="cdt.managedbuild.toolchain.llvm.clang.win32.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
+         </toolChain>
+         <toolChain
+               id="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
@@ -3825,10 +4744,16 @@
                id="cdt.managedbuild.toolchain.llvm.static.compiler.linux.base">
          </toolChain>
          <toolChain
+               id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+         </toolChain>
+         <toolChain
                id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+         </toolChain>
+         <toolChain
+               id="cdt.managedbuild.toolchain.llvm.jit.macosx.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.jit.win32.base">
@@ -3840,10 +4765,16 @@
                id="cdt.managedbuild.toolchain.llvm.clang.linux.base">
          </toolChain>
          <toolChain
+               id="cdt.managedbuild.toolchain.llvm.clang.macosx.base">
+         </toolChain>
+         <toolChain
                id="cdt.managedbuild.toolchain.llvm.clang.win32.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.gnu.linux.base">
+         </toolChain>
+         <toolChain
+               id="cdt.managedbuild.toolchain.llvm.gnu.macosx.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base">
@@ -3855,10 +4786,16 @@
                id="cdt.managedbuild.toolchain.llvm.static.compiler.linux.base">
          </toolChain>
          <toolChain
+               id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base">
+         </toolChain>
+         <toolChain
                id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.jit.linux.base">
+         </toolChain>
+         <toolChain
+               id="cdt.managedbuild.toolchain.llvm.jit.macosx.base">
          </toolChain>
          <toolChain
                id="cdt.managedbuild.toolchain.llvm.jit.win32.base">
