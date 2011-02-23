@@ -4569,23 +4569,14 @@
             name="%ContentType.LlvmAssemblerCode"
             priority="normal">
       </content-type>
-   </extension>
-   <extension
-         point="org.eclipse.core.contenttype.contentTypes">
       <file-association
             content-type="org.eclipse.cdt.managedbuilder.llvm.ui.llvmBytecode"
             file-extensions="bc">
       </file-association>
-   </extension>
-   <extension
-         point="org.eclipse.core.contenttype.contentTypes">
       <file-association
             content-type="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblySource"
             file-extensions="ll">
       </file-association>
-   </extension>
-   <extension
-         point="org.eclipse.core.contenttype.contentTypes">
       <file-association
             content-type="org.eclipse.cdt.managedbuilder.llvm.ui.llvmExecutable"
             file-extensions="exe.bc">
@@ -4598,7 +4589,7 @@
             id="llvmAssembly"
             name="%Language.LlvmAssembly">
          <contentType
-               id="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblySource">
+               id="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblyCode">
          </contentType>
       </language>
    </extension>
