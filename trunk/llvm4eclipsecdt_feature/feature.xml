@@ -2,15 +2,18 @@
 <feature
       id="llvm4eclipsecdt"
       label="llvm4eclipsecdt"
-      version="0.2.0.4"
+      version="0.2.0.5"
       provider-name="Nokia Siemens Networks"
-      os="linux,win32">
+      os="linux, macosx, win32">
 
    <description url="https://code.google.com/p/llvm4eclipsecdt/">
-      llvm4eclipsecdt provides LLVM toolchain support for Eclipse CDT. It can compile C and C++ program code with Clang or llvm-gcc front-ends using LLVM as a back-end.
-
-LLVM tools such as assembler, archiver, linker, static compiler (llc), JIT/Interpreter (lli) are featured and can be configured via graphical user interface (Project-&gt;Properties-&gt;C/C++ Build-&gt;Settings). Plugin supports Linux and Windows with MinGW and Cygwin.
-
+      llvm4eclipsecdt provides LLVM toolchain support for Eclipse CDT.
+It can compile C and C++ program code with Clang or llvm-gcc
+front-ends using LLVM as a back-end.
+LLVM tools such as assembler, archiver, linker, static compiler
+(llc), JIT/Interpreter (lli) are featured and can be configured
+via graphical user interface (Project-&gt;Properties-&gt;C/C++ Build-&gt;Settings).
+Plugin supports Linux, MacOSX and Windows with MinGW and Cygwin.
 License: Eclipse Public License
 Project site: http://code.google.com/p/llvm4eclipsecdt
    </description>
@@ -123,7 +126,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="org.eclipse.cdt.managedbuilder.llvm.ui"
          download-size="0"
          install-size="0"
-         version="0.2.0.4"
+         version="0.2.0.5"
          unpack="false"/>
 
 </feature>
