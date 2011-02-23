@@ -12,7 +12,7 @@ CDT 8.0
 
 export org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier 
 <br />
-apply CDT bug patch 321040
+(Before CD 8.0: apply CDT bug patch 321040)
 
 = Links =
 http://download.eclipse.org/eclipse/downloads/
