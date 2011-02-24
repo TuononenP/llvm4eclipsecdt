@@ -219,7 +219,7 @@
          </optionCategory>
          <inputType
                buildVariable="BCS"
-               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
                id="cdt.managedbuild.tool.llvm.c.linker.input"
                multipleOfType="true"
                primaryInput="true"
@@ -326,7 +326,7 @@
          </option>
          <inputType
                buildVariable="BCS"
-               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
                id="cdt.managedbuild.tool.llvm.archiver.input"
                multipleOfType="true"
                sourceContentType="org.eclipse.cdt.managedbuilder.llvm.ui.llvmBytecode"
@@ -535,7 +535,7 @@
          </option>
          <inputType
                buildVariable="BCS"
-               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
                id="cdt.managedbuild.tool.llvm.llc.input"
                multipleOfType="true"
                primaryInput="true"
@@ -691,7 +691,7 @@
          </option>
          <inputType
                buildVariable="BCS"
-               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
                id="cdt.managedbuild.tool.llvm.lli.input"
                multipleOfType="true"
                primaryInput="true"
@@ -983,7 +983,7 @@
                variableList="CPATH,C_INCLUDE_PATH">
          </envVarBuildPath>
          <inputType
-               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
                dependencyContentType="org.eclipse.cdt.core.cHeader"
                dependencyExtensions="h"
                id="cdt.managedbuild.tool.llvm.c.compiler.input"
@@ -1006,7 +1006,7 @@
                variableList="CPATH,CPLUS_INCLUDE_PATH">
          </envVarBuildPath>
          <inputType
-               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.ClangDependencyCalculator2"
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
                dependencyContentType="org.eclipse.cdt.core.cxxHeader"
                dependencyExtensions="h,H,hpp"
                id="cdt.managedbuild.tool.llvm.cpp.compiler.input"
@@ -1029,6 +1029,7 @@
                variableList="CPATH,C_INCLUDE_PATH">
          </envVarBuildPath>
          <inputType
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
                dependencyContentType="org.eclipse.cdt.core.cHeader"
                dependencyExtensions="h"
                id="cdt.managedbuild.tool.llvm.gcc.compiler.input"
@@ -1051,6 +1052,7 @@
                variableList="CPATH,CPLUS_INCLUDE_PATH">
          </envVarBuildPath>
          <inputType
+               dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
                dependencyContentType="org.eclipse.cdt.core.cxxHeader"
                dependencyExtensions="h,H,hpp"
                id="cdt.managedbuild.tool.llvm.g++.compiler.input"

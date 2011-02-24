@@ -20,7 +20,7 @@ import org.eclipse.core.runtime.IPath;
 /**
  * @author Leo Hippelainen
  */
-public class ClangDependencyCalculator2 extends DefaultGCCDependencyCalculator2 {
+public class LlvmDependencyCalculator2 extends DefaultGCCDependencyCalculator2 {
 
 	/*
 	 * (non-Javadoc)
@@ -29,7 +29,7 @@ public class ClangDependencyCalculator2 extends DefaultGCCDependencyCalculator2 
 	 */
 	public IManagedDependencyInfo getDependencySourceInfo(IPath source, IResource resource, IBuildObject buildContext,
 			ITool tool, IPath topBuildDirectory) {
-		return new ClangDependencyCalculator2Commands(source, resource, buildContext, tool, topBuildDirectory);
+		return new LlvmDependencyCalculator2Commands(source, resource, buildContext, tool, topBuildDirectory);
 	}
 	
 	/* (non-Javadoc)
@@ -37,7 +37,7 @@ public class ClangDependencyCalculator2 extends DefaultGCCDependencyCalculator2 
 	 * org.eclipse.cdt.managedbuilder.core.IBuildObject, org.eclipse.cdt.managedbuilder.core.ITool, org.eclipse.core.runtime.IPath)
 	 */
 	public IManagedDependencyInfo getDependencySourceInfo(IPath source, IBuildObject buildContext, ITool tool, IPath topBuildDirectory) {
-		return new ClangDependencyCalculator2Commands(source, buildContext, tool, topBuildDirectory);
+		return new LlvmDependencyCalculator2Commands(source, buildContext, tool, topBuildDirectory);
 	}
 
 }

@@ -19,7 +19,7 @@ import org.eclipse.core.runtime.IPath;
 /**
  * @author Leo Hippelainen
  */
-public class ClangDependencyCalculator2Commands extends
+public class LlvmDependencyCalculator2Commands extends
 		DefaultGCCDependencyCalculator2Commands {
 
 	/**
@@ -29,7 +29,7 @@ public class ClangDependencyCalculator2Commands extends
 	 * @param tool ITool
 	 * @param topBuildDirectory IPath
 	 */
-	public ClangDependencyCalculator2Commands(IPath source, IResource resource,
+	public LlvmDependencyCalculator2Commands(IPath source, IResource resource,
 			IBuildObject buildContext, ITool tool, IPath topBuildDirectory) {
 		super(source, resource, buildContext, tool, topBuildDirectory);
 	}
@@ -40,7 +40,7 @@ public class ClangDependencyCalculator2Commands extends
 	 * @param tool ITool
 	 * @param topBuildDirectory IPath
 	 */
-	public ClangDependencyCalculator2Commands(IPath source,
+	public LlvmDependencyCalculator2Commands(IPath source,
 			IBuildObject buildContext, ITool tool, IPath topBuildDirectory) {
 		super(source, buildContext, tool, topBuildDirectory);
 	}
