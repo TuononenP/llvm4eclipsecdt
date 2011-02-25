@@ -1033,7 +1033,8 @@
                dependencyContentType="org.eclipse.cdt.core.cHeader"
                dependencyExtensions="h"
                id="cdt.managedbuild.tool.llvm.gcc.compiler.input"
-               scannerConfiorg.eclipse.cdt.core.gccgDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileC|org.eclipse.cdt.make.core.LLVMStandardMakePerFileProfile"
+               languageId="org.eclipse.cdt.core.gcc"
+               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileC|org.eclipse.cdt.make.core.LLVMStandardMakePerFileProfile"
                sourceContentType="org.eclipse.cdt.core.cSource"
                sources="c">
          </inputType>
@@ -1303,7 +1304,7 @@
             name="%ToolChainName.llvm.with.static.compiler"
             osList="all"
             superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.llc.base;cdt.managedbuild.tool.llvm.archiver">
+            targetTool="cdt.managedbuild.tool.llvm.llc;cdt.managedbuild.tool.llvm.archiver">
          <tool
                id="cdt.managedbuild.tool.llvm.llc.base"
                isAbstract="true"
@@ -1366,7 +1367,7 @@
             name="%ToolChainName.llvm.jit"
             osList="all"
             superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.lli.base;cdt.managedbuild.tool.llvm.archiver">
+            targetTool="cdt.managedbuild.tool.llvm.lli;cdt.managedbuild.tool.llvm.archiver">
          <tool
                id="cdt.managedbuild.tool.llvm.lli.base"
                isAbstract="true"
@@ -1488,10 +1489,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.linux.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.linux.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -1532,10 +1529,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.linux.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.linux.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -1584,10 +1577,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.linux.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.linux.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -1628,10 +1617,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.linux.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.linux.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -1680,10 +1665,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.linux.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.linux.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -1724,10 +1705,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.linux.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.linux.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -1800,10 +1777,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.macosx.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -1844,10 +1817,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.macosx.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -1894,10 +1863,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.macosx.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -1938,10 +1903,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.macosx.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -1990,10 +1951,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.macosx.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2034,10 +1991,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.macosx.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2110,10 +2063,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.win32.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.win32.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2154,10 +2103,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.win32.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.win32.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2206,10 +2151,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.win32.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.win32.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2250,10 +2191,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.win32.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.win32.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2302,10 +2239,6 @@
                      id="cdt.managedbuild.tool.llvm.clang.win32.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.win32.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2346,10 +2279,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.clang.win32.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.clang.win32.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2422,10 +2351,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.linux.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.linux.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2466,10 +2391,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.linux.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.linux.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2519,10 +2440,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.linux.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.linux.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2563,10 +2480,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.linux.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.linux.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2616,10 +2529,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.linux.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.linux.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2660,10 +2569,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.linux.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.linux.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2736,10 +2641,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.macosx.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2778,10 +2679,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.macosx.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2831,10 +2728,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.macosx.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2875,10 +2768,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.macosx.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -2928,10 +2817,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.macosx.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -2972,10 +2857,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.macosx.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.macosx.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3049,10 +2930,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3093,10 +2970,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3145,10 +3018,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3189,10 +3058,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3241,10 +3106,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3285,10 +3146,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.cygwin.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3362,10 +3219,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3406,10 +3259,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3458,10 +3307,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3502,10 +3347,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3554,10 +3395,6 @@
                      id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3598,10 +3435,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.gnu.win32.mingw.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3662,10 +3495,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3694,10 +3523,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3734,10 +3559,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3766,10 +3587,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -3806,10 +3623,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -3839,10 +3652,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.linux.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.linux.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
       </projectType>
@@ -3870,78 +3679,6 @@
             </checkBuildProperty>
          </enablement>
       </configuration>
-      <projectType
-            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
-            id="cdt.managedbuild.target.llvm.static.compiler.win32.exe"
-            isAbstract="false"
-            isTest="false">
-         <configuration
-               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
-               cleanCommand="rm -rf"
-               id="cdt.managedbuild.config.llvm.static.compiler.win32.exe.debug"
-               name="%ConfigName.Dbg"
-               parent="cdt.managedbuild.config.llvm.static.compiler.win32.base">
-            <toolChain
-                  id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.exe.debug"
-                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base">
-               <targetPlatform
-                     archList="all"
-                     id="cdt.managedbuild.target.llvm.static.compiler.win32.platform.exe.debug"
-                     osList="win32"
-                     superClass="cdt.managedbuild.target.llvm.platform.base">
-               </targetPlatform>
-               <builder
-                     id="cdt.managedbuild.target.llvm.static.compiler.win32.builder.exe.debug"
-                     superClass="cdt.managedbuild.target.llvm.builder.base">
-               </builder>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.llc.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.llc">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
-            </toolChain>
-         </configuration>
-         <configuration
-               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
-               cleanCommand="rm -rf"
-               id="cdt.managedbuild.config.llvm.static.compiler.win32.exe.release"
-               name="%ConfigName.Rel"
-               parent="cdt.managedbuild.config.llvm.static.compiler.win32.base">
-            <toolChain
-                  id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.exe.release"
-                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base">
-               <targetPlatform
-                     archList="all"
-                     id="cdt.managedbuild.target.llvm.static.compiler.win32.platform.exe.release"
-                     osList="win32"
-                     superClass="cdt.managedbuild.target.llvm.platform.base">
-               </targetPlatform>
-               <builder
-                     id="cdt.managedbuild.target.llvm.static.compiler.win32.builder.exe.release"
-                     superClass="cdt.managedbuild.target.llvm.builder.base">
-               </builder>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.llc.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.llc">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
-            </toolChain>
-         </configuration>
-      </projectType>
       <projectType
             buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib"
             id="cdt.managedbuild.target.llvm.static.compiler.win32.so"
@@ -3974,10 +3711,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4007,9 +3740,69 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
+            </toolChain>
+         </configuration>
+      </projectType>
+      <projectType
+            buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe"
+            id="cdt.managedbuild.target.llvm.static.compiler.win32.exe"
+            isAbstract="false"
+            isTest="false">
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.static.compiler.win32.exe.debug"
+               name="%ConfigName.Dbg"
+               parent="cdt.managedbuild.config.llvm.static.compiler.win32.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.exe.debug"
+                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.static.compiler.win32.platform.exe.debug"
+                     osList="win32"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.static.compiler.win32.builder.exe.debug"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
                <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
+                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.llc.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.llc">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.exe.debug"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
+               </tool>
+            </toolChain>
+         </configuration>
+         <configuration
+               buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release"
+               cleanCommand="rm -rf"
+               id="cdt.managedbuild.config.llvm.static.compiler.win32.exe.release"
+               name="%ConfigName.Rel"
+               parent="cdt.managedbuild.config.llvm.static.compiler.win32.base">
+            <toolChain
+                  id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.exe.release"
+                  superClass="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base">
+               <targetPlatform
+                     archList="all"
+                     id="cdt.managedbuild.target.llvm.static.compiler.win32.platform.exe.release"
+                     osList="win32"
+                     superClass="cdt.managedbuild.target.llvm.platform.base">
+               </targetPlatform>
+               <builder
+                     id="cdt.managedbuild.target.llvm.static.compiler.win32.builder.exe.release"
+                     superClass="cdt.managedbuild.target.llvm.builder.base">
+               </builder>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.llc.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.llc">
+               </tool>
+               <tool
+                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.exe.release"
+                     superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
             </toolChain>
          </configuration>
@@ -4046,10 +3839,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4078,10 +3867,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.win32.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.win32.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4142,10 +3927,6 @@
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4174,10 +3955,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4214,10 +3991,6 @@
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4246,10 +4019,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4286,10 +4055,6 @@
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4318,10 +4083,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.linux.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4382,10 +4143,6 @@
                      id="cdt.managedbuild.tool.llvm.jit.win32.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.win32.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4414,10 +4171,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.win32.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.win32.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4454,10 +4207,6 @@
                      id="cdt.managedbuild.tool.llvm.jit.win32.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.win32.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4486,10 +4235,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.win32.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.win32.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4526,10 +4271,6 @@
                      id="cdt.managedbuild.tool.llvm.jit.win32.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.win32.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4558,10 +4299,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.jit.win32.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.jit.win32.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4622,10 +4359,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.exe.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.archiver.exe.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4654,10 +4387,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.exe.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.archiver.exe.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4694,10 +4423,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.archiver.so.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4726,10 +4451,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.so.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.archiver.so.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
@@ -4766,10 +4487,6 @@
                      id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.lib.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.archiver.lib.debug"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
-               </tool>
             </toolChain>
          </configuration>
          <configuration
@@ -4798,10 +4515,6 @@
                <tool
                      id="cdt.managedbuild.tool.llvm.static.compiler.macosx.assembler.lib.release"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
-               </tool>
-               <tool
-                     id="cdt.managedbuild.tool.llvm.static.compiler.macosx.archiver.lib.release"
-                     superClass="cdt.managedbuild.tool.llvm.archiver">
                </tool>
             </toolChain>
          </configuration>
