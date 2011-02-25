@@ -4607,7 +4607,7 @@
       <buildOutputProvider>
          <open></open>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedClangScannerInfoConsoleParser">
+               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -4634,7 +4634,7 @@
       <buildOutputProvider>
          <open></open>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedClangScannerInfoConsoleParser">
+               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -4661,7 +4661,7 @@
       <buildOutputProvider>
          <open></open>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedClangScannerInfoConsoleParser">
+               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider

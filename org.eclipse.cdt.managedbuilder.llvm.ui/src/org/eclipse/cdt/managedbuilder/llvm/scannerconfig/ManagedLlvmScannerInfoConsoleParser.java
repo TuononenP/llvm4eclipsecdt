@@ -28,7 +28,7 @@ import org.eclipse.core.resources.IProject;
  * TODO: Javadoc comments
  */
 @SuppressWarnings("restriction")
-public class ManagedClangScannerInfoConsoleParser
+public class ManagedLlvmScannerInfoConsoleParser
 	extends GCCScannerInfoConsoleParser {
 	
 	private Boolean fManagedBuildOnState;
