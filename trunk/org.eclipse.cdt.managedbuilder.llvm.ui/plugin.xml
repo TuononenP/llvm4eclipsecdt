@@ -46,7 +46,7 @@
          <option
                category="llvm.c.link.category.general"
                command="-v"
-               defaultValue="false"
+               defaultValue="true"
                id="llvm.c.link.option.verbose"
                name="%Option.Posix.Linker.Verbose"
                tip="In this mode the linker will print additional information about the actions it takes, programs it executes, etc."
