@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>llvm4eclipsecdt_update-site</name>
+	<name>org.eclipse.cdt.managedbuilder.llvm-update</name>
 	<comment></comment>
 	<projects>
 	</projects>

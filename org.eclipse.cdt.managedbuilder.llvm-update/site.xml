@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/llvm4eclipsecdt_0.2.0.9.jar" id="llvm4eclipsecdt" version="0.2.0.9" os="linux, macosx, win32">
+   <feature url="features/llvm4eclipsecdt_1.0.0.201103020000.jar" id="llvm4eclipsecdt" version="1.0.0.201103020000" os="linux, macosx, win32">
       <category name="LLVM plugin for Eclipse CDT"/>
    </feature>
    <category-def name="LLVM plugin for Eclipse CDT" label="LLVM plugin for Eclipse CDT">
