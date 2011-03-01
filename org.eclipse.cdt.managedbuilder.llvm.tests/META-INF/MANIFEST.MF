@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: org.eclipse.cdt.managedbuilder.llvm.tests
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: org.eclipse.cdt.managedbuilder.llvm.tests.Activator
+Bundle-Vendor: Nokia Siemens Networks
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Import-Package: junit.framework
