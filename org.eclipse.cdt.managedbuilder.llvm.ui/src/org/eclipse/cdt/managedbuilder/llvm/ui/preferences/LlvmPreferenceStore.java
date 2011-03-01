@@ -19,7 +19,8 @@ import org.eclipse.jface.preference.IPreferenceStore;
  * Class used to access the LLVM Preference store values.
  * 
  * @author Petri Tuononen
- * @noextend  This class is not intended to be subclassed by clients.
+ * 
+ * This class is not intended to be subclassed by clients.
  */
 public class LlvmPreferenceStore {
 

@@ -30,8 +30,8 @@ import org.osgi.framework.BundleContext;
  * @author  Leo Hippelainen
  * @author  Petri Tuononen
  * 
- * @noextend  This class is not intended to be subclassed by clients.
- * @noinstantiate  This class is not intended to be instantiated by clients.
+ * This class is not intended to be subclassed by clients.
+ * This class is not intended to be instantiated by clients.
  */
 public class LlvmUIPlugin extends AbstractUIPlugin { 
 
@@ -152,7 +152,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	/**
 	 * Get String from the plugin.properties file
 	 * 
-	 * @param Variable name wanted as a String e.g. "ToolName.assembler.llvm"
+	 * @param var Variable name wanted as a String e.g. "ToolName.assembler.llvm"
 	 * @return String e.g. LLVM assembler
 	 */
 	public static String getPropertyString(String var) {
