@@ -46,7 +46,7 @@ public class LibraryListEditor extends LlvmListEditor {
 		FileDialog dlg = new FileDialog(getShell());
 		final Text text = new Text(getShell(), SWT.BORDER);
 		dlg.setFilterPath(text.getText());
-		dlg.setText("Browse a directory path");
+		dlg.setText("Browse a directory path"); //$NON-NLS-1$
 		dlg.open();
 		String file = dlg.getFileName();
 		//remove white spaces
@@ -67,9 +67,8 @@ public class LibraryListEditor extends LlvmListEditor {
 			//inform LLVM environment variable supplier that there has been a change
 			LlvmEnvironmentVariableSupplier.invalidatePaths();
 			return file;
-		}  else {
-			return null;
 		}
+		return null;
 	}
 
 	@Override
@@ -77,17 +76,17 @@ public class LibraryListEditor extends LlvmListEditor {
 	 * Removes the path from the list as well as from the Tool's Option.
 	 */
 	protected void removePressed() {
-		List list = getList();
+		List libList = getList();
         setPresentsDefaultValue(false);
-        int index = list.getSelectionIndex();
+        int index = libList.getSelectionIndex();
         //remove a library from the LLVM preference store
-        LlvmPreferenceStore.removeLibrary(list.getItem(index).toString());
+        LlvmPreferenceStore.removeLibrary(libList.getItem(index).toString());
         //remove a library from LLVM linker's option
-        LlvmToolOptionPathUtil.removeLlvmLib(list.getItem(index).toString());
+        LlvmToolOptionPathUtil.removeLlvmLib(libList.getItem(index).toString());
 		//inform LLVM environment variable supplier that there has been a change
 		LlvmEnvironmentVariableSupplier.invalidatePaths();
         if (index >= 0) {
-            list.remove(index);
+        	libList.remove(index);
             selectionChanged();
         }
 	}

@@ -35,7 +35,7 @@ import org.osgi.framework.BundleContext;
 public class LlvmUIPlugin extends AbstractUIPlugin { 
 
 	//The plug-in ID
-	public static final String PLUGIN_ID = "org.eclipse.cdt.managedbuilder.llvm.ui";
+	public static final String PLUGIN_ID = "org.eclipse.cdt.managedbuilder.llvm.ui"; //$NON-NLS-1$
 
 	//The shared instance
 	private static LlvmUIPlugin plugin;
@@ -44,7 +44,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	private ResourceBundle resourceBundle;
 	
 	//Name for the properties file
-	private final static String PROPERTIES = "plugin.properties";
+	private final static String PROPERTIES = "plugin.properties"; //$NON-NLS-1$
 
 	//Property Resource bundle
 	private PropertyResourceBundle properties;
@@ -61,6 +61,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
@@ -70,10 +71,11 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		super.stop(context);
 		plugin = null;
-		resourceBundle = null;
+		this.resourceBundle = null;
 	}
 
 	/**
@@ -103,12 +105,12 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	 */
 	public ResourceBundle getResourceBundle() {
 		try {
-			if (resourceBundle == null)
-				resourceBundle = ResourceBundle.getBundle(this.getClass().getName()+ "Resources"); //$NON-NLS-1$
+			if (this.resourceBundle == null)
+				this.resourceBundle = ResourceBundle.getBundle(this.getClass().getName()+ "Resources"); //$NON-NLS-1$
 		} catch (MissingResourceException x) {
-			resourceBundle = null;
+			this.resourceBundle = null;
 		}
-		return resourceBundle;
+		return this.resourceBundle;
 	}
 
 	/**
@@ -135,9 +137,9 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	 * @return PropertyResourceBundle
 	 */
 	public PropertyResourceBundle getProperties(){
-		if (properties == null){
+		if (this.properties == null){
 			try {
-				properties = new PropertyResourceBundle(
+				this.properties = new PropertyResourceBundle(
 						FileLocator.openStream(this.getBundle(),
 								new Path(PROPERTIES),false));
 			} catch (IOException e) {
@@ -145,7 +147,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 				e.getMessage();
 			}
 		}
-		return properties;
+		return this.properties;
 	}	  
 	
 	/**

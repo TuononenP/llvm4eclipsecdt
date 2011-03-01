@@ -46,8 +46,8 @@ public class IncludePathListEditor extends LlvmListEditor {
 		DirectoryDialog dlg = new DirectoryDialog(getShell());
 		final Text text = new Text(getShell(), SWT.BORDER);
 		dlg.setFilterPath(text.getText());
-		dlg.setText("Browse a directory path");
-		dlg.setMessage("Select a directory");
+		dlg.setText("Browse a directory path"); //$NON-NLS-1$
+		dlg.setMessage("Select a directory"); //$NON-NLS-1$
 		String dir = dlg.open();
 		//remove white spaces
 		dir = dir.trim();
@@ -70,9 +70,8 @@ public class IncludePathListEditor extends LlvmListEditor {
 			//inform LLVM environment variable supplier that there has been a change
 			LlvmEnvironmentVariableSupplier.invalidatePaths();
 			return dir;
-		}  else {
-			return null;
 		}
+		return null;
 	}
 
 	@Override
@@ -80,17 +79,17 @@ public class IncludePathListEditor extends LlvmListEditor {
 	 * Removes the path from the list as well as from the Tool's Option.
 	 */
 	protected void removePressed() {
-		List list = getList();
+		List incList = getList();
         setPresentsDefaultValue(false);
-        int index = list.getSelectionIndex();
+        int index = incList.getSelectionIndex();
         //remove an include path from the LLVM preference store
-        LlvmPreferenceStore.removeIncludePath(list.getItem(index).toString());
+        LlvmPreferenceStore.removeIncludePath(incList.getItem(index).toString());
         //remove an include path from the LLVM assembler's option
-        LlvmToolOptionPathUtil.removeLlvmIncludePath(list.getItem(index).toString());
+        LlvmToolOptionPathUtil.removeLlvmIncludePath(incList.getItem(index).toString());
 		//inform LLVM environment variable supplier that there has been a change
 		LlvmEnvironmentVariableSupplier.invalidatePaths();
         if (index >= 0) {
-            list.remove(index);
+        	incList.remove(index);
             selectionChanged();
         }
 	}

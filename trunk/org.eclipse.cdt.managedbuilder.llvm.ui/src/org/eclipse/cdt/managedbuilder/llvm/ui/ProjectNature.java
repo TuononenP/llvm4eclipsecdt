@@ -45,7 +45,7 @@ public class ProjectNature implements IProjectNature {
 	 * @return IProject
 	 */
 	public IProject getProject() {
-		return project;
+		return this.project;
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class ProjectNature implements IProjectNature {
 	 * @param proj IProject
 	 */
 	public void setProject(IProject proj) {
-		project = proj;
+		this.project = proj;
 	}
 
 }

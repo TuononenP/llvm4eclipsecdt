@@ -47,6 +47,7 @@ public class LlvmDependencyCalculator2Commands extends
 	 * (non-Javadoc)
 	 * @see org.eclipse.cdt.managedbuilder.makegen.IManagedDependencyCommands#getDependencyCommandOptions()
 	 */
+	@Override
 	public String[] getDependencyCommandOptions() {
 		String[] options = new String[2];
 		// -MMD 

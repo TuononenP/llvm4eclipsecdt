@@ -17,9 +17,9 @@ package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
  */
 public class PreferenceConstants {
 
-	public static final String P_LLVM_PATH = "LLVM installation folder";
-	public static final String P_LLVM_INCLUDE_PATH = "Include path used in LLVM compilations";
-	public static final String P_LLVM_LIBRARY_PATH = "Library path used in LLVM builds";
-	public static final String P_LLVM_LIBRARIES = "Libraries used in LLVM builds";
+	public static final String P_LLVM_PATH = "LLVM installation folder"; //$NON-NLS-1$
+	public static final String P_LLVM_INCLUDE_PATH = "Include path used in LLVM compilations"; //$NON-NLS-1$
+	public static final String P_LLVM_LIBRARY_PATH = "Library path used in LLVM builds"; //$NON-NLS-1$
+	public static final String P_LLVM_LIBRARIES = "Libraries used in LLVM builds"; //$NON-NLS-1$
 	
 }

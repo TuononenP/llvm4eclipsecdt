@@ -36,8 +36,8 @@ import org.eclipse.core.resources.ResourcesPlugin;
 public class LlvmToolOptionPathUtil {
 	
 	//tool input extensions
-	private static final String assemblerInputType = "ll";
-	private static final String linkerInputType = "bc";
+	private static final String assemblerInputType = "ll"; //$NON-NLS-1$
+	private static final String linkerInputType = "bc"; //$NON-NLS-1$
 	//tool option values
 	public static final int INCLUDE = 1;
 	public static final int LIB = 2;
@@ -581,7 +581,7 @@ public class LlvmToolOptionPathUtil {
 		//get ITool associated with the input extension
 		ITool cfTool = cf.getToolFromInputExtension(assemblerInputType);
 		//get option id for include paths
-		String includeOptionId = getOptionId(cf, cfTool, IOption.INCLUDE_PATH);
+		String includeOptionId = getOptionId(cfTool, IOption.INCLUDE_PATH);
 		return getIToolPathOption(cfTool, includeOptionId);
 	}
 	
@@ -595,7 +595,7 @@ public class LlvmToolOptionPathUtil {
 		//get ITool associated with the input extension
 		ITool cfTool = cf.getToolFromInputExtension(linkerInputType);
 		//get option id for libraries
-		String libOptionId = getOptionId(cf, cfTool, IOption.LIBRARIES);
+		String libOptionId = getOptionId(cfTool, IOption.LIBRARIES);
 		return getIToolPathOption(cfTool, libOptionId);
 	}
 	
@@ -609,19 +609,18 @@ public class LlvmToolOptionPathUtil {
 		//get ITool associated with the input extension
 		ITool cfTool = cf.getToolFromInputExtension(linkerInputType);
 		//get option id for library paths
-		String libDirOptionId = getOptionId(cf, cfTool, IOption.LIBRARY_PATHS);
+		String libDirOptionId = getOptionId(cfTool, IOption.LIBRARY_PATHS);
 		return getIToolPathOption(cfTool, libDirOptionId);
 	}
 	
 	/**
 	 * Returns Tool's option id.
 	 * 
-	 * @param cf IConfiguration Project build configuration
 	 * @param cfTool ITool Tool
 	 * @param optionValueType Option's value type.
 	 * @return optionId Tool's option id.
 	 */
-	private static String getOptionId(IConfiguration cf, ITool cfTool, int optionValueType) {
+	private static String getOptionId(ITool cfTool, int optionValueType) {
 		String optionId = null;
 		//get all Tool options.
 		IOption[] options = cfTool.getOptions();
@@ -649,7 +648,7 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static IOption getIToolPathOption(ITool cfTool, String optionId) {
 		//get path option with specific id for the ITool
-		return cfTool.getOptionById(optionId); //$NON-NLS-1$
+		return cfTool.getOptionById(optionId);
 	}
 	
 	/**
@@ -676,7 +675,7 @@ public class LlvmToolOptionPathUtil {
 			newPathList.add(path);
 		}
 		//creates a new list that includes all existing paths as well as new paths
-		String[] newArray = (String[])newPathList.toArray(new String[0]);
+		String[] newArray = newPathList.toArray(new String[0]);
 		return newArray;
 	}
 	
@@ -697,7 +696,7 @@ public class LlvmToolOptionPathUtil {
 		}
 		newPathList.remove(removePath);
 		//creates a new list that includes all existing paths except the removed path
-		String[] newArray = (String[])newPathList.toArray(new String[0]);
+		String[] newArray = newPathList.toArray(new String[0]);
 		return newArray;
 	}
 	
@@ -708,7 +707,7 @@ public class LlvmToolOptionPathUtil {
 	 * @return String array containing multiple paths.
 	 */
 	public static String[] stringToArray(String str) {
-		return str.split(System.getProperty("path.separator"));
+		return str.split(System.getProperty("path.separator")); //$NON-NLS-1$
 	}
 	
 	/**
@@ -724,7 +723,7 @@ public class LlvmToolOptionPathUtil {
 		if (array.length>0 /*&& !array[0].equals("")*/) {
 			for (String i : array) {
 				sB.append(i);
-				sB.append(System.getProperty("path.separator"));
+				sB.append(System.getProperty("path.separator")); //$NON-NLS-1$
 			}			
 		}
 		return sB.toString();

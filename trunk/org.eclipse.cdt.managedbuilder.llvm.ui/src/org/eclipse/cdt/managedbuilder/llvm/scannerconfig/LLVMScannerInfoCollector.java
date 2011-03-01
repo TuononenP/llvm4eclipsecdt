@@ -11,7 +11,6 @@
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.scannerconfig;
 
-import org.eclipse.cdt.make.core.scannerconfig.IScannerInfoCollector3;
 import org.eclipse.cdt.make.internal.core.scannerconfig2.PerProjectSICollector;
 import org.eclipse.cdt.managedbuilder.scannerconfig.IManagedScannerInfoCollector;
 
@@ -22,8 +21,7 @@ import org.eclipse.cdt.managedbuilder.scannerconfig.IManagedScannerInfoCollector
  * files using this format.
  * 
  */
-@SuppressWarnings("restriction")
 public class LLVMScannerInfoCollector
 	extends PerProjectSICollector
-	implements IScannerInfoCollector3, IManagedScannerInfoCollector {
+	implements IManagedScannerInfoCollector {
 }
