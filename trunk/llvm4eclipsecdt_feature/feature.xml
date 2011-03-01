@@ -2,7 +2,7 @@
 <feature
       id="llvm4eclipsecdt"
       label="llvm4eclipsecdt"
-      version="0.2.0.7"
+      version="0.2.0.8"
       provider-name="Nokia Siemens Networks"
       os="linux, macosx, win32">
 
@@ -126,7 +126,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="org.eclipse.cdt.managedbuilder.llvm.ui"
          download-size="0"
          install-size="0"
-         version="0.2.0.7"
+         version="0.2.0.8"
          unpack="false"/>
 
 </feature>
