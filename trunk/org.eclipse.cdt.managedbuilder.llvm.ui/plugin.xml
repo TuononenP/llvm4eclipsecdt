@@ -49,7 +49,7 @@
                defaultValue="true"
                id="llvm.c.link.option.verbose"
                name="%Option.Posix.Linker.Verbose"
-               tip="In this mode the linker will print additional information about the actions it takes, programs it executes, etc."
+               tip="%option.tip"
                valueType="boolean">
          </option>
          <optionCategory
@@ -84,7 +84,7 @@
                defaultValue="false"
                id="llvm.c.link.option.strip.debug"
                name="%Option.Posix.Linker.Strip"
-               tip="Strip all debug and symbol information from the executable to make it smaller."
+               tip="%option.tip.0"
                valueType="boolean">
          </option>
          <option
@@ -93,7 +93,7 @@
                defaultValue="false"
                id="llvm.c.link.option.strip"
                name="%Option.Posix.Linker.Strip.Debug"
-               tip="Strip all debug information from the executable to make it smaller."
+               tip="%option.tip.1"
                valueType="boolean">
          </option>
          <option
@@ -102,7 +102,7 @@
                defaultValue="false"
                id="llvm.c.link.option.verification"
                name="%Option.Posix.Linker.Verification"
-               tip="Run the verification pass after each of the passes to verify intermediate results."
+               tip="%option.tip.2"
                valueType="boolean">
          </option>
          <option
@@ -111,7 +111,7 @@
                defaultValue="false"
                id="llvm.c.link.option.disable_internalize"
                name="%Option.Posix.Linker.DisableInternalize"
-               tip="Do not mark all symbols as internal."
+               tip="%option.tip.3"
                valueType="boolean">
          </option>
          <option
@@ -120,7 +120,7 @@
                defaultValue="false"
                id="llvm.c.link.option.disable_optimization"
                name="%Option.Posix.Linker.DisableOptimization"
-               tip="Completely disable optimization."
+               tip="%option.tip.4"
                valueType="boolean">
          </option>
          <option
@@ -129,7 +129,7 @@
                defaultValue="false"
                id="llvm.c.link.option.disable_inhiling"
                name="%Option.Posix.Linker.DisableInhiling"
-               tip="Do not run the inlining pass. Functions will not be inlined into other functions."
+               tip="%option.tip.5"
                valueType="boolean">
          </option>
          <option
@@ -146,7 +146,7 @@
                isAbstract="false"
                name="%Option.Posix.Linker.native"
                resourceFilter="all"
-               tip="Generate a native machine code executable."
+               tip="%option.tip.6"
                valueType="boolean">
             <enablement
                   attribute="defaultValue"
@@ -167,7 +167,7 @@
                isAbstract="false"
                name="%Option.Posix.Linker.nativeCBackend"
                resourceFilter="all"
-               tip="Generate a native machine code executable with the LLVM C backend. Uses the C backend to generate code for the program instead of an LLVM native code generator."
+               tip="%option.tip.7"
                valueType="boolean">
             <enablement
                   attribute="defaultValue"
@@ -199,7 +199,7 @@
                id="llvm.c.link.option.linkaslibrary"
                isAbstract="false"
                name="%Option.Posix.Linker.link_as_library"
-               tip="Link the bitcode files together as a library, not an executable. In this mode, undefined symbols will be permitted."
+               tip="%option.tip.8"
                valueType="boolean">
             <enablement
                   attribute="defaultValue"
@@ -312,7 +312,7 @@
                isAbstract="false"
                name="%Option.Posix.Archiver.delete"
                resourceFilter="all"
-               tip="Print the table of contents."
+               tip="%option.tip.9"
                valueType="boolean">
          </option>
          <option
@@ -449,7 +449,7 @@
                command="--stats"
                id="llvm.both.llc.option.printStats"
                name="%Option.Llvm.printStats"
-               tip="Print statistics recorded by code-generation passes."
+               tip="%option.tip.10"
                valueType="boolean">
          </option>
          <option
@@ -522,7 +522,7 @@
                id="llvm.llc.option.optimization.disableExcessPrecisionOptimization"
                isAbstract="false"
                name="%Option.Llvm.llc.optimization.disableExcessPrecisionOptimization"
-               tip="Disable optimizations that may produce excess precision for floating point. Note that this option can dramatically slow down code on some systems (e.g. X86)."
+               tip="%option.tip.11"
                valueType="boolean">
          </option>
          <option
@@ -595,7 +595,7 @@
                command="-stats"
                id="llvm.both.lli.option.printStats"
                name="%Option.Llvm.printStats"
-               tip="Print statistics from the code-generation passes."
+               tip="%option.tip.12"
                valueType="boolean">
          </option>
          <option
@@ -606,13 +606,13 @@
             <enumeratedOptionValue
                   command="-force-interpreter=true"
                   id="llvm.both.lli.option.interpreter.true"
-                  name="true">
+                  name="%enumeratedOptionValue.name">
             </enumeratedOptionValue>
             <enumeratedOptionValue
                   command="-force-interpreter=false"
                   id="llvm.both.lli.option.interpreter.false"
                   isDefault="true"
-                  name="false">
+                  name="%enumeratedOptionValue.name.0">
             </enumeratedOptionValue>
          </option>
          <optionCategory
@@ -626,7 +626,7 @@
                id="llvm.lli.category.FloatingPointOptions.soft-float"
                name="%Option.Llvm.Lli.soft-float"
                resourceFilter="all"
-               tip="Causes lli to generate software floating point library calls instead of equivalent hardware instructions."
+               tip="%option.tip.13"
                valueType="boolean">
          </option>
          <option
@@ -635,7 +635,7 @@
                id="llvm.lli.category.FloatingPointOptions.enable-unsafe-fp-math"
                name="%Option.Llvm.Lli.enable-unsafe-fp-math"
                resourceFilter="all"
-               tip="Causes lli to enable optimizations that may decrease floating point precision."
+               tip="%option.tip.14"
                valueType="boolean">
          </option>
          <option
@@ -644,7 +644,7 @@
                id="llvm.lli.category.FloatingPointOptions.disable-excess-fp-precision"
                name="%Option.Llvm.Lli.disable-excess-fp-precision"
                resourceFilter="all"
-               tip="Disable optimizations that may increase floating point precision."
+               tip="%option.tip.15"
                valueType="boolean">
          </option>
          <option
@@ -653,7 +653,7 @@
                id="llvm.lli.category.FloatingPointOptions.enable-finite-only-fp-math"
                name="%Option.Llvm.Lli.enable-finite-only-fp-math"
                resourceFilter="all"
-               tip="Enable optimizations that assumes only finite floating point math. That is, there is no NAN or Inf values."
+               tip="%option.tip.16"
                valueType="boolean">
          </option>
          <optionCategory
