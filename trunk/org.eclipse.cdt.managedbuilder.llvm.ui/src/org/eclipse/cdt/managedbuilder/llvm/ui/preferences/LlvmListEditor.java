@@ -74,7 +74,6 @@ public abstract class LlvmListEditor extends ListEditor {
 
     /**
 	 * The selection listener.
-	 * @uml.property  name="selectionListener"
 	 */
     private SelectionListener selectionListener;
 
@@ -229,7 +228,6 @@ public abstract class LlvmListEditor extends ListEditor {
     /**
 	 * Returns this field editor's selection listener. The listener is created if nessessary.
 	 * @return  the selection listener
-	 * @uml.property  name="selectionListener"
 	 */
     private SelectionListener getSelectionListener() {
         if (selectionListener == null) {

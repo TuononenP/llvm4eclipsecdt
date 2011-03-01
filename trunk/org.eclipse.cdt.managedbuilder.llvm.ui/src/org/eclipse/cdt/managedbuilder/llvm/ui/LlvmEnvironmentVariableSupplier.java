@@ -26,7 +26,8 @@ import org.eclipse.core.runtime.Path;
 /**
  * @author  Leo Hippelainen
  * @author  Petri Tuononen
- * @noextend  This class is not intended to be subclassed by clients.
+ * 
+ * This class is not intended to be subclassed by clients.
  * 
  * Contains LLVM environment variables.
  */
@@ -210,7 +211,6 @@ public class LlvmEnvironmentVariableSupplier implements
 	 * 
 	 * @param pathKey Path for specific location
 	 * @param subDirName Additional sub-path
-	 * @param preferenceName PreferenceConstants name
 	 * @return bin path
 	 */
 	private static String findBinDir(String pathKey, String subDirName) {
