@@ -24,12 +24,12 @@ import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
 import org.eclipse.core.runtime.Path;
 
 /**
+ * Contains LLVM environment variables.
+ * 
  * @author  Leo Hippelainen
  * @author  Petri Tuononen
  * 
  * This class is not intended to be subclassed by clients.
- * 
- * Contains LLVM environment variables.
  */
 @SuppressWarnings("restriction")
 public class LlvmEnvironmentVariableSupplier implements
