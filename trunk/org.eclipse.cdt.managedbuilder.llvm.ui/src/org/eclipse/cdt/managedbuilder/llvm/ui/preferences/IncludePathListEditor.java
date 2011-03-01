@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Petri Tuononen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
@@ -22,7 +23,6 @@ import org.eclipse.swt.widgets.Text;
  * New implementation of LlvmListEditor.
  * Used to select an include path from the dialog.
  * 
- * @author Petri Tuononen
  */
 public class IncludePathListEditor extends LlvmListEditor {
 

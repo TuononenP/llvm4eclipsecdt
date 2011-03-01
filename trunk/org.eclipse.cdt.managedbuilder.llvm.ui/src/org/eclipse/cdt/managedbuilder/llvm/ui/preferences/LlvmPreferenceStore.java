@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Petri Tuononen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
@@ -17,8 +18,6 @@ import org.eclipse.jface.preference.IPreferenceStore;
 
 /**
  * Class used to access the LLVM Preference store values.
- * 
- * @author Petri Tuononen
  * 
  * This class is not intended to be subclassed by clients.
  */

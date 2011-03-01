@@ -7,13 +7,13 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Petri Tuononen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.util;
 
 /**
  * Provides different separators such as file and path separators.
  * 
- * @author Petri Tuononen
  */
 public class Separators {
 

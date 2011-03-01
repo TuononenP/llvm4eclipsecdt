@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui;
 
@@ -15,7 +16,6 @@ import org.eclipse.cdt.managedbuilder.envvar.IBuildEnvironmentVariable;
 /**
  * Implemented type that contains BuildEnvironmentalVariables.
  * 
- * @author Leo Hippelainen
  */
 public class LlvmBuildEnvironmentVariable implements IBuildEnvironmentVariable {
 

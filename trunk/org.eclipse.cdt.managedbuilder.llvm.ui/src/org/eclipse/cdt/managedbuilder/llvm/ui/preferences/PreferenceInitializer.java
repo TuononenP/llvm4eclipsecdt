@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
@@ -17,7 +18,6 @@ import org.eclipse.jface.preference.IPreferenceStore;
 /**
  * Class used to initialize the default preference values.
  * 
- * @author Leo Hippelainen
  */
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 

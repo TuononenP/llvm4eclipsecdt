@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui;
 
@@ -17,7 +18,6 @@ import org.osgi.framework.Version;
 /**
  * Based on MingwIsToolChainSupported.
  *  
- * @author Leo Hippelainen
  */
 public class LlvmIsToolChainSupported implements IManagedIsToolChainSupported {
 

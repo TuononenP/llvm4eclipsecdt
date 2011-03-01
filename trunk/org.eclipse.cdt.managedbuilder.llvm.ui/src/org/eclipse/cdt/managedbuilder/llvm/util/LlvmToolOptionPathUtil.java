@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Petri Tuononen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.util;
 
@@ -30,8 +31,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
  * for LLVM assembler and linker Tools which are added in Preferences->LLVM to all projects
  * and build configurations that use LLVM ToolChain. Values added in Preferences->LLVM will
  * show in Project->Properties->C/C++ General->Paths and Symbols tabs.
- * 
- * @author Petri Tuononen
  * 
  */
 public class LlvmToolOptionPathUtil {

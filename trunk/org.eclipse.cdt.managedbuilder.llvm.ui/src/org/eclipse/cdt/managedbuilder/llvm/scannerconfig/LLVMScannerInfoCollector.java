@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.scannerconfig;
 
@@ -20,7 +21,6 @@ import org.eclipse.cdt.managedbuilder.scannerconfig.IManagedScannerInfoCollector
  * information in POSIX format and that the Scanner will be able to search for 
  * files using this format.
  * 
- * @author Leo Hippelainen
  */
 @SuppressWarnings("restriction")
 public class LLVMScannerInfoCollector

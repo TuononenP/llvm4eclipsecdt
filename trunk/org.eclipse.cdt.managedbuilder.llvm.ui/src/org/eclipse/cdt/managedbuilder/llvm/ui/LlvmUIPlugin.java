@@ -7,6 +7,8 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
+ *      Petri Tuononen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui;
 
@@ -26,9 +28,6 @@ import org.osgi.framework.BundleContext;
 /**
  * The activator class controls the plug-in life cycle.
  * The main plugin class to be used in the desktop.
- * 
- * @author  Leo Hippelainen
- * @author  Petri Tuononen
  * 
  * This class is not intended to be subclassed by clients.
  * This class is not intended to be instantiated by clients.
