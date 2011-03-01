@@ -7,7 +7,8 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
- *******************************************************************************/
+ *      Petri Tuononen - Initial implementation 
+ ******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.util;
 
 import org.eclipse.core.resources.IProject;
@@ -17,7 +18,6 @@ import org.eclipse.core.runtime.CoreException;
 /**
  * Methods that deal with project nature.
  * 
- * @author Petri Tuononen
  */
 public class ProjectNatureUtil {
 

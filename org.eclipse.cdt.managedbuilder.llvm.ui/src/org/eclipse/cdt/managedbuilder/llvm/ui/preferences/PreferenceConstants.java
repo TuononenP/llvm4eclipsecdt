@@ -7,13 +7,13 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
 /**
  * Constant definitions for plug-in preferences
  * 
- * @author Leo Hippelainen
  */
 public class PreferenceConstants {
 

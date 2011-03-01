@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.makegen;
 
@@ -17,9 +18,6 @@ import org.eclipse.cdt.managedbuilder.makegen.gnu.DefaultGCCDependencyCalculator
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 
-/**
- * @author Leo Hippelainen
- */
 public class LlvmDependencyCalculator2 extends DefaultGCCDependencyCalculator2 {
 
 	/*

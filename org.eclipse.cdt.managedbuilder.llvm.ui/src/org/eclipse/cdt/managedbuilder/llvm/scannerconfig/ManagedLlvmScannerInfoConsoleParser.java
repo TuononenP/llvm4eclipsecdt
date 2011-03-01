@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+  *     Leo Hippelainen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.scannerconfig;
 
@@ -24,7 +25,6 @@ import org.eclipse.core.resources.IProject;
  * Copy/pasted from org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser
  * because that class cannot be referenced to due to restrictions in the exported packages definition.
  * 
- * @author Leo Hippelainen
  * TODO: Javadoc comments
  */
 @SuppressWarnings("restriction")

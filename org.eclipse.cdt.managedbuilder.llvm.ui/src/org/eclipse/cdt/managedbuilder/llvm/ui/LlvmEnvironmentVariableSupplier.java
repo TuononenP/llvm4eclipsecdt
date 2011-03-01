@@ -7,6 +7,8 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
+ *      Petri Tuononen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui;
 
@@ -26,12 +28,8 @@ import org.eclipse.core.runtime.Path;
 /**
  * Contains LLVM environment variables.
  * 
- * @author  Leo Hippelainen
- * @author  Petri Tuononen
- * 
  * This class is not intended to be subclassed by clients.
  */
-@SuppressWarnings("restriction")
 public class LlvmEnvironmentVariableSupplier implements
 		IConfigurationEnvironmentVariableSupplier {
 

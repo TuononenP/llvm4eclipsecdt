@@ -7,6 +7,8 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Leo Hippelainen - Initial implementation
+ *      Petri Tuononen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
@@ -27,9 +29,6 @@ import org.eclipse.ui.IWorkbench;
  * are stored in the preference store that belongs to
  * the main plug-in class. That way, preferences can
  * be accessed directly via the preference store.
- * 
- * @author Leo Hippelainen
- * @author Petri Tuononen
  * 
  * TODO: Append new value to a PreferenceStore variable and not replace it (other than bin dir).
  * TODO: When creating a new project with LLVM, automatically get values from PreferencePage to Paths & Symbols. 

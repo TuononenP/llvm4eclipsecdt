@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *      Nokia Siemens Networks - initial implementation
+ *      Petri Tuononen - Initial implementation
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
@@ -36,7 +37,6 @@ import org.eclipse.swt.widgets.Widget;
  * The editor displays a list containing the values, buttons for adding and removing
  * values, and Up and Down buttons to adjust the order of elements in the list.
  * 
- * @author  Petri Tuononen
  */
 public abstract class LlvmListEditor extends ListEditor {
 
