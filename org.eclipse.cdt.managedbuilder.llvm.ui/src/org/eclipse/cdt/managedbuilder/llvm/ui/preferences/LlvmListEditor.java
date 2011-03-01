@@ -44,33 +44,33 @@ public abstract class LlvmListEditor extends ListEditor {
      * The list widget; <code>null</code> if none
      * (before creation or after disposal).
      */
-    private List list;
+    List list;
 
     /**
      * The button box containing the Add, Remove, Up, and Down buttons;
      * <code>null</code> if none (before creation or after disposal).
      */
-    private Composite buttonBox;
+    Composite buttonBox;
 
     /**
      * The Add button.
      */
-    private Button addButton;
+    Button addButton;
 
     /**
      * The Remove button.
      */
-    private Button removeButton;
+    Button removeButton;
 
     /**
      * The Up button.
      */
-    private Button upButton;
+    Button upButton;
 
     /**
      * The Down button.
      */
-    private Button downButton;
+    Button downButton;
 
     /**
 	 * The selection listener.
@@ -121,10 +121,10 @@ public abstract class LlvmListEditor extends ListEditor {
      * @param box the box for the buttons
      */
     private void createButtons(Composite box) {
-        addButton = createPushButton(box, "ListEditor.add");//$NON-NLS-1$
-        removeButton = createPushButton(box, "ListEditor.remove");//$NON-NLS-1$
-        upButton = createPushButton(box, "ListEditor.up");//$NON-NLS-1$
-        downButton = createPushButton(box, "ListEditor.down");//$NON-NLS-1$
+        this.addButton = createPushButton(box, "ListEditor.add");//$NON-NLS-1$
+        this.removeButton = createPushButton(box, "ListEditor.remove");//$NON-NLS-1$
+        this.upButton = createPushButton(box, "ListEditor.up");//$NON-NLS-1$
+        this.downButton = createPushButton(box, "ListEditor.down");//$NON-NLS-1$
     }
 
     /**
@@ -151,19 +151,21 @@ public abstract class LlvmListEditor extends ListEditor {
     /**
      * Creates a selection listener.
      */
-    public void createSelectionListener() {
-        selectionListener = new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
+    @Override
+	public void createSelectionListener() {
+        this.selectionListener = new SelectionAdapter() {
+            @Override
+			public void widgetSelected(SelectionEvent event) {
                 Widget widget = event.widget;
-                if (widget == addButton) {
+                if (widget == LlvmListEditor.this.addButton) {
                     addPressed();
-                } else if (widget == removeButton) {
+                } else if (widget == LlvmListEditor.this.removeButton) {
                     removePressed();
-                } else if (widget == upButton) {
+                } else if (widget == LlvmListEditor.this.upButton) {
                     upPressed();
-                } else if (widget == downButton) {
+                } else if (widget == LlvmListEditor.this.downButton) {
                     downPressed();
-                } else if (widget == list) {
+                } else if (widget == LlvmListEditor.this.list) {
                     selectionChanged();
                 }
             }
@@ -177,29 +179,30 @@ public abstract class LlvmListEditor extends ListEditor {
      * @param parent the parent control
      * @return the button box
      */
-    public Composite getButtonBoxControl(Composite parent) {
-        if (buttonBox == null) {
-            buttonBox = new Composite(parent, SWT.NULL);
+    @Override
+	public Composite getButtonBoxControl(Composite parent) {
+        if (this.buttonBox == null) {
+            this.buttonBox = new Composite(parent, SWT.NULL);
             GridLayout layout = new GridLayout();
             layout.marginWidth = 0;
-            buttonBox.setLayout(layout);
-            createButtons(buttonBox);
-            buttonBox.addDisposeListener(new DisposeListener() {
+            this.buttonBox.setLayout(layout);
+            createButtons(this.buttonBox);
+            this.buttonBox.addDisposeListener(new DisposeListener() {
                 public void widgetDisposed(DisposeEvent event) {
-                    addButton = null;
-                    removeButton = null;
-                    upButton = null;
-                    downButton = null;
-                    buttonBox = null;
+                    LlvmListEditor.this.addButton = null;
+                    LlvmListEditor.this.removeButton = null;
+                    LlvmListEditor.this.upButton = null;
+                    LlvmListEditor.this.downButton = null;
+                    LlvmListEditor.this.buttonBox = null;
                 }
             });
 
         } else {
-            checkParent(buttonBox, parent);
+            checkParent(this.buttonBox, parent);
         }
 
         selectionChanged();
-        return buttonBox;
+        return this.buttonBox;
     }
 
     /**
@@ -208,21 +211,22 @@ public abstract class LlvmListEditor extends ListEditor {
      * @param parent the parent control
      * @return the list control
      */
-    public List getListControl(Composite parent) {
-        if (list == null) {
-            list = new List(parent, SWT.BORDER | SWT.SINGLE | SWT.V_SCROLL
+    @Override
+	public List getListControl(Composite parent) {
+        if (this.list == null) {
+            this.list = new List(parent, SWT.BORDER | SWT.SINGLE | SWT.V_SCROLL
                     | SWT.H_SCROLL);
-            list.setFont(parent.getFont());
-            list.addSelectionListener(getSelectionListener());
-            list.addDisposeListener(new DisposeListener() {
+            this.list.setFont(parent.getFont());
+            this.list.addSelectionListener(getSelectionListener());
+            this.list.addDisposeListener(new DisposeListener() {
                 public void widgetDisposed(DisposeEvent event) {
-                    list = null;
+                    LlvmListEditor.this.list = null;
                 }
             });
         } else {
-            checkParent(list, parent);
+            checkParent(this.list, parent);
         }
-        return list;
+        return this.list;
     }
 
     /**
@@ -230,10 +234,10 @@ public abstract class LlvmListEditor extends ListEditor {
 	 * @return  the selection listener
 	 */
     private SelectionListener getSelectionListener() {
-        if (selectionListener == null) {
+        if (this.selectionListener == null) {
 			createSelectionListener();
 		}
-        return selectionListener;
+        return this.selectionListener;
     }
 
 	/**
@@ -246,14 +250,14 @@ public abstract class LlvmListEditor extends ListEditor {
 	 * </p>
 	 * 
 	 */
-    protected void selectionChanged() {
+    @Override
+	protected void selectionChanged() {
+        int index = this.list.getSelectionIndex();
+        int size = this.list.getItemCount();
 
-        int index = list.getSelectionIndex();
-        int size = list.getItemCount();
-
-        removeButton.setEnabled(index >= 0);
-        upButton.setEnabled(size > 1 && index > 0);
-        downButton.setEnabled(size > 1 && index >= 0 && index < size - 1);
+        this.removeButton.setEnabled(index >= 0);
+        this.upButton.setEnabled(size > 1 && index > 0);
+        this.downButton.setEnabled(size > 1 && index >= 0 && index < size - 1);
     }
 
     /**
@@ -264,15 +268,15 @@ public abstract class LlvmListEditor extends ListEditor {
      */
     private void swap(boolean up) {
         setPresentsDefaultValue(false);
-        int index = list.getSelectionIndex();
+        int index = this.list.getSelectionIndex();
         int target = up ? index - 1 : index + 1;
 
         if (index >= 0) {
-            String[] selection = list.getSelection();
+            String[] selection = this.list.getSelection();
             Assert.isTrue(selection.length == 1);
-            list.remove(index);
-            list.add(selection[0], target);
-            list.setSelection(target);
+            this.list.remove(index);
+            this.list.add(selection[0], target);
+            this.list.setSelection(target);
         }
         selectionChanged();
     }
@@ -286,26 +290,27 @@ public abstract class LlvmListEditor extends ListEditor {
      *
      * @return the shell
      */
-    protected Shell getShell() {
-        if (addButton == null) {
+    @Override
+	protected Shell getShell() {
+        if (this.addButton == null) {
 			return null;
 		}
-        return addButton.getShell();
+        return this.addButton.getShell();
     }
     
     /**
      * Notifies that the Add button has been pressed.
      */
-    private void addPressed() {
+    void addPressed() {
         setPresentsDefaultValue(false);
         String input = getNewInputObject();
 
         if (input != null) {
-            int index = list.getSelectionIndex();
+            int index = this.list.getSelectionIndex();
             if (index >= 0) {
-				list.add(input, index + 1);
+				this.list.add(input, index + 1);
 			} else {
-				list.add(input, 0);
+				this.list.add(input, 0);
 			}
             selectionChanged();
         }
@@ -319,14 +324,14 @@ public abstract class LlvmListEditor extends ListEditor {
     /**
      * Notifies that the Up button has been pressed.
      */
-    private void upPressed() {
+    void upPressed() {
         swap(true);
     }
 
     /**
      * Notifies that the Down button has been pressed.
      */
-    private void downPressed() {
+    void downPressed() {
         swap(false);
     }
 	

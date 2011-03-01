@@ -63,7 +63,7 @@ public class LlvmBuildEnvironmentVariable implements IBuildEnvironmentVariable {
 	 * @return name The name of the llvm environment variable
 	 */
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	/*
@@ -77,7 +77,7 @@ public class LlvmBuildEnvironmentVariable implements IBuildEnvironmentVariable {
 	 * @return operation The operation of the llvm environment variable
 	 */
 	public int getOperation() {
-		return operation;
+		return this.operation;
 	}
 
 	/*
@@ -92,7 +92,7 @@ public class LlvmBuildEnvironmentVariable implements IBuildEnvironmentVariable {
 	 * @return value The value of the llvm environment variable.
 	 */
 	public String getValue() {
-		return value;
+		return this.value;
 	}
 	
 }

@@ -29,7 +29,7 @@ public class LlvmIsToolChainSupported implements IManagedIsToolChainSupported {
 	 */
 	public LlvmIsToolChainSupported() {
 		// Only supported if we can find the llvm tools.
-		supported = LlvmEnvironmentVariableSupplier.getBinPath() != null;
+		this.supported = LlvmEnvironmentVariableSupplier.getBinPath() != null;
 	}
 
 	/* (non-Javadoc)
@@ -45,7 +45,7 @@ public class LlvmIsToolChainSupported implements IManagedIsToolChainSupported {
 			 * Use org.osgi.framework.PluginVersionIdentifier with older CDT versions.
 			 */
 			Version version, String instance) {
-		return supported;
+		return this.supported;
 	}
 
 }

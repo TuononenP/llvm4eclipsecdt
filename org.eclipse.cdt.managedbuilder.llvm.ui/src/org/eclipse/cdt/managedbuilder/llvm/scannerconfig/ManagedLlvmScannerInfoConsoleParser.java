@@ -27,7 +27,6 @@ import org.eclipse.core.resources.IProject;
  * 
  * TODO: Javadoc comments
  */
-@SuppressWarnings("restriction")
 public class ManagedLlvmScannerInfoConsoleParser
 	extends GCCScannerInfoConsoleParser {
 	
@@ -39,20 +38,19 @@ public class ManagedLlvmScannerInfoConsoleParser
 	 * @param line String
 	 * @return boolean
 	 */
+	@Override
 	public boolean processLine(String line) {
 		if(isManagedBuildOn())
 			return false;
 		return super.processLine(line);
 	}
 
-	/**
-	 * 
-	 */
+	@Override
 	public void shutdown() {
 		if(!isManagedBuildOn()){
 			super.shutdown();
 		}
-		fManagedBuildOnState = null;
+		this.fManagedBuildOnState = null;
 	}
 
 	/**
@@ -61,6 +59,7 @@ public class ManagedLlvmScannerInfoConsoleParser
 	 * @param project IProject
 	 * @param collector IScannerInfoCollector
 	 */
+	@Override
 	public void startup(IProject project, IScannerInfoCollector collector) {
 		if(isManagedBuildOn())
 			return;
@@ -73,9 +72,9 @@ public class ManagedLlvmScannerInfoConsoleParser
 	 * @return boolean
 	 */
 	protected boolean isManagedBuildOn(){
-		if(fManagedBuildOnState == null)
-			fManagedBuildOnState = Boolean.valueOf(doCalcManagedBuildOnState());
-		return fManagedBuildOnState.booleanValue();
+		if(this.fManagedBuildOnState == null)
+			this.fManagedBuildOnState = Boolean.valueOf(doCalcManagedBuildOnState());
+		return this.fManagedBuildOnState.booleanValue();
 	}
 
 	/**

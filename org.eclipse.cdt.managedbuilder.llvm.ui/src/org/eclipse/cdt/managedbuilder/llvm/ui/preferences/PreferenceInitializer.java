@@ -26,12 +26,13 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 * 
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = LlvmUIPlugin.getDefault().getPreferenceStore();
-		store.setDefault(PreferenceConstants.P_LLVM_PATH, "");
-		store.setDefault(PreferenceConstants.P_LLVM_INCLUDE_PATH, "");
-		store.setDefault(PreferenceConstants.P_LLVM_LIBRARY_PATH, "");
-		store.setDefault(PreferenceConstants.P_LLVM_LIBRARIES, "");
+		store.setDefault(PreferenceConstants.P_LLVM_PATH, ""); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_LLVM_INCLUDE_PATH, ""); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_LLVM_LIBRARY_PATH, ""); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_LLVM_LIBRARIES, ""); //$NON-NLS-1$
 	}
 
 }

@@ -17,8 +17,8 @@ package org.eclipse.cdt.managedbuilder.llvm.util;
  */
 public class Separators {
 
-	private static String pathSeparator = System.getProperty("path.separator");
-	private static String fileSeparator = System.getProperty("file.separator");
+	private static String pathSeparator = System.getProperty("path.separator"); //$NON-NLS-1$
+	private static String fileSeparator = System.getProperty("file.separator"); //$NON-NLS-1$
 	
 	/**
 	 * Get path separator.

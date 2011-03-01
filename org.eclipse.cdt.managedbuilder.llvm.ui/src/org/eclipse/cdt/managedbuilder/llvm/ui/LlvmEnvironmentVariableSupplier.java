@@ -30,6 +30,7 @@ import org.eclipse.core.runtime.Path;
  * 
  * @noextend This class is not intended to be subclassed by clients.
  */
+@SuppressWarnings("restriction") //MingwEnvironmentVariableSupplier
 public class LlvmEnvironmentVariableSupplier implements
 		IConfigurationEnvironmentVariableSupplier {
 
@@ -39,12 +40,12 @@ public class LlvmEnvironmentVariableSupplier implements
 	private static HashMap<String, LlvmBuildEnvironmentVariable> llvmEnvironmentVariables = 
 		new HashMap<String, LlvmBuildEnvironmentVariable>(6);
 	//Environment variables for HashMap usage
-	private static final String ENV_VAR_NAME_LLVM_BIN = "LLVM_BIN_PATH";
-	private static final String ENV_VAR_NAME_LLVMINTERP = "LLVMINTERP";
-	private static final String ENV_VAR_NAME_PATH = "PATH";
-	private static final String ENV_VAR_NAME_INCLUDE_PATH = "INCLUDE_PATH";
-	private static final String ENV_VAR_NAME_LIBRARY_PATH = "LD_LIBRARY_PATH";
-	private static final String ENV_VAR_NAME_LIBRARIES = "LIBRARIES";
+	private static final String ENV_VAR_NAME_LLVM_BIN = "LLVM_BIN_PATH"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_LLVMINTERP = "LLVMINTERP"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_PATH = "PATH"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_INCLUDE_PATH = "INCLUDE_PATH"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_LIBRARY_PATH = "LD_LIBRARY_PATH"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_LIBRARIES = "LIBRARIES"; //$NON-NLS-1$
 	
 	/**
 	 * Constructor.
@@ -66,7 +67,7 @@ public class LlvmEnvironmentVariableSupplier implements
 			String pathStr = binPath;
 			//clang on Windows requires also MinGW GCC
 			//if OS is Windows (Windows specific settings)
-			if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) {
+			if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) { //$NON-NLS-1$ //$NON-NLS-2$
 				try {
 					//try to find mingw or cygwin path from PATH environment variable
 					IBuildEnvironmentVariable envPath = llvmEnvironmentVariables
@@ -89,12 +90,12 @@ public class LlvmEnvironmentVariableSupplier implements
 					//if mingw found
 					if (mingwPath != null) {
 						//form full path
-						pathStr = pathStr + System.getProperty("path.separator") + mingwPath.getValue();
+						pathStr = pathStr + System.getProperty("path.separator") + mingwPath.getValue(); //$NON-NLS-1$
 					}
 					//if cygwin found
 					if (cygwinPath != null) {
 						//form full path
-						pathStr = pathStr + System.getProperty("path.separator") + cygwinPath.getValue();
+						pathStr = pathStr + System.getProperty("path.separator") + cygwinPath.getValue(); //$NON-NLS-1$
 					}
 				} catch (Exception e) {
 					//TODO: Emit proper error message and enter it to Eclipse error log.
@@ -103,7 +104,7 @@ public class LlvmEnvironmentVariableSupplier implements
 			}
 			//initialize environment variable cache values
 			setLlvmEnvironmentVariable(ENV_VAR_NAME_PATH, pathStr);
-			setLlvmEnvironmentVariable(ENV_VAR_NAME_LLVMINTERP, binPath + Separators.getFileSeparator() + "lli");
+			setLlvmEnvironmentVariable(ENV_VAR_NAME_LLVMINTERP, binPath + Separators.getFileSeparator() + "lli"); //$NON-NLS-1$
 			setLlvmEnvironmentVariable(ENV_VAR_NAME_INCLUDE_PATH, getSysEnvPathAndPreferenceStorePath(ENV_VAR_NAME_INCLUDE_PATH));
 			setLlvmEnvironmentVariable(ENV_VAR_NAME_LIBRARY_PATH, getSysEnvPathAndPreferenceStorePath(ENV_VAR_NAME_LIBRARY_PATH));
 			setLlvmEnvironmentVariable(ENV_VAR_NAME_LIBRARIES, getSysEnvPathAndPreferenceStorePath(ENV_VAR_NAME_LIBRARIES));
@@ -117,7 +118,7 @@ public class LlvmEnvironmentVariableSupplier implements
 	 * @return LLVM bin path
 	 */
 	public static String getBinPath() {
-		return findBinDir(ENV_VAR_NAME_LLVM_BIN, "bin");
+		return findBinDir(ENV_VAR_NAME_LLVM_BIN, "bin"); //$NON-NLS-1$
 	}
 
 	/**
@@ -273,8 +274,7 @@ public class LlvmEnvironmentVariableSupplier implements
 	private static String getDirIfLlvmFound(String candidatePath, String subPath) {
 		// If there is a trailing / or \, remove it
 		if (candidatePath.endsWith(Separators.getFileSeparator()) && candidatePath.length() > 1) {
-			candidatePath = candidatePath.substring(0,
-					candidatePath.length() - 1);
+			candidatePath = candidatePath.substring(0, candidatePath.length() - 1);
 		}
 		//if subPath exists and is not empty -> append it to candidatePath
 		if ((null != subPath) && (subPath.length()!=0)) {
@@ -295,11 +295,11 @@ public class LlvmEnvironmentVariableSupplier implements
 	private static String getBinDirIfLlvm_ar(String binPathTemp) {
 		//if given directory is found
 		if (new Path(binPathTemp).toFile().isDirectory()) {
-			String llvm_executable = "llvm-ar";
+			String llvm_executable = "llvm-ar"; //$NON-NLS-1$
 			File arFileFullPath = null;
 			//if OS is Windows -> add .exe to the executable name
-			if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) {
-				llvm_executable = llvm_executable + ".exe";
+			if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) {  //$NON-NLS-1$//$NON-NLS-2$
+				llvm_executable = llvm_executable + ".exe"; //$NON-NLS-1$
 			}
 			//form full executable path
 			arFileFullPath = new File(binPathTemp + Separators.getFileSeparator()
@@ -427,8 +427,8 @@ public class LlvmEnvironmentVariableSupplier implements
 	 */
 	private static String getSysEnvPathAndPreferenceStorePath(String envName) {
 		StringBuffer sB = new StringBuffer();
-		String sysEnv = "";
-		String prefStore = "";
+		String sysEnv = ""; //$NON-NLS-1$
+		String prefStore = ""; //$NON-NLS-1$
 		sysEnv = getSysEnvPath(envName);
 		//if the system environment variable isn't empty
 		if (sysEnv.length()!=0) {
@@ -470,9 +470,8 @@ public class LlvmEnvironmentVariableSupplier implements
 		String path = System.getenv(envName);
 		if(path != null) {
 			return path;
-		} else {
-			return "";
 		}
+		return ""; //$NON-NLS-1$
 	}
 	
 	/*
