@@ -30,8 +30,8 @@ import org.eclipse.ui.IWorkbench;
  * the main plug-in class. That way, preferences can
  * be accessed directly via the preference store.
  * 
- * TODO: Append new value to a PreferenceStore variable and not replace it (other than bin dir).
- * TODO: When creating a new project with LLVM, automatically get values from PreferencePage to Paths & Symbols. 
+ * TODO: When creating a new project with LLVM, automatically get values
+ *       from PreferencePage to Paths & Symbols. 
  */
 public class LlvmPreferencePage
 	extends FieldEditorPreferencePage

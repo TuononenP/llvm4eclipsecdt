@@ -28,7 +28,7 @@ import org.eclipse.core.runtime.Path;
 /**
  * Contains LLVM environment variables.
  * 
- * This class is not intended to be subclassed by clients.
+ * @noextend This class is not intended to be subclassed by clients.
  */
 public class LlvmEnvironmentVariableSupplier implements
 		IConfigurationEnvironmentVariableSupplier {
