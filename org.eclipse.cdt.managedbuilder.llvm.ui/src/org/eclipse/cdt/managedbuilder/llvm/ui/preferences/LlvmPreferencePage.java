@@ -43,7 +43,7 @@ public class LlvmPreferencePage
 	 */
 	public LlvmPreferencePage() {
 		setPreferenceStore(LlvmUIPlugin.getDefault().getPreferenceStore());
-		setDescription("Preferences for LLVM tool chain."); //$NON-NLS-1$
+		setDescription(Messages.LlvmPreferencePage_0);
 	}
 
 	/* (non-Javadoc)
@@ -69,20 +69,20 @@ public class LlvmPreferencePage
 	protected void createFieldEditors() {
 		//field for installation path
 		addField(new DirectoryFieldEditor(PreferenceConstants.P_LLVM_PATH, 
-				"LLVM &Installation folder:", getFieldEditorParent())); //$NON-NLS-1$
+				Messages.LlvmPreferencePage_1, getFieldEditorParent()));
 		//list editor for include paths
 		IncludePathListEditor includePathListEditor = new IncludePathListEditor(
-				PreferenceConstants.P_LLVM_INCLUDE_PATH, "Include directories", //$NON-NLS-1$
+				PreferenceConstants.P_LLVM_INCLUDE_PATH, Messages.LlvmPreferencePage_2,
 				getFieldEditorParent());
 		addField(includePathListEditor);
 		//list editor for libraries
 		LibraryListEditor libraryListEditor = new LibraryListEditor(
-				PreferenceConstants.P_LLVM_LIBRARIES, "Libraries", //$NON-NLS-1$
+				PreferenceConstants.P_LLVM_LIBRARIES, Messages.LlvmPreferencePage_3, 
 				getFieldEditorParent());
 		addField(libraryListEditor);
 		//list editor for library paths
 		LibraryPathListEditor libraryPathListEditor = new LibraryPathListEditor(
-				PreferenceConstants.P_LLVM_LIBRARY_PATH, "Library search path directories", //$NON-NLS-1$
+				PreferenceConstants.P_LLVM_LIBRARY_PATH, Messages.LlvmPreferencePage_4, 
 				getFieldEditorParent());
 		addField(libraryPathListEditor);
 	}

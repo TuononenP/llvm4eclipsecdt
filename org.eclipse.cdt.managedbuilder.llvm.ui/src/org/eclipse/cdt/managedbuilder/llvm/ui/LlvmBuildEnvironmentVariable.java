@@ -48,7 +48,7 @@ public class LlvmBuildEnvironmentVariable implements IBuildEnvironmentVariable {
 	 * @return String delimiter
 	 */
 	public String getDelimiter() {
-		return ";"; //$NON-NLS-1$
+		return Messages.LlvmBuildEnvironmentVariable_0;
 	}
 
 	/*
