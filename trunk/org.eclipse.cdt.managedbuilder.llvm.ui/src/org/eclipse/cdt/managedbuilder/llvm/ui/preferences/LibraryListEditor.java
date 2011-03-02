@@ -46,7 +46,7 @@ public class LibraryListEditor extends LlvmListEditor {
 		FileDialog dlg = new FileDialog(getShell());
 		final Text text = new Text(getShell(), SWT.BORDER);
 		dlg.setFilterPath(text.getText());
-		dlg.setText("Browse a directory path"); //$NON-NLS-1$
+		dlg.setText(Messages.LibraryListEditor_0); 
 		dlg.open();
 		String file = dlg.getFileName();
 		if(file == null) {
