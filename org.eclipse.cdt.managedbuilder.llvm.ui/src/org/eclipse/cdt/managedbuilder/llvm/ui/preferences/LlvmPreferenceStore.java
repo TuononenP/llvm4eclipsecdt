@@ -143,7 +143,7 @@ public class LlvmPreferenceStore {
 	 * @return paths 
 	 */
 	private static String getExistingPaths(String name) {
-		String paths = Messages.LlvmPreferenceStore_0;
+		String paths = ""; //$NON-NLS-1$
 		if (name.equals(PreferenceConstants.P_LLVM_INCLUDE_PATH)) {
 			paths = getIncludePath();
 		} else if (name.equals(PreferenceConstants.P_LLVM_LIBRARY_PATH)) {
@@ -168,7 +168,7 @@ public class LlvmPreferenceStore {
 		//if values exist
 		if (paths.length()!=0) {
 			//if the value is reasonable
-			if (!value.equalsIgnoreCase(Messages.LlvmPreferenceStore_1) && value.length()!=0) {
+			if (!value.equalsIgnoreCase("") && value.length()!=0) { //$NON-NLS-1$
 				//if the paths doesn't contain the new value
 				if (!paths.contains(value)) {
 					//append existing paths to the string buffer
@@ -183,7 +183,7 @@ public class LlvmPreferenceStore {
 			}
 		} else { //no existing values
 			//if the value is reasonable
-			if (!value.equalsIgnoreCase(Messages.LlvmPreferenceStore_2) && value.length()!=0) {
+			if (!value.equalsIgnoreCase("") && value.length()!=0) { //$NON-NLS-1$
 				//append a new path to the string buffer
 				sB.append(value);
 			}
@@ -257,11 +257,11 @@ public class LlvmPreferenceStore {
 						newValue = sB.toString();
 					}
 				} else { //only one value with a path separator at the end
-					newValue = Messages.LlvmPreferenceStore_3;
+					newValue = ""; //$NON-NLS-1$
 				}
 				
 			} else { //only value without a path separator at the end
-				newValue = Messages.LlvmPreferenceStore_4;
+				newValue = ""; //$NON-NLS-1$
 			}
 			//set the new preference store value
 			setPreferenceStoreValue(name, newValue);

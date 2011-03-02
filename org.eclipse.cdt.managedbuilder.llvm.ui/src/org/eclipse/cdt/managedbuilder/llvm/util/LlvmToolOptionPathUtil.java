@@ -36,8 +36,8 @@ import org.eclipse.core.resources.ResourcesPlugin;
 public class LlvmToolOptionPathUtil {
 	
 	//tool input extensions
-	private static final String assemblerInputType = Messages.LlvmToolOptionPathUtil_0; 
-	private static final String linkerInputType = Messages.LlvmToolOptionPathUtil_1; 
+	private static final String assemblerInputType = "ll"; //$NON-NLS-1$
+	private static final String linkerInputType = "bc"; //$NON-NLS-1$
 	//tool option values
 	public static final int INCLUDE = 1;
 	public static final int LIB = 2;
@@ -707,7 +707,7 @@ public class LlvmToolOptionPathUtil {
 	 * @return String array containing multiple paths.
 	 */
 	public static String[] stringToArray(String str) {
-		return str.split(System.getProperty(Messages.LlvmToolOptionPathUtil_2)); 
+		return str.split(System.getProperty("path.separator")); //$NON-NLS-1$
 	}
 	
 	/**
@@ -723,7 +723,7 @@ public class LlvmToolOptionPathUtil {
 		if (array.length>0 /*&& !array[0].equals("")*/) {
 			for (String i : array) {
 				sB.append(i);
-				sB.append(System.getProperty(Messages.LlvmToolOptionPathUtil_3));
+				sB.append(System.getProperty("path.separator")); //$NON-NLS-1$
 			}			
 		}
 		return sB.toString();

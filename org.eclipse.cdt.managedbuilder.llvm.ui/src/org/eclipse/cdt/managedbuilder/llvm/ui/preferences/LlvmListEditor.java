@@ -121,10 +121,10 @@ public abstract class LlvmListEditor extends ListEditor {
      * @param box the box for the buttons
      */
     private void createButtons(Composite box) {
-        this.addButton = createPushButton(box, Messages.LlvmListEditor_0);
-        this.removeButton = createPushButton(box, Messages.LlvmListEditor_1);
-        this.upButton = createPushButton(box, Messages.LlvmListEditor_2);
-        this.downButton = createPushButton(box, Messages.LlvmListEditor_3);
+        this.addButton = createPushButton(box, "ListEditor.add");//$NON-NLS-1$
+        this.removeButton = createPushButton(box, "ListEditor.remove");//$NON-NLS-1$
+        this.upButton = createPushButton(box, "ListEditor.up");//$NON-NLS-1$
+        this.downButton = createPushButton(box, "ListEditor.down");//$NON-NLS-1$
     }
 
     /**

@@ -29,10 +29,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = LlvmUIPlugin.getDefault().getPreferenceStore();
-		store.setDefault(PreferenceConstants.P_LLVM_PATH, Messages.PreferenceInitializer_0); 
-		store.setDefault(PreferenceConstants.P_LLVM_INCLUDE_PATH, Messages.PreferenceInitializer_1); 
-		store.setDefault(PreferenceConstants.P_LLVM_LIBRARY_PATH, Messages.PreferenceInitializer_2); 
-		store.setDefault(PreferenceConstants.P_LLVM_LIBRARIES, Messages.PreferenceInitializer_3); 
+		store.setDefault(PreferenceConstants.P_LLVM_PATH, ""); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_LLVM_INCLUDE_PATH, ""); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_LLVM_LIBRARY_PATH, ""); //$NON-NLS-1$
+		store.setDefault(PreferenceConstants.P_LLVM_LIBRARIES, ""); //$NON-NLS-1$
 	}
 
 }

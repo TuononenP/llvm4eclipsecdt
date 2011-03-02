@@ -46,7 +46,7 @@ public class LibraryPathListEditor extends LlvmListEditor {
 		DirectoryDialog dlg = new DirectoryDialog(getShell());
 		final Text text = new Text(getShell(), SWT.BORDER);
 		dlg.setFilterPath(text.getText());
-		dlg.setText(Messages.LibraryPathListEditor_0);
+		dlg.setText(Messages.LibraryPathListEditor_0); 
 		dlg.setMessage(Messages.LibraryPathListEditor_1); 
 		String dir = dlg.open();
 		if(dir == null) {
