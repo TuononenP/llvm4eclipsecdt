@@ -23,16 +23,18 @@ public class JUnit_tests extends TestCase {
 		super(name);
 	}
 
+	@Override
 	protected void setUp() { }
 
+	@Override
 	protected void tearDown() { }
 
-	public void testBooleanTrue() {
+	public static void testBooleanTrue() {
 		assertTrue(true);
 	}
 
-	public void testBooleanFalse() {
+	public static void testBooleanFalse() {
 		assertTrue(false);
 	}
 
-};
+}
