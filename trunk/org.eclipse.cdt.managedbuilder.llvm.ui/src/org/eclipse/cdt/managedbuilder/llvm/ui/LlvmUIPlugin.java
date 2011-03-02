@@ -35,7 +35,7 @@ import org.osgi.framework.BundleContext;
 public class LlvmUIPlugin extends AbstractUIPlugin { 
 
 	//The plug-in ID
-	public static final String PLUGIN_ID = Messages.LlvmUIPlugin_0; 
+	public static final String PLUGIN_ID = "org.eclipse.cdt.managedbuilder.llvm.ui"; //$NON-NLS-1$
 
 	//The shared instance
 	private static LlvmUIPlugin plugin;
@@ -44,7 +44,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	private ResourceBundle resourceBundle;
 	
 	//Name for the properties file
-	private final static String PROPERTIES = Messages.LlvmUIPlugin_1; 
+	private final static String PROPERTIES = "plugin.properties"; //$NON-NLS-1$
 
 	//Property Resource bundle
 	private PropertyResourceBundle properties;
@@ -106,7 +106,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	public ResourceBundle getResourceBundle() {
 		try {
 			if (this.resourceBundle == null)
-				this.resourceBundle = ResourceBundle.getBundle(this.getClass().getName()+ Messages.LlvmUIPlugin_2); 
+				this.resourceBundle = ResourceBundle.getBundle(this.getClass().getName()+ "Resources"); //$NON-NLS-1$
 		} catch (MissingResourceException x) {
 			this.resourceBundle = null;
 		}
@@ -119,7 +119,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	 * @param e
 	 */
 	public void log(Throwable e) {
-		log(new Status(IStatus.ERROR, PLUGIN_ID, IStatus.ERROR, Messages.LlvmUIPlugin_3, e)); 
+		log(new Status(IStatus.ERROR, PLUGIN_ID, IStatus.ERROR, "Error", e)); //$NON-NLS-1$
 	}
 
 	/**

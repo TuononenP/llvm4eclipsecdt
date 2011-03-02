@@ -46,8 +46,8 @@ public class IncludePathListEditor extends LlvmListEditor {
 		DirectoryDialog dlg = new DirectoryDialog(getShell());
 		final Text text = new Text(getShell(), SWT.BORDER);
 		dlg.setFilterPath(text.getText());
-		dlg.setText(Messages.IncludePathListEditor_0); 
-		dlg.setMessage(Messages.IncludePathListEditor_1); 
+		dlg.setText(Messages.IncludePathListEditor_0);
+		dlg.setMessage(Messages.IncludePathListEditor_1);
 		String dir = dlg.open();
 		if(dir == null) {
 			return null;

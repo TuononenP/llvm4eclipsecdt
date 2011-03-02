@@ -51,9 +51,9 @@ public class LlvmDependencyCalculator2Commands extends
 	public String[] getDependencyCommandOptions() {
 		String[] options = new String[2];
 		// -MMD 
-		options[0] = Messages.LlvmDependencyCalculator2Commands_0;
+		options[0] = "-MMD";						//$NON-NLS-1$
 		// -MP 
-		options[1] = Messages.LlvmDependencyCalculator2Commands_1;
+		options[1] = "-MP";							//$NON-NLS-1$
 		// TODO: Check if -MF and/or -MT supported or needed with Clang
 		return options;
 	}
