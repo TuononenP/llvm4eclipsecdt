@@ -49,9 +49,13 @@ public class IncludePathListEditor extends LlvmListEditor {
 		dlg.setText("Browse a directory path"); //$NON-NLS-1$
 		dlg.setMessage("Select a directory"); //$NON-NLS-1$
 		String dir = dlg.open();
+		if(dir == null) {
+			return null;
+		}
+		
 		//remove white spaces
 		dir = dir.trim();
-		if (dir != null && dir.length()!=0) {
+		if (dir.length()!=0) {
 			//get all existing items in the list
 			String[] existingItems = getList().getItems();
 			//check that the list doesn't already contain the added item

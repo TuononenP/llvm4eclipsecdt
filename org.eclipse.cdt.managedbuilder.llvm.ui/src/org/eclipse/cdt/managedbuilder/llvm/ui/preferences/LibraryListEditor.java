@@ -49,9 +49,13 @@ public class LibraryListEditor extends LlvmListEditor {
 		dlg.setText("Browse a directory path"); //$NON-NLS-1$
 		dlg.open();
 		String file = dlg.getFileName();
+		if(file == null) {
+			return null;
+		}
+		
 		//remove white spaces
 		file = file.trim();
-		if (file != null && file.length()!=0) {
+		if (file.length()!=0) {
 			//get all existing items in the list
 			String[] existingItems = getList().getItems();
 			//return null if duplicate item found
