@@ -52,7 +52,6 @@ public class LibraryListEditor extends LlvmListEditor {
 		if(file == null) {
 			return null;
 		}
-		
 		//remove white spaces
 		file = file.trim();
 		if (file.length()!=0) {
