@@ -52,7 +52,6 @@ public class IncludePathListEditor extends LlvmListEditor {
 		if(dir == null) {
 			return null;
 		}
-		
 		//remove white spaces
 		dir = dir.trim();
 		if (dir.length()!=0) {

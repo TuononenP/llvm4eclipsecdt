@@ -52,11 +52,12 @@ public class LibraryPathListEditor extends LlvmListEditor {
 		if(dir == null) {
 			return null;
 		}
-		
 		//remove white spaces
 		dir = dir.trim();
 		if (dir.length()!=0) {
+			//get all existing items in the list
 			String[] existingItems = getList().getItems();
+			//check that the list doesn't already contain the added item
 			if (existingItems.length>0) {
 				//return null if duplicate item found
 				for (String item : existingItems) {
