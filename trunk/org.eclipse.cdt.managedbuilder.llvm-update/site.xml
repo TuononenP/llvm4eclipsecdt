@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/llvm4eclipsecdt_1.0.1.201103041930.jar" id="llvm4eclipsecdt" version="1.0.1.201103041930" os="linux, macosx, win32">
+   <feature url="features/llvm4eclipsecdt_1.0.1.201103041937.jar" id="llvm4eclipsecdt" version="1.0.1.201103041937" os="linux, macosx, win32">
       <category name="LLVM Toolchain Support"/>
    </feature>
    <category-def name="LLVM Toolchain Support" label="LLVM Toolchain Support">
