@@ -551,7 +551,7 @@
             </additionalInput>
          </inputType>
          <outputType
-               buildVariable="llvmAssemblyCode"
+               buildVariable="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblyCode"
                id="cdt.managedbuild.tool.llvm.llc.output.s"
                outputs="s">
          </outputType>
@@ -4549,26 +4549,26 @@
       <content-type
             base-type="org.eclipse.cdt.core.binaryFile"
             file-extensions="bc"
-            id="compiledLlvmBytecodeFile"
+            id="org.eclipse.cdt.managedbuilder.llvm.ui.llvmBytecode"
             name="%ContentType.LlvmBytecodeFileName"
             priority="normal">
       </content-type>
       <content-type
             base-type="org.eclipse.core.runtime.text"
             file-extensions="ll"
-            id="llvmAssemblySource"
+            id="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblySource"
             name="%ContentType.LlvmSourceFileName"
             priority="high">
       </content-type>
       <content-type
-            id="llvmExecutable"
+            id="org.eclipse.cdt.managedbuilder.llvm.ui.llvmExecutable"
             name="%ContentType.LlvmExecutableFileName"
             priority="normal">
       </content-type>
       <content-type
             base-type="org.eclipse.core.runtime.text"
             file-extensions="s"
-            id="llvmAssemblyCode"
+            id="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblyCode"
             name="%ContentType.LlvmAssemblerCode"
             priority="normal">
       </content-type>
@@ -4583,6 +4583,10 @@
       <file-association
             content-type="org.eclipse.cdt.managedbuilder.llvm.ui.llvmExecutable"
             file-extensions="exe.bc">
+      </file-association>
+      <file-association
+            content-type="org.eclipse.cdt.managedbuilder.llvm.ui.llvmAssemblyCode"
+            file-extensions="s">
       </file-association>
    </extension>
    <extension
