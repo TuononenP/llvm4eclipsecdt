@@ -30,7 +30,6 @@ import org.eclipse.core.runtime.Path;
  * 
  * @noextend This class is not intended to be subclassed by clients.
  */
-@SuppressWarnings("restriction") //MingwEnvironmentVariableSupplier
 public class LlvmEnvironmentVariableSupplier implements
 		IConfigurationEnvironmentVariableSupplier {
 
