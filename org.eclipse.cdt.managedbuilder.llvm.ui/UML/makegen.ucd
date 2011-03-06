@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="makegen" size="1436,558" id="org.eclipse.cdt.managedbuilder.llvm.makegen" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030206F72672E65636C697073652E6364742E6D616E616765646275696C6465722E6C6C766D2E75692F70657065">
-  <children xsi:type="editmodel:ClassEditModel" name="LlvmDependencyCalculator2" location="50,50" size="258,86" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2" runTimeClassModel="getDependencySourceInfo(Lorg.eclipse.core.runtime.IPath;Lorg.eclipse.cdt.managedbuilder.core.IBuildObject;Lorg.eclipse.cdt.managedbuilder.core.ITool;Lorg.eclipse.core.runtime.IPath;),getDependencySourceInfo(Lorg.eclipse.core.runtime.IPath;Lorg.eclipse.core.resources.IResource;Lorg.eclipse.cdt.managedbuilder.core.IBuildObject;Lorg.eclipse.cdt.managedbuilder.core.ITool;Lorg.eclipse.core.runtime.IPath;)">
+  <children xsi:type="editmodel:ClassEditModel" name="LlvmDependencyCalculator2" location="50,50" size="258,86" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2" runTimeClassModel="">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="176,36">
       <children xsi:type="editmodel:MethodEditModel" name="getDependencySourceInfo" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2#getDependencySourceInfo(Lorg.eclipse.core.runtime.IPath;Lorg.eclipse.core.resources.IResource;Lorg.eclipse.cdt.managedbuilder.core.IBuildObject;Lorg.eclipse.cdt.managedbuilder.core.ITool;Lorg.eclipse.core.runtime.IPath;)"/>
@@ -19,13 +19,13 @@
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/IBuildObject" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.2/@children.2" label="//@children.0/@sourceConnections.2/@children.0" sourceEnd="//@children.0/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="258,82" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="18,0"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="258,71" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,4"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2-Soyatec::Import->org.eclipse.cdt.managedbuilder.makegen/IManagedDependencyInfo" source="//@children.0" target="//@children.4" targetEnd="//@children.0/@sourceConnections.3/@children.2" label="//@children.0/@sourceConnections.3/@children.0" sourceEnd="//@children.0/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="202,86" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="76,0"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="232,86" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="57,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/ITool" source="//@children.0" target="//@children.5" targetEnd="//@children.0/@sourceConnections.4/@children.2" label="//@children.0/@sourceConnections.4/@children.0" sourceEnd="//@children.0/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
@@ -34,7 +34,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="LlvmDependencyCalculator2Commands" location="405,50" size="341,104" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2Commands" runTimeClassModel="LlvmDependencyCalculator2Commands(Lorg.eclipse.core.runtime.IPath;Lorg.eclipse.core.resources.IResource;Lorg.eclipse.cdt.managedbuilder.core.IBuildObject;Lorg.eclipse.cdt.managedbuilder.core.ITool;Lorg.eclipse.core.runtime.IPath;),LlvmDependencyCalculator2Commands(Lorg.eclipse.core.runtime.IPath;Lorg.eclipse.cdt.managedbuilder.core.IBuildObject;Lorg.eclipse.cdt.managedbuilder.core.ITool;Lorg.eclipse.core.runtime.IPath;),getDependencyCommandOptions()">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="LlvmDependencyCalculator2Commands" location="405,50" size="341,104" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2Commands" runTimeClassModel="">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="247,54">
       <children xsi:type="editmodel:MethodEditModel" name="LlvmDependencyCalculator2Commands" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2Commands#LlvmDependencyCalculator2Commands(Lorg.eclipse.core.runtime.IPath;Lorg.eclipse.core.resources.IResource;Lorg.eclipse.cdt.managedbuilder.core.IBuildObject;Lorg.eclipse.cdt.managedbuilder.core.ITool;Lorg.eclipse.core.runtime.IPath;)"/>
@@ -49,8 +49,8 @@
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2Commands-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/IBuildObject" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="318,104" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="21,0"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="308,104" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="37,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.makegen/LlvmDependencyCalculator2Commands-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/ITool" source="//@children.1" target="//@children.5" targetEnd="//@children.1/@sourceConnections.2/@children.2" label="//@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
@@ -70,34 +70,39 @@
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/IBuildObject" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="202,0" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="45,56"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="232,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="6,56"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/ITool" source="//@children.2" target="//@children.5" targetEnd="//@children.2/@sourceConnections.2/@children.2" label="//@children.2/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="5,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="215,56"/>
     </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2-Standard::Instantiate->org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2Commands" source="//@children.2" target="//@children.6" targetEnd="//@children.2/@sourceConnections.3/@children.2" label="//@children.2/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="73,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="190,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="156,43"/>
+    </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.2 //@children.2/@sourceConnections.1 //@children.4/@sourceConnections.1 //@children.5/@sourceConnections.0 //@children.1/@sourceConnections.1 //@children.6/@sourceConnections.0" name="IBuildObject" location="702,255" size="222,56" id="org.eclipse.cdt.managedbuilder.core/IBuildObject" runTimeClassModel="">
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.2 //@children.2/@sourceConnections.1 //@children.4/@sourceConnections.1 //@children.5/@sourceConnections.0 //@children.1/@sourceConnections.1 //@children.6/@sourceConnections.0" name="IBuildObject" location="945,255" size="222,56" id="org.eclipse.cdt.managedbuilder.core/IBuildObject" runTimeClassModel="">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.3 //@children.2/@sourceConnections.0" name="IManagedDependencyInfo" location="675,429" size="249,56" id="org.eclipse.cdt.managedbuilder.makegen/IManagedDependencyInfo" runTimeClassModel="">
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.3 //@children.2/@sourceConnections.0" name="IManagedDependencyInfo" location="925,429" size="249,56" id="org.eclipse.cdt.managedbuilder.makegen/IManagedDependencyInfo" runTimeClassModel="">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.makegen/IManagedDependencyInfo-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/ITool" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="21,0" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="214,56"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,4" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="222,50"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.makegen/IManagedDependencyInfo-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/IBuildObject" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="137,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="130,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="110,56"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
@@ -113,17 +118,17 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="DefaultGCCDependencyCalculator2Commands" location="855,71" size="390,43" id="org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2Commands" runTimeClassModel="">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.2/@sourceConnections.3" name="DefaultGCCDependencyCalculator2Commands" location="855,71" size="390,43" id="org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2Commands" runTimeClassModel="">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2Commands-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/IBuildObject" source="//@children.6" target="//@children.3" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="34,43" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="187,0"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="200,43" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="110,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2Commands-Standard::Call->org.eclipse.cdt.managedbuilder.core/ITool*org.eclipse.cdt.managedbuilder.makegen.gnu/DefaultGCCDependencyCalculator2Commands-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/ITool" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.1/@children.2" label="//@children.6/@sourceConnections.1/@children.0" sourceEnd="//@children.6/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="75,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import»" size="75,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="92,43" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="222,4"/>
     </sourceConnections>

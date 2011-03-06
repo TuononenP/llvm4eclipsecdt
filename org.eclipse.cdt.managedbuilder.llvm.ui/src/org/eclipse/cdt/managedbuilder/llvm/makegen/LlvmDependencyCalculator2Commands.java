@@ -20,15 +20,15 @@ import org.eclipse.core.runtime.IPath;
 public class LlvmDependencyCalculator2Commands extends
 		DefaultGCCDependencyCalculator2Commands {
 
-	/**
-	 * @param source IPath
-	 * @param resource IResource
-	 * @param buildContext IBuildObject
-	 * @param tool ITool
-	 * @param topBuildDirectory IPath
-	 */
-	public LlvmDependencyCalculator2Commands(IPath source, IResource resource,
-			IBuildObject buildContext, ITool tool, IPath topBuildDirectory) {
+		
+		/** 
+		 * @param source IPath
+		 * @param resource IResource
+		 * @param buildContext IBuildObject
+		 * @param tool ITool
+		 * @param topBuildDirectory IPath
+		 */
+	public LlvmDependencyCalculator2Commands(IPath source, IResource resource, IBuildObject buildContext, ITool tool, IPath topBuildDirectory){
 		super(source, resource, buildContext, tool, topBuildDirectory);
 	}
 
