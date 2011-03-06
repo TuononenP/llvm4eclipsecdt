@@ -4655,32 +4655,6 @@
       </scannerInfoProvider>
    </extension>
    <extension
-         id="LLVMManagedMakePerProjectProfile"
-         name="%extension.name.1"
-         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
-      <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LLVMScannerInfoCollector"
-            scope="project">
-      </scannerInfoCollector>
-      <buildOutputProvider>
-         <open></open>
-         <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
-         </scannerInfoConsoleParser>
-      </buildOutputProvider>
-      <scannerInfoProvider
-            providerId="specsFile">
-         <run
-               arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
-               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
-               command="clang">
-         </run>
-         <scannerInfoConsoleParser
-               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
-         </scannerInfoConsoleParser>
-      </scannerInfoProvider>
-   </extension>
-   <extension
          point="org.eclipse.cdt.core.templateAssociations">
       <template
             id="org.eclipse.cdt.build.core.templates.EmptyProject">
