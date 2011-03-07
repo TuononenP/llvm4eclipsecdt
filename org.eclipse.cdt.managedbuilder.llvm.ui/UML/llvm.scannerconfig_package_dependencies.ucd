@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="llvm.scannerconfig_package_dependencies" size="1816,812" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030206F72672E65636C697073652E6364742E6D616E616765646275696C6465722E6C6C766D2E75692F70657065">
-  <children xsi:type="editmodel:ClassEditModel" name="LLVMScannerInfoCollector" location="15,463" size="239,30" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/LLVMScannerInfoCollector" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="scannerconfig" size="1816,515" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030206F72672E65636C697073652E6364742E6D616E616765646275696C6465722E6C6C766D2E75692F70657065">
+  <children xsi:type="editmodel:ClassEditModel" name="LLVMScannerInfoCollector" location="23,45" size="239,30" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/LLVMScannerInfoCollector" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/LLVMScannerInfoCollector-Soyatec::Implement->org.eclipse.cdt.managedbuilder.scannerconfig/IManagedScannerInfoCollector" source="//@children.0" target="//@children.10" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="72,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="239,15" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,28"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="119,30" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="119,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/LLVMScannerInfoCollector-Standard::Derive->org.eclipse.cdt.make.internal.core.scannerconfig2/PerProjectSICollector" source="//@children.0" target="//@children.9" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" location="362,419" size="49,13" automaticRelocationAllowed="false" locationOnWireFromSource="1.0512921962942008" distanceFromWire="-26.90529287552936" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="167,0" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="78,43"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="239,15" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,15"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="ManagedLlvmScannerInfoConsoleParser" location="50,50" size="380,158" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser" runTimeClassModel="">
+  <children xsi:type="editmodel:ClassEditModel" name="ManagedLlvmScannerInfoConsoleParser" location="990,303" size="380,158" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser" runTimeClassModel="startup(Lorg.eclipse.core.resources.IProject;Lorg.eclipse.cdt.make.core.scannerconfig.IScannerInfoCollector;),processLine(Ljava.lang.String;),shutdown(),isManagedBuildOn(),fManagedBuildOnState,doCalcManagedBuildOnState()">
     <children xsi:type="editmodel:CompartmentEditModel" size="197,18">
       <children xsi:type="editmodel:AttributeEditModel" name="fManagedBuildOnState" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser#fManagedBuildOnState"/>
     </children>
@@ -30,132 +30,132 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Soyatec::Import->org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext*org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Standard::Call->org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="75,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="380,157" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,137" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="241,20"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Standard::Call->org.eclipse.cdt.core.model/CoreModel" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="34,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="380,121" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,21"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="296,158" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="83,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Standard::Derive->org.eclipse.cdt.make.internal.core.scannerconfig.gnu/GCCScannerInfoConsoleParser" source="//@children.1" target="//@children.4" targetEnd="//@children.1/@sourceConnections.2/@children.2" label="//@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="247,158" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="132,0"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="21,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="291,43"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Soyatec::Import->org.eclipse.cdt.core.settings.model/ICProjectDescription" source="//@children.1" target="//@children.5" targetEnd="//@children.1/@sourceConnections.3/@children.2" label="//@children.1/@sourceConnections.3/@children.0" sourceEnd="//@children.1/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="380,28" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,28"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,155" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="177,0"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Standard::Call->org.eclipse.cdt.managedbuilder.core/IConfiguration*org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/IConfiguration" source="//@children.1" target="//@children.6" targetEnd="//@children.1/@sourceConnections.4/@children.2" label="//@children.1/@sourceConnections.4/@children.0" sourceEnd="//@children.1/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="75,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="380,73" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,28"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,152" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="222,5"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Soyatec::Import->org.eclipse.cdt.make.core.scannerconfig/IScannerInfoCollector" source="//@children.1" target="//@children.7" targetEnd="//@children.1/@sourceConnections.5/@children.2" label="//@children.1/@sourceConnections.5/@children.0" sourceEnd="//@children.1/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" location="105,313" size="49,13" automaticRelocationAllowed="false" locationOnWireFromSource="28.000000000000004" distanceFromWire="-23.999999999999996" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="103,158" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="140,0"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,47" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="244,48"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Standard::Call->org.eclipse.cdt.make.core.scannerconfig/InfoContext*org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Soyatec::Import->org.eclipse.cdt.make.core.scannerconfig/InfoContext" source="//@children.1" target="//@children.8" targetEnd="//@children.1/@sourceConnections.6/@children.2" label="//@children.1/@sourceConnections.6/@children.0" sourceEnd="//@children.1/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="75,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="380,122" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="28,0"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,78" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="244,21"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Standard::Call->org.eclipse.cdt.make.internal.core.scannerconfig2/PerProjectSICollector*org.eclipse.cdt.managedbuilder.llvm.scannerconfig/ManagedLlvmScannerInfoConsoleParser-Soyatec::Import->org.eclipse.cdt.make.internal.core.scannerconfig2/PerProjectSICollector" source="//@children.1" target="//@children.9" targetEnd="//@children.1/@sourceConnections.7/@children.2" label="//@children.1/@sourceConnections.7/@children.0" sourceEnd="//@children.1/@sourceConnections.7/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" location="404,266" size="75,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="358,158" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="103,0"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="75,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="26,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="194,43"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="CfgInfoContext" location="871,207" size="241,43" id="org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="CfgInfoContext" location="23,420" size="241,43" id="org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext-Standard::Call->org.eclipse.cdt.managedbuilder.core/IConfiguration*org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext-Soyatec::Import->org.eclipse.cdt.managedbuilder.core/IConfiguration" source="//@children.2" target="//@children.6" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="75,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="187,0" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="53,56"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="241,36" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,6"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext-Standard::Call->org.eclipse.cdt.core.settings.model/ICProjectDescription*org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext-Soyatec::Import->org.eclipse.cdt.core.settings.model/ICProjectDescription" source="//@children.2" target="//@children.5" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="75,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="8,0" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="204,56"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="240,43" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,8"/>
     </sourceConnections>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext-Standard::Call->org.eclipse.cdt.make.core.scannerconfig/InfoContext*org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext-Standard::Instantiate->org.eclipse.cdt.make.core.scannerconfig/InfoContext*org.eclipse.cdt.build.core.scannerconfig/CfgInfoContext-Soyatec::Import->org.eclipse.cdt.make.core.scannerconfig/InfoContext" source="//@children.2" target="//@children.8" targetEnd="//@children.2/@sourceConnections.2/@children.2" label="//@children.2/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate, Call»" size="140,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="164,43" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="75,0"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="241,9" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,33"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1" name="CoreModel" location="705,150" size="167,43" id="org.eclipse.cdt.core.model/CoreModel" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1" name="CoreModel" location="1203,531" size="167,43" id="org.eclipse.cdt.core.model/CoreModel" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.core.model/CoreModel-Soyatec::Import->org.eclipse.cdt.core.settings.model/ICProjectDescription" source="//@children.3" target="//@children.5" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="83,0" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="113,56"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,21" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="214,27"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.2" name="GCCScannerInfoConsoleParser" location="165,255" size="313,43" id="org.eclipse.cdt.make.internal.core.scannerconfig.gnu/GCCScannerInfoConsoleParser" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.2" name="GCCScannerInfoConsoleParser" location="720,45" size="313,43" id="org.eclipse.cdt.make.internal.core.scannerconfig.gnu/GCCScannerInfoConsoleParser" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.make.internal.core.scannerconfig.gnu/GCCScannerInfoConsoleParser-Standard::Call->org.eclipse.cdt.make.core.scannerconfig/IScannerInfoCollector*org.eclipse.cdt.make.internal.core.scannerconfig.gnu/GCCScannerInfoConsoleParser-Soyatec::Import->org.eclipse.cdt.make.core.scannerconfig/IScannerInfoCollector" source="//@children.4" target="//@children.7" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="75,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="45,43" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="197,0"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="115,43" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="175,0"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.1/@sourceConnections.3 //@children.2/@sourceConnections.1 //@children.3/@sourceConnections.0" name="ICProjectDescription" location="675,50" size="214,56" id="org.eclipse.cdt.core.settings.model/ICProjectDescription" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.1/@sourceConnections.3 //@children.2/@sourceConnections.1 //@children.3/@sourceConnections.0" name="ICProjectDescription" location="645,525" size="214,56" id="org.eclipse.cdt.core.settings.model/ICProjectDescription" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.1/@sourceConnections.4 //@children.2/@sourceConnections.0" name="IConfiguration" location="1005,95" size="222,56" id="org.eclipse.cdt.managedbuilder.core/IConfiguration" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.1/@sourceConnections.4 //@children.2/@sourceConnections.0" name="IConfiguration" location="645,450" size="222,56" id="org.eclipse.cdt.managedbuilder.core/IConfiguration" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.1/@sourceConnections.5 //@children.4/@sourceConnections.0 //@children.10/@sourceConnections.0" name="IScannerInfoCollector" location="13,375" size="244,56" id="org.eclipse.cdt.make.core.scannerconfig/IScannerInfoCollector" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.1/@sourceConnections.5 //@children.4/@sourceConnections.0 //@children.10/@sourceConnections.0" name="IScannerInfoCollector" location="375,240" size="244,56" id="org.eclipse.cdt.make.core.scannerconfig/IScannerInfoCollector" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.6 //@children.2/@sourceConnections.2 //@children.9/@sourceConnections.0" name="InfoContext" location="960,297" size="244,43" id="org.eclipse.cdt.make.core.scannerconfig/InfoContext" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.6 //@children.2/@sourceConnections.2 //@children.9/@sourceConnections.0" name="InfoContext" location="645,360" size="244,43" id="org.eclipse.cdt.make.core.scannerconfig/InfoContext" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.7 //@children.0/@sourceConnections.1" name="PerProjectSICollector" location="495,297" size="296,43" id="org.eclipse.cdt.make.internal.core.scannerconfig2/PerProjectSICollector" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.7 //@children.0/@sourceConnections.1" name="PerProjectSICollector" location="375,45" size="296,43" id="org.eclipse.cdt.make.internal.core.scannerconfig2/PerProjectSICollector" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.make.internal.core.scannerconfig2/PerProjectSICollector-Standard::Call->org.eclipse.cdt.make.core.scannerconfig/InfoContext*org.eclipse.cdt.make.internal.core.scannerconfig2/PerProjectSICollector-Standard::Instantiate->org.eclipse.cdt.make.core.scannerconfig/InfoContext*org.eclipse.cdt.make.internal.core.scannerconfig2/PerProjectSICollector-Soyatec::Import->org.eclipse.cdt.make.core.scannerconfig/InfoContext" source="//@children.9" target="//@children.8" targetEnd="//@children.9/@sourceConnections.0/@children.2" label="//@children.9/@sourceConnections.0/@children.0" sourceEnd="//@children.9/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate, Call»" location="735,341" size="140,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="296,21" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,21"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate, Call»" size="140,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="282,43" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="12,0"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0" name="IManagedScannerInfoCollector" location="390,450" size="276,56" id="org.eclipse.cdt.managedbuilder.scannerconfig/IManagedScannerInfoCollector" runTimeClassModel="">
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0" name="IManagedScannerInfoCollector" location="23,240" size="276,56" id="org.eclipse.cdt.managedbuilder.scannerconfig/IManagedScannerInfoCollector" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.eclipse.cdt.managedbuilder.scannerconfig/IManagedScannerInfoCollector-Standard::Derive->org.eclipse.cdt.make.core.scannerconfig/IScannerInfoCollector" source="//@children.10" target="//@children.7" targetEnd="//@children.10/@sourceConnections.0/@children.2" label="//@children.10/@sourceConnections.0/@children.0" sourceEnd="//@children.10/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" location="341,401" size="49,13" automaticRelocationAllowed="false" locationOnWireFromSource="-36.39168140026126" distanceFromWire="-37.74447674643111" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,2" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="244,51"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="276,28" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,28"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
