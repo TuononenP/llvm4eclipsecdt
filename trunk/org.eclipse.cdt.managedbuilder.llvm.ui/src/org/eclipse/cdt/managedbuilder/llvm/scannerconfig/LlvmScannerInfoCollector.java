@@ -21,7 +21,7 @@ import org.eclipse.cdt.managedbuilder.scannerconfig.IManagedScannerInfoCollector
  * files using this format.
  * 
  */
-public class LLVMScannerInfoCollector
+public class LlvmScannerInfoCollector
 	extends PerProjectSICollector
 	implements IManagedScannerInfoCollector {
 }
