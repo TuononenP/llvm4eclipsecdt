@@ -238,6 +238,7 @@ public class LlvmToolOptionPathUtil {
 	 * @return IConfiguration[] Build configurations
 	 */
 	private static IConfiguration[] getAllBuildConfigs(IProject proj) {
+		IConfiguration[] configurations = new IConfiguration[] {};
 		IManagedBuildInfo info = null;
 		//try to get Managed build info
 		try {
@@ -245,14 +246,19 @@ public class LlvmToolOptionPathUtil {
 		} catch (Exception e) { //if not a managed build project
 			//print error
 			e.printStackTrace();
-			return null;
+			return configurations;
 		}
-		assert(info!=null); //throws an error if info is null
+		//info can be null for projects without build info. For example, when creating a project
+		//from Import >ÊC/C++ Executable
+		if(info == null) {
+			return configurations;
+		}
 		//get ManagedProject associated with build info
 		IManagedProject mProj = info.getManagedProject();
 
 		//get all build configurations of the project
-		return mProj.getConfigurations();
+		configurations = mProj.getConfigurations();
+		return configurations;
 	}
 	
 	/**
