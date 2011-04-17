@@ -1,12 +1,24 @@
 #summary LLVM with Clang and LLVM-GCC compilers using MingGW on Windows
 
-= Introduction =
+=How to setup LLVM compiler environment with MinGW=
 
-LLVM installation instructions for Windows using MinGW compiler suite (Test environment: Windows 7 Pro 64-bit, LLVM 2.8, Clang 2.8, LLVM-GCC 4.2).
+==LLVM 2.9==
 
-= Details =
+This is by far the easiest and fasted method to setup LLVM compiler for Windows. It only takes couple of minutes by following these steps.
 
-This might be the fastest, easiest and most of all 'the most likely to work' solution to get LLVM suite and front-ends working on Windows. (For more specific instructions, read http://llvm.org/docs/GettingStarted.html carefully.)
+1. Download mingw-get-inst (http://www.mingw.org -> Downloads)
+2. Run MinGW installer (mingw-get-inst)
+3. You can select to download packages from the latest repositories
+4. Install to location with no spaces
+5. Select to install C++ compiler
+6. Add MinGW bin directory path to a system environment variable PATH (e.g. C:\MinGW\bin)
+7. Download LLVM, Clang and LLVM-GCC binaries
+8. Uncompress downloaded binaries into MinGW directory
+9. Answer Yes when asked to merge folders
+
+==LLVM 2.8==
+
+These are older instructions how to setup LLVM 2.8 on Windows with MinGW(For more specific instructions, read http://llvm.org/docs/GettingStarted.html carefully.)
 
 Step 1. Download LLVM and Clang source code and MinGW binary of LLVM-GCC. Download site: http://llvm.org/releases/download.html#2.8
 
