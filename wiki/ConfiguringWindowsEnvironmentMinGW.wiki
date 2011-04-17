@@ -6,14 +6,22 @@
 
 This is by far the easiest and fasted method to setup LLVM compiler for Windows. It only takes couple of minutes by following these steps.
 
-1. Download mingw-get-inst (http://www.mingw.org -> Downloads) `*`
+1. Download mingw-get-inst (http://www.mingw.org -> Downloads)
+
 2. Run MinGW installer (mingw-get-inst)
+
 3. You can select to download packages from the latest repositories
+
 4. Install to location with no spaces
+
 5. Select to install C++ compiler
+
 6. Add MinGW bin directory path to a system environment variable PATH (e.g. C:\MinGW\bin)
+
 7. Download LLVM, Clang and LLVM-GCC binaries
+
 8. Uncompress downloaded binaries into MinGW directory
+
 9. Answer Yes when asked to merge folders
 
 ==LLVM 2.8==
