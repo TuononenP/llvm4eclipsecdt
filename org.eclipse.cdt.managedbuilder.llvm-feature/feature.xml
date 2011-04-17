@@ -4,7 +4,7 @@
       label="llvm4eclipsecdt"
       version="1.0.1.qualifier"
       provider-name="Nokia Siemens Networks"
-      os="linux, macosx, win32">
+      os="linux,macosx,win32">
 
    <description>
       llvm4eclipsecdt provides LLVM toolchain support for Eclipse CDT.
@@ -231,6 +231,7 @@ litigation.
 
    <plugin
          id="org.eclipse.cdt.managedbuilder.llvm.ui"
+         os="linux,macosx,win32"
          download-size="0"
          install-size="0"
          version="1.0.1.qualifier"
