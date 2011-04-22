@@ -192,7 +192,8 @@ public class LlvmToolOptionPathUtil {
 		case 2:
 			return addLlvmLibToToolOption(cf, path);
 		case 3:
-			return addLlvmLibSearchPathToToolOption(cf, path);
+//			return addLlvmLibSearchPathToToolOption(cf, path); //not supported in CDT 7.x
+			return false;
 		default:
 			return false;
 		}
@@ -213,7 +214,8 @@ public class LlvmToolOptionPathUtil {
 		case 2:
 			return removeLlvmLibFromToolOption(cf, path);
 		case 3:
-			return removeLlvmLibSearchPathFromToolOption(cf, path);
+//			return removeLlvmLibSearchPathFromToolOption(cf, path); //not supported in CDT 7.x
+			return false;
 		default:
 			return false;
 		}
@@ -249,7 +251,7 @@ public class LlvmToolOptionPathUtil {
 			return configurations;
 		}
 		//info can be null for projects without build info. For example, when creating a project
-		//from Import >ÊC/C++ Executable
+		//from Import >ï¿½C/C++ Executable
 		if(info == null) {
 			return configurations;
 		}
@@ -345,49 +347,49 @@ public class LlvmToolOptionPathUtil {
 		return false;
 	}
 	
-	/**
-	 * Adds a Library search path to LLVM linker's Library search path Option.
-	 * 
-	 * @param cf IConfiguration Build configuration
-	 * @param libDir Library search path
-	 * @return boolean Returns true if Library search path Option was added successfully for the LLVM Linker.
-	 */
-	private static boolean addLlvmLibSearchPathToToolOption(IConfiguration cf, String libDir) {
-		//get LLVM linker
-		ITool llvmLinker = getLlvmLinker(cf);
-		//If the LLVM linker is found from the given build configuration
-		if (llvmLinker != null) {
-			//get LLVM Linker Library search path option
-			IOption libDirOption = getLlvmLinkerLibrarySearchPathOption(cf);
-			//add library search path to LLVM linker's Library Search Path Option type
-			addLibrarySearchPathToToolOption(cf, llvmLinker, libDirOption, libDir);
-			return true;
-		} 
-		//adding library failed
-		return false;
-	}
+//	/**
+//	 * Adds a Library search path to LLVM linker's Library search path Option.
+//	 * 
+//	 * @param cf IConfiguration Build configuration
+//	 * @param libDir Library search path
+//	 * @return boolean Returns true if Library search path Option was added successfully for the LLVM Linker.
+//	 */
+//	private static boolean addLlvmLibSearchPathToToolOption(IConfiguration cf, String libDir) {
+//		//get LLVM linker
+//		ITool llvmLinker = getLlvmLinker(cf);
+//		//If the LLVM linker is found from the given build configuration
+//		if (llvmLinker != null) {
+//			//get LLVM Linker Library search path option
+//			IOption libDirOption = getLlvmLinkerLibrarySearchPathOption(cf);
+//			//add library search path to LLVM linker's Library Search Path Option type
+//			addLibrarySearchPathToToolOption(cf, llvmLinker, libDirOption, libDir);
+//			return true;
+//		} 
+//		//adding library failed
+//		return false;
+//	}
 
-	/**
-	 * Removes a Library search path from LLVM linker's Library search path Option.
-	 * 
-	 * @param cf IConfiguration Build configuration
-	 * @param removeLibDir Library search path
-	 * @return boolean Returns true if Library search path Option was removed successfully from the LLVM Linker.
-	 */
-	private static boolean removeLlvmLibSearchPathFromToolOption(IConfiguration cf, String removeLibDir) {
-		//get LLVM linker
-		ITool llvmLinker = getLlvmLinker(cf);
-		//If the LLVM linker is found from the given build configuration
-		if (llvmLinker != null) {
-			//get LLVM Linker Library search path option
-			IOption libDirOption = getLlvmLinkerLibrarySearchPathOption(cf);
-			//remove a library search path from LLVM linker's Library Search Path Option type
-			removeLibrarySearchPathFromToolOption(cf, llvmLinker, libDirOption, removeLibDir);
-			return true;
-		} 
-		//removing the library search path failed
-		return false;
-	}
+//	/**
+//	 * Removes a Library search path from LLVM linker's Library search path Option.
+//	 * 
+//	 * @param cf IConfiguration Build configuration
+//	 * @param removeLibDir Library search path
+//	 * @return boolean Returns true if Library search path Option was removed successfully from the LLVM Linker.
+//	 */
+//	private static boolean removeLlvmLibSearchPathFromToolOption(IConfiguration cf, String removeLibDir) {
+//		//get LLVM linker
+//		ITool llvmLinker = getLlvmLinker(cf);
+//		//If the LLVM linker is found from the given build configuration
+//		if (llvmLinker != null) {
+//			//get LLVM Linker Library search path option
+//			IOption libDirOption = getLlvmLinkerLibrarySearchPathOption(cf);
+//			//remove a library search path from LLVM linker's Library Search Path Option type
+//			removeLibrarySearchPathFromToolOption(cf, llvmLinker, libDirOption, removeLibDir);
+//			return true;
+//		} 
+//		//removing the library search path failed
+//		return false;
+//	}
 	
 	/**
 	 * Adds include path for given Build configuration's Tool's Include path Option.
@@ -462,42 +464,42 @@ public class LlvmToolOptionPathUtil {
 	}
 	
 	//Works only if Eclipse Bugzilla Bug 321040 fix is applied
-	/**
-	 * Adds new Library search path for the Linker's Library search path Option.
-	 * 
-	 * @param cf IConfiguration Build configuration
-	 * @param cfTool ITool Tool
-	 * @param option Tool Option type
-	 * @param newSearchPath Library search path
-	 */
-	private static void addLibrarySearchPathToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newSearchPath) {
-		try {
-			//add a new library path to linker's Library search path option.
-			addInputToToolOption(cf, cfTool, option, newSearchPath, option.getLibraryPaths());
-		} catch (BuildException e) {
-			//show error
-			e.printStackTrace();
-		}
-	}
+//	/**
+//	 * Adds new Library search path for the Linker's Library search path Option.
+//	 * 
+//	 * @param cf IConfiguration Build configuration
+//	 * @param cfTool ITool Tool
+//	 * @param option Tool Option type
+//	 * @param newSearchPath Library search path
+//	 */
+//	private static void addLibrarySearchPathToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newSearchPath) {
+//		try {
+//			//add a new library path to linker's Library search path option.
+//			addInputToToolOption(cf, cfTool, option, newSearchPath, option.getLibraryPaths()); //not supported in CDT 7.x
+//		} catch (BuildException e) {
+//			//show error
+//			e.printStackTrace();
+//		}
+//	}
 
-	/**
-	 * Removes a Library search path from the Linker's Library search path Option.
-	 * Since CDT 8.0 (Bugzilla Bug 321040)
-	 * 
-	 * @param cf IConfiguration Build configuration
-	 * @param cfTool ITool Tool
-	 * @param option Tool Option type
-	 * @param removeSearchPath Library search path
-	 */
-	private static void removeLibrarySearchPathFromToolOption(IConfiguration cf, ITool cfTool, IOption option, String removeSearchPath) {
-		try {
-			//remove a library path from linker's Library search path option.
-			removeInputFromToolOption(cf, cfTool, option, removeSearchPath, option.getLibraryPaths());
-		} catch (BuildException e) {
-			//show error
-			e.printStackTrace();
-		}
-	}
+//	/**
+//	 * Removes a Library search path from the Linker's Library search path Option.
+//	 * Since CDT 8.0 (Bugzilla Bug 321040)
+//	 * 
+//	 * @param cf IConfiguration Build configuration
+//	 * @param cfTool ITool Tool
+//	 * @param option Tool Option type
+//	 * @param removeSearchPath Library search path
+//	 */
+//	private static void removeLibrarySearchPathFromToolOption(IConfiguration cf, ITool cfTool, IOption option, String removeSearchPath) {
+//		try {
+//			//remove a library path from linker's Library search path option.
+////			removeInputFromToolOption(cf, cfTool, option, removeSearchPath, option.getLibraryPaths()); //not supported in CDT 7.x
+//		} catch (BuildException e) {
+//			//show error
+//			e.printStackTrace();
+//		}
+//	}
 	
 	/**
 	 * Adds a new value to specific Option.
@@ -605,19 +607,19 @@ public class LlvmToolOptionPathUtil {
 		return getIToolPathOption(cfTool, libOptionId);
 	}
 	
-	/**
-	 * Returns LLVM Linker Library search path Option type.
-	 * 
-	 * @param cf IConfiguration Project build configuration
-	 * @return IOption Tool option type
-	 */
-	private static IOption getLlvmLinkerLibrarySearchPathOption(IConfiguration cf) {
-		//get ITool associated with the input extension
-		ITool cfTool = cf.getToolFromInputExtension(linkerInputType);
-		//get option id for library paths
-		String libDirOptionId = getOptionId(cfTool, IOption.LIBRARY_PATHS);
-		return getIToolPathOption(cfTool, libDirOptionId);
-	}
+//	/**
+//	 * Returns LLVM Linker Library search path Option type.
+//	 * 
+//	 * @param cf IConfiguration Project build configuration
+//	 * @return IOption Tool option type
+//	 */
+//	private static IOption getLlvmLinkerLibrarySearchPathOption(IConfiguration cf) {
+//		//get ITool associated with the input extension
+//		ITool cfTool = cf.getToolFromInputExtension(linkerInputType);
+//		//get option id for library paths
+//		String libDirOptionId = getOptionId(cfTool, IOption.LIBRARY_PATHS);
+//		return getIToolPathOption(cfTool, libDirOptionId);
+//	}
 	
 	/**
 	 * Returns Tool's option id.
