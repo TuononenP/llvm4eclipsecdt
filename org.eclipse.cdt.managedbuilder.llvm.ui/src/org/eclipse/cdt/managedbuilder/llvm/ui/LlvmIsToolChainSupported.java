@@ -13,6 +13,7 @@ package org.eclipse.cdt.managedbuilder.llvm.ui;
 
 import org.eclipse.cdt.managedbuilder.core.IManagedIsToolChainSupported;
 import org.eclipse.cdt.managedbuilder.core.IToolChain;
+import org.eclipse.core.runtime.PluginVersionIdentifier;
 import org.osgi.framework.Version;
 
 /**
@@ -44,7 +45,7 @@ public class LlvmIsToolChainSupported implements IManagedIsToolChainSupported {
 			 * Version is supported from CDT 7.1.0.
 			 * Use org.osgi.framework.PluginVersionIdentifier with older CDT versions.
 			 */
-			Version version, String instance) {
+			PluginVersionIdentifier version, String instance) {
 		return this.supported;
 	}
 
