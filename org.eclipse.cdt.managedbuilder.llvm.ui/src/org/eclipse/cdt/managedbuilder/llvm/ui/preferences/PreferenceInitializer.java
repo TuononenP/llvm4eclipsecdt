@@ -13,7 +13,8 @@ package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
 import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmUIPlugin;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
-import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.core.runtime.preferences.DefaultScope;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 
 /**
  * Class used to initialize the default preference values.
@@ -28,11 +29,11 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 */
 	@Override
 	public void initializeDefaultPreferences() {
-		IPreferenceStore store = LlvmUIPlugin.getDefault().getPreferenceStore();
-		store.setDefault(PreferenceConstants.P_LLVM_PATH, ""); //$NON-NLS-1$
-		store.setDefault(PreferenceConstants.P_LLVM_INCLUDE_PATH, ""); //$NON-NLS-1$
-		store.setDefault(PreferenceConstants.P_LLVM_LIBRARY_PATH, ""); //$NON-NLS-1$
-		store.setDefault(PreferenceConstants.P_LLVM_LIBRARIES, ""); //$NON-NLS-1$
+		IEclipsePreferences store = DefaultScope.INSTANCE.getNode(LlvmUIPlugin.PLUGIN_ID);
+		store.put(PreferenceConstants.P_LLVM_PATH, ""); //$NON-NLS-1$
+		store.put(PreferenceConstants.P_LLVM_INCLUDE_PATH, ""); //$NON-NLS-1$
+		store.put(PreferenceConstants.P_LLVM_LIBRARY_PATH, ""); //$NON-NLS-1$
+		store.put(PreferenceConstants.P_LLVM_LIBRARIES, ""); //$NON-NLS-1$
 	}
 
 }
