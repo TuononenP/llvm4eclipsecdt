@@ -14,7 +14,8 @@ package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmUIPlugin;
 import org.eclipse.cdt.managedbuilder.llvm.util.LlvmToolOptionPathUtil;
 import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
-import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 
 /**
  * Class used to access the LLVM Preference store values.
@@ -28,8 +29,9 @@ public class LlvmPreferenceStore {
 	 * 
 	 * @return LLVM Preference store.
 	 */
-	public static IPreferenceStore getPreferenceStore() {
-		return LlvmUIPlugin.getDefault().getPreferenceStore();	
+	public static IEclipsePreferences getPreferenceStore() {
+		IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode(LlvmUIPlugin.PLUGIN_ID);
+		return prefs;
 	}
 	
 	/**
@@ -39,7 +41,7 @@ public class LlvmPreferenceStore {
      * @return the string-valued preference
 	 */
 	public static String getPreferenceStoreValue(String name) {
-		return getPreferenceStore().getString(name);
+		return getPreferenceStore().get(name, ""); //$NON-NLS-1$
 	}
 	
 	/**
@@ -97,7 +99,7 @@ public class LlvmPreferenceStore {
      * @param value the string-valued preference
 	 */
 	public static void setPreferenceStoreValue(String name, String value) {
-		getPreferenceStore().setValue(name, value);
+		getPreferenceStore().put(name, value);
 	}
 	
 	/**
