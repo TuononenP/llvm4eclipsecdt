@@ -4796,7 +4796,7 @@
          point="org.eclipse.core.resources.natures">
       <runtime>
          <run
-               class="org.eclipse.cdt.managedbuilder.llvm.ui.ProjectNature">
+               class="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmProjectNature">
          </run>
       </runtime>
    </extension>
