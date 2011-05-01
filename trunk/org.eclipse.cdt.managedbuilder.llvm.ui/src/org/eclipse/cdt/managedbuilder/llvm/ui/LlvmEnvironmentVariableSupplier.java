@@ -39,12 +39,12 @@ public class LlvmEnvironmentVariableSupplier implements
 	private static HashMap<String, LlvmBuildEnvironmentVariable> llvmEnvironmentVariables = 
 		new HashMap<String, LlvmBuildEnvironmentVariable>(6);
 	//Environment variables for HashMap usage
-	private static final String ENV_VAR_NAME_LLVM_BIN = "LLVM_BIN_PATH"; //$NON-NLS-1$
-	private static final String ENV_VAR_NAME_LLVMINTERP = "LLVMINTERP"; //$NON-NLS-1$
-	private static final String ENV_VAR_NAME_PATH = "PATH"; //$NON-NLS-1$
-	private static final String ENV_VAR_NAME_INCLUDE_PATH = "INCLUDE_PATH"; //$NON-NLS-1$
-	private static final String ENV_VAR_NAME_LIBRARY_PATH = "LD_LIBRARY_PATH"; //$NON-NLS-1$
-	private static final String ENV_VAR_NAME_LIBRARIES = "LIBRARIES"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_LLVM_BIN 		= "LLVM_BIN_PATH"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_LLVMINTERP 	= "LLVMINTERP"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_PATH 			= "PATH"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_INCLUDE_PATH 	= "INCLUDE_PATH"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_LIBRARY_PATH 	= "LLVM_LIB_SEARCH_PATH"; //$NON-NLS-1$
+	private static final String ENV_VAR_NAME_LIBRARIES 		= "LIBRARIES"; //$NON-NLS-1$
 	
 	/**
 	 * Constructor.
@@ -104,9 +104,9 @@ public class LlvmEnvironmentVariableSupplier implements
 			//initialize environment variable cache values
 			setLlvmEnvironmentVariable(ENV_VAR_NAME_PATH, pathStr);
 			setLlvmEnvironmentVariable(ENV_VAR_NAME_LLVMINTERP, binPath + Separators.getFileSeparator() + "lli"); //$NON-NLS-1$
-			setLlvmEnvironmentVariable(ENV_VAR_NAME_INCLUDE_PATH, getSysEnvPathAndPreferenceStorePath(ENV_VAR_NAME_INCLUDE_PATH));
-			setLlvmEnvironmentVariable(ENV_VAR_NAME_LIBRARY_PATH, getSysEnvPathAndPreferenceStorePath(ENV_VAR_NAME_LIBRARY_PATH));
-			setLlvmEnvironmentVariable(ENV_VAR_NAME_LIBRARIES, getSysEnvPathAndPreferenceStorePath(ENV_VAR_NAME_LIBRARIES));
+			setLlvmEnvironmentVariable(ENV_VAR_NAME_INCLUDE_PATH, getSysEnvPath(ENV_VAR_NAME_INCLUDE_PATH));
+			setLlvmEnvironmentVariable(ENV_VAR_NAME_LIBRARY_PATH, getSysEnvPath(ENV_VAR_NAME_LIBRARY_PATH));
+			setLlvmEnvironmentVariable(ENV_VAR_NAME_LIBRARIES, getSysEnvPath(ENV_VAR_NAME_LIBRARIES));
 			preferencesChanged = false;
 		}
 	}
@@ -199,9 +199,8 @@ public class LlvmEnvironmentVariableSupplier implements
 	/**
 	 * This is to be called if some of the preference paths have changed.
 	 */
-	public static void invalidatePaths() {
+	public static void notifyPreferenceChange() { //TODO: Change
 		preferencesChanged = true;
-		updatePaths();
 	}
 
 	/**
@@ -215,7 +214,7 @@ public class LlvmEnvironmentVariableSupplier implements
 		String resultPath = null;
 		//if preferences haven't been changed
 		//try to find the bin path from the LLVM environment variable HashMap 
-		if (!preferencesChanged) {
+		if (!preferencesChanged) { //TODO: Change
 			//get current path
 			LlvmBuildEnvironmentVariable earlierValue = llvmEnvironmentVariables
 					.get(pathKey);
@@ -383,81 +382,11 @@ public class LlvmEnvironmentVariableSupplier implements
 		if (newPath!=null) {
 			//if the newPath isn't empty
 			if((newPath.trim()).length()!=0) {
-				//set new value to the preference store
-//				if (name.equalsIgnoreCase(ENV_VAR_NAME_INCLUDE_PATH)) {
-//					LlvmPreferenceStore.setIncludePath(newPath);
-//				} else if (name.equalsIgnoreCase(ENV_VAR_NAME_LIBRARY_PATH)) {
-//					LlvmPreferenceStore.setLibraryPath(newPath);
-//				} else if (name.equalsIgnoreCase(ENV_VAR_NAME_LIBRARIES)) {
-//					LlvmPreferenceStore.setLibrary(newPath);
-//				}
 				//add new values to the LLVM environment variable
 				llvmEnvironmentVariables.put(name, new LlvmBuildEnvironmentVariable(
 						name, newPath, IBuildEnvironmentVariable.ENVVAR_APPEND));				
 			}
 		}
-	}
-	
-	/**
-	 * Updates environment paths from the preference store.
-	 */
-	private static void updatePaths() {
-		//try to get a bin path from the preference store
-		String newBinPath = LlvmPreferenceStore.getBinPath();
-		if (null != newBinPath) {
-			//remove white spaces from the bin path
-			newBinPath = newBinPath.trim();
-			//if the bin path is not empty
-			if (newBinPath.length()!=0) {
-				//set a new bin path replacing the existing one
-				setLlvmEnvironmentVariableReplace(ENV_VAR_NAME_LLVM_BIN, newBinPath);
-			}
-		}	
-		//update include and library paths and library files from the preference store
-		setLlvmEnvironmentVariable(ENV_VAR_NAME_INCLUDE_PATH, LlvmPreferenceStore.getIncludePath());
-		setLlvmEnvironmentVariable(ENV_VAR_NAME_LIBRARY_PATH, LlvmPreferenceStore.getLibraryPath());
-		setLlvmEnvironmentVariable(ENV_VAR_NAME_LIBRARIES, LlvmPreferenceStore.getLibraries());
-	}
-	
-	/**
-	 * Get combined system environment variable path and LLVM preference store variable path.
-	 * 
-	 * @param envName LLVM environment variable name
-	 * @return String containing combined system environment variable path and LLVM preference store variable path
-	 */
-	private static String getSysEnvPathAndPreferenceStorePath(String envName) {
-		StringBuffer sB = new StringBuffer();
-		String sysEnv = ""; //$NON-NLS-1$
-		String prefStore = ""; //$NON-NLS-1$
-		sysEnv = getSysEnvPath(envName);
-		//if the system environment variable isn't empty
-		if (sysEnv.length()!=0) {
-			//append system environment variable path
-			sB.append(sysEnv);
-			//if the last char of the system environment variable path isn't a path separator
-			if(sysEnv.charAt(sysEnv.length()-1)!=Separators.getPathSeparator().charAt(0)) {
-				//append a path separator
-				sB.append(Separators.getPathSeparator());				
-			}
-		}		
-		//get the matching preference store variable
-		if (envName.equals(ENV_VAR_NAME_INCLUDE_PATH)) {
-			prefStore = LlvmPreferenceStore.getIncludePath();
-		} else if (envName.equals(ENV_VAR_NAME_LIBRARY_PATH)) {
-			prefStore = LlvmPreferenceStore.getLibraryPath();
-		} else if (envName.equals(ENV_VAR_NAME_LIBRARIES)) {
-			prefStore = LlvmPreferenceStore.getLibraries();
-		}
-		//if the preference store variable value exists
-		if (prefStore.length()!=0) {
-			//append the llvm preference store variable value
-			sB.append(prefStore);
-		}
-		/*
-		 * form a String of the full path containing system environment variable path
-		 * and llvm preference store variable path
-		 */
-		return sB.toString();
 	}
 	
 	/**
