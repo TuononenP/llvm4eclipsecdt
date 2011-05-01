@@ -68,7 +68,7 @@ public class LibraryListEditor extends LlvmListEditor {
 			//add a new library to LLVM linker's option
 			LlvmToolOptionPathUtil.addLlvmLib(file);
 			//inform LLVM environment variable supplier that there has been a change
-			LlvmEnvironmentVariableSupplier.invalidatePaths();
+			LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
 			return file;
 		}
 		return null;
@@ -87,7 +87,7 @@ public class LibraryListEditor extends LlvmListEditor {
         //remove a library from LLVM linker's option
         LlvmToolOptionPathUtil.removeLlvmLib(libList.getItem(index).toString());
 		//inform LLVM environment variable supplier that there has been a change
-		LlvmEnvironmentVariableSupplier.invalidatePaths();
+		LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
         if (index >= 0) {
         	libList.remove(index);
             selectionChanged();

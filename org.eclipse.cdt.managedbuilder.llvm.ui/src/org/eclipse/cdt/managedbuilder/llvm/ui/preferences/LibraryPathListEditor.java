@@ -71,7 +71,7 @@ public class LibraryPathListEditor extends LlvmListEditor {
 			//add a new library path to LLVM linker's option
 			LlvmToolOptionPathUtil.addLlvmLibSearchPath(dir);
 			//inform LLVM environment variable supplier that there has been a change
-			LlvmEnvironmentVariableSupplier.invalidatePaths();
+			LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
 			return dir;
 		}
 		return null;
@@ -90,7 +90,7 @@ public class LibraryPathListEditor extends LlvmListEditor {
         //remove a library path from LLVM linker's option
         LlvmToolOptionPathUtil.removeLlvmLibSearchPath(libPathList.getItem(index).toString());
 		//inform LLVM environment variable supplier that there has been a change
-		LlvmEnvironmentVariableSupplier.invalidatePaths();
+		LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
         if (index >= 0) {
         	libPathList.remove(index);
             selectionChanged();

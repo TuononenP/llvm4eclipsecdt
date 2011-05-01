@@ -71,7 +71,7 @@ public class IncludePathListEditor extends LlvmListEditor {
 			//add a new include path to LLVM assembler's option
 			LlvmToolOptionPathUtil.addLlvmIncludePath(dir);
 			//inform LLVM environment variable supplier that there has been a change
-			LlvmEnvironmentVariableSupplier.invalidatePaths();
+			LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
 			return dir;
 		}
 		return null;
@@ -90,7 +90,7 @@ public class IncludePathListEditor extends LlvmListEditor {
         //remove an include path from the LLVM assembler's option
         LlvmToolOptionPathUtil.removeLlvmIncludePath(incList.getItem(index).toString());
 		//inform LLVM environment variable supplier that there has been a change
-		LlvmEnvironmentVariableSupplier.invalidatePaths();
+		LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
         if (index >= 0) {
         	incList.remove(index);
             selectionChanged();
