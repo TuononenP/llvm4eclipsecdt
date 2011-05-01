@@ -421,6 +421,10 @@
                </value>
             </property>
          </supportedProperties>
+         <envVarBuildPath
+               pathType="buildpathInclude"
+               variableList="INCLUDE_PATH">
+         </envVarBuildPath>
          <optionCategory
                id="llvm.llc.category.general"
                name="%OptionCategory.General"
@@ -574,6 +578,10 @@
                </value>
             </property>
          </supportedProperties>
+         <envVarBuildPath
+               pathType="buildpathInclude"
+               variableList="INCLUDE_PATH">
+         </envVarBuildPath>
          <optionCategory
                id="llvm.lli.category.general"
                name="%OptionCategory.General"
@@ -726,7 +734,7 @@
          </supportedProperties>
          <envVarBuildPath
                pathType="buildpathInclude"
-               variableList="CPATH">
+               variableList="CPATH, INCLUDE_PATH">
          </envVarBuildPath>
          <optionCategory
                id="llvm.c_cpp.compiler.category.preprocessor"
@@ -980,7 +988,7 @@
          <envVarBuildPath
                buildPathResolver="org.eclipse.cdt.managedbuilder.gnu.cygwin.CygwinPathResolver"
                pathType="buildpathInclude"
-               variableList="CPATH,C_INCLUDE_PATH">
+               variableList="CPATH,C_INCLUDE_PATH, INCLUDE_PATH">
          </envVarBuildPath>
          <inputType
                dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
@@ -1003,7 +1011,7 @@
          <envVarBuildPath
                buildPathResolver="org.eclipse.cdt.managedbuilder.gnu.cygwin.CygwinPathResolver"
                pathType="buildpathInclude"
-               variableList="CPATH,CPLUS_INCLUDE_PATH">
+               variableList="CPATH,CPLUS_INCLUDE_PATH, INCLUDE_PATH">
          </envVarBuildPath>
          <inputType
                dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
@@ -1026,7 +1034,7 @@
          <envVarBuildPath
                buildPathResolver="org.eclipse.cdt.managedbuilder.gnu.cygwin.CygwinPathResolver"
                pathType="buildpathInclude"
-               variableList="CPATH,C_INCLUDE_PATH">
+               variableList="CPATH,C_INCLUDE_PATH, INCLUDE_PATH">
          </envVarBuildPath>
          <inputType
                dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
@@ -1049,7 +1057,7 @@
          <envVarBuildPath
                buildPathResolver="org.eclipse.cdt.managedbuilder.gnu.cygwin.CygwinPathResolver"
                pathType="buildpathInclude"
-               variableList="CPATH,CPLUS_INCLUDE_PATH">
+               variableList="CPATH,CPLUS_INCLUDE_PATH, INCLUDE_PATH">
          </envVarBuildPath>
          <inputType
                dependencyCalculator="org.eclipse.cdt.managedbuilder.llvm.makegen.LlvmDependencyCalculator2"
