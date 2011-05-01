@@ -271,17 +271,18 @@ public class LlvmEnvironmentVariableSupplier implements
 	 * @return Full path for LLVM executable if valid, otherwise null
 	 */
 	private static String getDirIfLlvmFound(String candidatePath, String subPath) {
+		String llvmPath = null;
 		// If there is a trailing / or \, remove it
 		if (candidatePath.endsWith(Separators.getFileSeparator()) && candidatePath.length() > 1) {
-			candidatePath = candidatePath.substring(0, candidatePath.length() - 1);
+			llvmPath = candidatePath.substring(0, candidatePath.length() - 1);
 		}
 		//if subPath exists and is not empty -> append it to candidatePath
 		if ((null != subPath) && (subPath.length()!=0)) {
 			//form full path
-			candidatePath = candidatePath + Separators.getFileSeparator() + subPath;
+			llvmPath = candidatePath + Separators.getFileSeparator() + subPath;
 		}
 		//return a full path for LLVM executable if it's valid, otherwise null
-		return getBinDirIfLlvm_ar(candidatePath);
+		return getBinDirIfLlvm_ar(llvmPath);
 	}
 
 	/**
