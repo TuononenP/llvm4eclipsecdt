@@ -19,7 +19,7 @@ import org.eclipse.core.runtime.CoreException;
  * Implements project nature for LLVM projects.
  * 
  */
-public class ProjectNature implements IProjectNature {
+public class LlvmProjectNature implements IProjectNature {
 
 	private IProject project;
 
