@@ -113,7 +113,7 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static void addPathToToolOption(String path, int var) {
 		//check if the given path exists
-		if (pathExists(path) || var==2) {
+		if (pathExists(path) || var==LIB) {
 			boolean success = false;
 			//get all projects in the workspace
 			IProject[] projects = getProjectsInWorkspace();
@@ -149,7 +149,7 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static void removePathFromToolOption(String path, int var) {
 		//check if the given path exists
-		if (pathExists(path) || var==2) {
+		if (pathExists(path) || var==LIB) {
 			boolean success = false;
 			//get all projects in the workspace
 			IProject[] projects = getProjectsInWorkspace();
@@ -249,7 +249,7 @@ public class LlvmToolOptionPathUtil {
 			return configurations;
 		}
 		//info can be null for projects without build info. For example, when creating a project
-		//from Import >ÊC/C++ Executable
+		//from Import >ï¿½C/C++ Executable
 		if(info == null) {
 			return configurations;
 		}
