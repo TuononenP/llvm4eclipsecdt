@@ -368,14 +368,6 @@
                valueType="string">
          </option>
          <option
-               browseType="directory"
-               category="llvm.asm.category.general"
-               command="-I"
-               id="llvm.both.asm.option.include.paths"
-               name="%Option.Posix.InclPaths"
-               valueType="includePath">
-         </option>
-         <option
                category="llvm.asm.category.general"
                command="-W"
                defaultValue="false"
@@ -765,7 +757,7 @@
          </option>
          <optionCategory
                id="llvm.c_cpp.compiler.category.dirs"
-               name="%OptionCategory.Dirs"
+               name="%OptionCategory.Includes"
                owner="cdt.managedbuild.tool.llvm.c_cpp.compiler">
          </optionCategory>
          <option

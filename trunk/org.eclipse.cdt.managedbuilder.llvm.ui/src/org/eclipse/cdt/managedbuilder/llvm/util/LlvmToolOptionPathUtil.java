@@ -36,8 +36,9 @@ import org.eclipse.core.resources.ResourcesPlugin;
 public class LlvmToolOptionPathUtil {
 	
 	//tool input extensions
-	private static final String assemblerInputType = "ll"; //$NON-NLS-1$
+//	private static final String assemblerInputType = "ll"; //$NON-NLS-1$
 	private static final String linkerInputType = "bc"; //$NON-NLS-1$
+	private static final String[] inputTypes = {"c", "cpp"};  //$NON-NLS-1$ //$NON-NLS-2$
 	//tool option values
 	public static final int INCLUDE = 1;
 	public static final int LIB = 2;
@@ -262,44 +263,84 @@ public class LlvmToolOptionPathUtil {
 	}
 	
 	/**
-	 * Adds an include path to LLVM assembler's include path option.
+	 * Adds an include path to LLVM front-end's include path option.
 	 * 
 	 * @param cf IConfiguration Build configuration
-	 * @param newIncludePath Include path to be added to LLVM assembler's Include path option
+	 * @param newIncludePath Include path to be added to LLVM front-end's Include path option
 	 */
 	private static boolean addLlvmIncludePathToToolOption(IConfiguration cf, String newIncludePath) {
-		//get LLVM assembler
-		ITool llvmAsm = getLlvmAssembler(cf);
-		//If the LLVM assembler is found from the given build configuration
-		if (llvmAsm != null) {
-			//get LLVM assembler Include paths option.
-			IOption llvmAsmIncPathOption = getLlvmAssemblerIncludePathOption(cf);
-			//add a new include path to assembler's Include paths option.
-			addIncludePathToToolOption(cf, llvmAsm, llvmAsmIncPathOption, newIncludePath);
+		//get LLVM front-end
+		ITool llvmFrontEnd = getLlvmFrontEnd(cf);
+		//If the LLVM front-end is found from the given build configuration
+		if (llvmFrontEnd != null) {
+			//get LLVM front-end Include paths option.
+			IOption llvmFrontEndIncPathOption = getLlvmFrontEndIncludePathOption(cf);
+			//add a new include path to front-end's Include paths option.
+			addIncludePathToToolOption(cf, llvmFrontEnd, llvmFrontEndIncPathOption, newIncludePath);
 			return true;
 		} 
 		return false;
 	}
 
 	/**
-	 * Removes an include path from LLVM assembler's include path option.
+	 * Removes an include path from LLVM front-end's include path option.
 	 * 
 	 * @param cf IConfiguration Build configuration
-	 * @param removeIncludePath Include path to be removed from LLVM assembler's Include path option
+	 * @param removeIncludePath Include path to be removed from LLVM front-end's Include path option
 	 */
 	private static boolean removeLlvmIncludePathFromToolOption(IConfiguration cf, String removeIncludePath) {
-		//get LLVM assembler
-		ITool llvmAsm = getLlvmAssembler(cf);
-		//If the LLVM assembler is found from the given build configuration
-		if (llvmAsm != null) {
-			//get LLVM assembler Include paths option.
-			IOption llvmAsmIncPathOption = getLlvmAssemblerIncludePathOption(cf);
-			//remove an include path from assembler's Include paths option.
-			removeIncludePathFromToolOption(cf, llvmAsm, llvmAsmIncPathOption, removeIncludePath);
+		//get LLVM front-end
+		ITool llvmFrontEnd = getLlvmFrontEnd(cf);
+		//If the LLVM front-end is found from the given build configuration
+		if (llvmFrontEnd != null) {
+			//get LLVM front-end Include paths option.
+			IOption llvmFrontEndIncPathOption = getLlvmFrontEndIncludePathOption(cf);
+			//remove an include path from front-end's Include paths option.
+			removeIncludePathFromToolOption(cf, llvmFrontEnd, llvmFrontEndIncPathOption, removeIncludePath);
 			return true;
 		} 
 		return false;
 	}
+	
+//	/**
+//	 * Adds an include path to LLVM assembler's include path option.
+//	 * 
+//	 * @param cf IConfiguration Build configuration
+//	 * @param newIncludePath Include path to be added to LLVM assembler's Include path option
+//	 */
+//	private static boolean addLlvmIncludePathToToolOption(IConfiguration cf, String newIncludePath) {
+//		//get LLVM assembler
+//		ITool llvmAsm = getLlvmAssembler(cf);
+//		//If the LLVM assembler is found from the given build configuration
+//		if (llvmAsm != null) {
+//			//get LLVM assembler Include paths option.
+//			IOption llvmAsmIncPathOption = getLlvmAssemblerIncludePathOption(cf);
+//			//add a new include path to assembler's Include paths option.
+//			addIncludePathToToolOption(cf, llvmAsm, llvmAsmIncPathOption, newIncludePath);
+//			return true;
+//		} 
+//		return false;
+//	}
+//
+//	/**
+//	 * Removes an include path from LLVM assembler's include path option.
+//	 * 
+//	 * @param cf IConfiguration Build configuration
+//	 * @param removeIncludePath Include path to be removed from LLVM assembler's Include path option
+//	 */
+//	private static boolean removeLlvmIncludePathFromToolOption(IConfiguration cf, String removeIncludePath) {
+//		//get LLVM assembler
+//		ITool llvmAsm = getLlvmAssembler(cf);
+//		//If the LLVM assembler is found from the given build configuration
+//		if (llvmAsm != null) {
+//			//get LLVM assembler Include paths option.
+//			IOption llvmAsmIncPathOption = getLlvmAssemblerIncludePathOption(cf);
+//			//remove an include path from assembler's Include paths option.
+//			removeIncludePathFromToolOption(cf, llvmAsm, llvmAsmIncPathOption, removeIncludePath);
+//			return true;
+//		} 
+//		return false;
+//	}
 	
 	/**
 	 * Adds a Library to LLVM linker's Libraries Option.
@@ -533,25 +574,44 @@ public class LlvmToolOptionPathUtil {
 	private static void removeInputFromToolOption(IConfiguration cf, ITool cfTool, IOption option, String removeValue, String[] existingValues) {
 		//if Option type is found
 		if (option != null) {
-			//remove value from existing values
-			String[] newValues = removePathFromExistingPathList(existingValues, removeValue);
-			//set new values array for the option for the given build configuration
-			ManagedBuildManager.setOption(cf, cfTool, option, newValues);
+			//check that list has values
+			if(existingValues.length>0) {
+				//remove value from existing values
+				String[] newValues = removePathFromExistingPathList(existingValues, removeValue);
+				//set new values array for the option for the given build configuration
+				ManagedBuildManager.setOption(cf, cfTool, option, newValues);
+			}
 		}
 		else{
 			//log error
 		}
 	}
 	
+//	/**
+//	 * Returns LLVM assembler.
+//	 * 
+//	 * @param cf IConfiguration Build configuration
+//	 * @return ITool LLVM assembler
+//	 */
+//	private static ITool getLlvmAssembler(IConfiguration cf) {
+//		//get LLVM assembler
+//		return getIToolByInputType(cf, assemblerInputType);
+//	}
+	
 	/**
-	 * Returns LLVM assembler.
-	 * 
+	 * Return LLVM front-end according to the input type.
 	 * @param cf IConfiguration Build configuration
-	 * @return ITool LLVM assembler
+	 * @return ITool LLVM front-end
 	 */
-	private static ITool getLlvmAssembler(IConfiguration cf) {
-		//get LLVM assembler
-		return getIToolByInputType(cf, assemblerInputType);
+	private static ITool getLlvmFrontEnd(IConfiguration cf) {
+		//get LLVM front-end according to the input type
+		for(int i=0; i<inputTypes.length; i++) {
+			ITool tool = getIToolByInputType(cf, inputTypes[i]);
+			if (tool != null) {
+				return tool;
+			}
+		}
+		return null;
 	}
 	
 	/**
@@ -577,15 +637,29 @@ public class LlvmToolOptionPathUtil {
 		return cf.getToolFromInputExtension(ext);
 	}
 	
+//	/**
+//	 * Returns LLVM Assembler Include path Option type.
+//	 * 
+//	 * @param cf IConfiguration Project build configuration
+//	 * @return IOption Tool option type
+//	 */
+//	private static IOption getLlvmAssemblerIncludePathOption(IConfiguration cf) {
+//		//get llvm assembler
+//		ITool cfTool = getLlvmAssembler(cf);
+//		//get option id for include paths
+//		String includeOptionId = getOptionId(cfTool, IOption.INCLUDE_PATH);
+//		return getIToolPathOption(cfTool, includeOptionId);
+//	}
+	
 	/**
-	 * Returns LLVM Assembler Include path Option type.
+	 * Returns LLVM front-end Include path Option type.
 	 * 
 	 * @param cf IConfiguration Project build configuration
 	 * @return IOption Tool option type
 	 */
-	private static IOption getLlvmAssemblerIncludePathOption(IConfiguration cf) {
-		//get ITool associated with the input extension
-		ITool cfTool = cf.getToolFromInputExtension(assemblerInputType);
+	private static IOption getLlvmFrontEndIncludePathOption(IConfiguration cf) {
+		//get llvm front-end
+		ITool cfTool = getLlvmFrontEnd(cf);
 		//get option id for include paths
 		String includeOptionId = getOptionId(cfTool, IOption.INCLUDE_PATH);
 		return getIToolPathOption(cfTool, includeOptionId);
@@ -598,8 +672,8 @@ public class LlvmToolOptionPathUtil {
 	 * @return IOption Tool option type
 	 */
 	private static IOption getLlvmLinkerLibrariesOption(IConfiguration cf) {
-		//get ITool associated with the input extension
-		ITool cfTool = cf.getToolFromInputExtension(linkerInputType);
+		//get llvm linker
+		ITool cfTool = getLlvmLinker(cf);
 		//get option id for libraries
 		String libOptionId = getOptionId(cfTool, IOption.LIBRARIES);
 		return getIToolPathOption(cfTool, libOptionId);
