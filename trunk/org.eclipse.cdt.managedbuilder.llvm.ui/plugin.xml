@@ -1095,7 +1095,7 @@
             osList="all"
             secondaryOutputs="cdt.managedbuild.tool.llvm.c.linker.output.exe.bc"
             superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.c.linker.base; cdt.managedbuild.tool.llvm.cpp.linker.base">
+            targetTool="cdt.managedbuild.tool.llvm.cpp.linker.base;cdt.managedbuild.tool.llvm.c.linker.base">
          <tool
                id="cdt.managedbuild.tool.llvm.c.linker.base"
                isAbstract="true"
@@ -1142,8 +1142,7 @@
             id="cdt.managedbuild.toolchain.llvm.clang.base"
             isAbstract="true"
             name="%ToolChainName.llvm.clang"
-            superClass="cdt.managedbuild.toolchain.llvm.with.linker.base"
-            targetTool="cdt.managedbuild.tool.llvm.c.compiler.base;cdt.managedbuild.tool.llvm.cpp.compiler.base">
+            superClass="cdt.managedbuild.toolchain.llvm.with.linker.base">
          <tool
                id="cdt.managedbuild.tool.llvm.c.compiler.base"
                isAbstract="true"
@@ -1210,8 +1209,7 @@
             id="cdt.managedbuild.toolchain.llvm.gnu.base"
             isAbstract="true"
             name="%ToolChainName.llvm.gnu"
-            superClass="cdt.managedbuild.toolchain.llvm.with.linker.base"
-            targetTool="cdt.managedbuild.tool.llvm.gnu.c.compiler.base;cdt.managedbuild.tool.llvm.gnu.cpp.compiler.base">
+            superClass="cdt.managedbuild.toolchain.llvm.with.linker.base">
          <tool
                id="cdt.managedbuild.tool.llvm.gnu.c.compiler.base"
                isAbstract="true"
