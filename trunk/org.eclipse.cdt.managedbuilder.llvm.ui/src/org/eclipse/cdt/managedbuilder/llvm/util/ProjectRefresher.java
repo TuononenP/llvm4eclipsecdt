@@ -26,7 +26,7 @@ public class ProjectRefresher implements IResourceChangeListener {
 	 */
 	public void resourceChanged(IResourceChangeEvent event) {
 
-		if (event.getType() == IResourceChangeEvent.POST_BUILD) {
+		if (event.getType() == IResourceChangeEvent.POST_BUILD) { //refresh every project after build
 			//get all projects
 			IProject[] projects = LlvmToolOptionPathUtil.getProjectsInWorkspace();
 
@@ -38,6 +38,15 @@ public class ProjectRefresher implements IResourceChangeListener {
 					e.printStackTrace();
 				}
 			}
+		} else if (event.getType() == IResourceChangeEvent.PRE_BUILD) {
+		/*
+		 * try to add values (include and library paths and libraries) to
+		 * projects's build configurations to ensure that newly added projects
+		 * have necessary paths.
+		 */
+		LlvmToolOptionPathUtil.addAllIncludesToBuildConf();
+		LlvmToolOptionPathUtil.addAllLibsToBuildConf();
+		LlvmToolOptionPathUtil.addAllLibPathsToBuildConf();
 		} else {
 			return;
 		}
