@@ -1060,7 +1060,8 @@
             id="cdt.managedbuild.toolchain.llvm.base"
             isAbstract="true"
             isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
-            name="%ToolChainName.llvm">
+            name="%ToolChainName.llvm"
+            osList="all">
          <builder
                id="cdt.managedbuild.target.llvm.builder.base"
                isAbstract="true"
@@ -1158,6 +1159,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.clang.linux.base"
+            isAbstract="false"
             name="%ToolChainName.llvm.linux"
             osList="linux,hpux,aix,qnx"
             superClass="cdt.managedbuild.toolchain.llvm.clang.base">
@@ -1173,6 +1175,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.clang.macosx.base"
+            isAbstract="false"
             name="%ToolChainName.llvm.macosx"
             osList="macosx"
             superClass="cdt.managedbuild.toolchain.llvm.clang.base">
@@ -1189,6 +1192,7 @@
             archList="all"
             configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.clang.win32.base"
+            isAbstract="false"
             name="%ToolChainName.llvm.win32"
             osList="win32"
             superClass="cdt.managedbuild.toolchain.llvm.clang.base">
@@ -1222,6 +1226,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.gnu.linux.base"
+            isAbstract="false"
             name="%ToolChainName.llvm.gnu.linux"
             osList="linux,hpux,aix,qnx"
             superClass="cdt.managedbuild.toolchain.llvm.gnu.base">
@@ -1237,6 +1242,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.gnu.macosx.base"
+            isAbstract="false"
             name="%ToolChainName.llvm.gnu.macosx"
             osList="macosx"
             superClass="cdt.managedbuild.toolchain.llvm.gnu.base">
@@ -1253,6 +1259,7 @@
             archList="all"
             configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.cygwin.GnuCygwinConfigurationEnvironmentSupplier"
             id="cdt.managedbuild.toolchain.llvm.gnu.win32.cygwin.base"
+            isAbstract="false"
             isToolChainSupported="org.eclipse.cdt.managedbuilder.gnu.cygwin.IsGnuCygwinToolChainSupported"
             name="%ToolChainName.llvm.gnu.win32.cygwin"
             osList="win32"
@@ -1270,6 +1277,7 @@
             archList="all"
             configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.gnu.win32.mingw.base"
+            isAbstract="false"
             isToolChainSupported="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwIsToolChainSupported"
             name="%ToolChainName.llvm.gnu.win32.mingw"
             osList="win32"
@@ -1285,10 +1293,8 @@
       </toolChain>
       <toolChain
             archList="all"
-            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.with.static.compiler.base"
             isAbstract="true"
-            isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm.with.static.compiler"
             osList="all"
             superClass="cdt.managedbuild.toolchain.llvm.base"
@@ -1304,7 +1310,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.static.compiler.linux.base"
-            isAbstract="true"
+            isAbstract="false"
             name="%ToolChainName.llvm.static.compiler.linux"
             osList="linux,hpux,aix,qnx"
             superClass="cdt.managedbuild.toolchain.llvm.with.static.compiler.base">
@@ -1320,6 +1326,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.static.compiler.macosx.base"
+            isAbstract="false"
             name="%ToolChainName.llvm.static.compiler.macosx"
             osList="macosx"
             superClass="cdt.managedbuild.toolchain.llvm.with.static.compiler.base">
@@ -1334,7 +1341,10 @@
       </toolChain>
       <toolChain
             archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.static.compiler.win32.base"
+            isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwIsToolChainSupported"
             name="%ToolChainName.llvm.static.compiler.win32"
             osList="win32"
             superClass="cdt.managedbuild.toolchain.llvm.with.static.compiler.base">
@@ -1349,10 +1359,8 @@
       </toolChain>
       <toolChain
             archList="all"
-            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.jit.base"
             isAbstract="true"
-            isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm.jit"
             osList="all"
             superClass="cdt.managedbuild.toolchain.llvm.base"
@@ -1368,6 +1376,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.jit.linux.base"
+            isAbstract="false"
             name="%ToolChainName.llvm.jit.linux"
             osList="linux,hpux,aix,qnx"
             superClass="cdt.managedbuild.toolchain.llvm.jit.base">
@@ -1383,6 +1392,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.jit.macosx.base"
+            isAbstract="false"
             name="%ToolChainName.llvm.jit.macosx"
             osList="macosx"
             superClass="cdt.managedbuild.toolchain.llvm.jit.base">
@@ -1397,7 +1407,10 @@
       </toolChain>
       <toolChain
             archList="all"
+            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.jit.win32.base"
+            isAbstract="false"
+            isToolChainSupported="org.eclipse.cdt.managedbuilder.gnu.mingw.MingwIsToolChainSupported"
             name="%ToolChainName.llvm.jit.win32"
             osList="win32"
             superClass="cdt.managedbuild.toolchain.llvm.jit.base">
