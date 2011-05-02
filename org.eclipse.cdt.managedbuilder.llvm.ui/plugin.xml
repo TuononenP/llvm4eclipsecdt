@@ -4611,7 +4611,6 @@
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
-         <open></open>
          <scannerInfoConsoleParser
                class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
