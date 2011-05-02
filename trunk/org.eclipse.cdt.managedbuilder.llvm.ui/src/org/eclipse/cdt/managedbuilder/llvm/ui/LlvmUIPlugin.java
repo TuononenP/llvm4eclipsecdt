@@ -18,7 +18,8 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 import org.eclipse.cdt.managedbuilder.llvm.util.ProjectRefresher;
-import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IStatus;
@@ -59,8 +60,9 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 		super();
 		plugin = this;
 		//add resource change listener to the workspace
-		IWorkspace ws = ResourcesPlugin.getWorkspace();
-		ws.addResourceChangeListener(new ProjectRefresher());
+		IResourceChangeListener listener = new ProjectRefresher();
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(
+				listener, IResourceChangeEvent.POST_BUILD);
 	}
 
 	/*
