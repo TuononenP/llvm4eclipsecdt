@@ -115,7 +115,7 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static void addPathToToolOption(String path, int var) {
 		//check if the given path exists
-		if (pathExists(path) || var==LIB) {
+		if (path.length()>0 && pathExists(path)) {
 			boolean success = false;
 			//get all projects in the workspace
 			IProject[] projects = getProjectsInWorkspace();
@@ -151,7 +151,7 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static void removePathFromToolOption(String path, int var) {
 		//check if the given path exists
-		if (pathExists(path) || var==LIB) {
+		if (path.length()>0 && pathExists(path)) {
 			boolean success = false;
 			//get all projects in the workspace
 			IProject[] projects = getProjectsInWorkspace();
