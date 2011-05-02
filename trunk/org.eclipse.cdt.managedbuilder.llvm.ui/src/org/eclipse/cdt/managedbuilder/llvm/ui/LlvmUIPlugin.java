@@ -17,6 +17,9 @@ import java.util.MissingResourceException;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
+import org.eclipse.cdt.managedbuilder.llvm.util.ProjectRefresher;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
@@ -55,6 +58,9 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	public LlvmUIPlugin() {
 		super();
 		plugin = this;
+		//add resource change listener to the workspace
+		IWorkspace ws = ResourcesPlugin.getWorkspace();
+		ws.addResourceChangeListener(new ProjectRefresher());
 	}
 
 	/*
