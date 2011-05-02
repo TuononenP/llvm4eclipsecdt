@@ -277,8 +277,8 @@ public class LlvmToolOptionPathUtil {
 			//get LLVM front-end Include paths option.
 			IOption llvmFrontEndIncPathOption = getLlvmFrontEndIncludePathOption(cf);
 			//add a new include path to front-end's Include paths option.
-			addIncludePathToToolOption(cf, llvmFrontEnd, llvmFrontEndIncPathOption, newIncludePath);
-			return true;
+			boolean val = addIncludePathToToolOption(cf, llvmFrontEnd, llvmFrontEndIncPathOption, newIncludePath);
+			return val;
 		} 
 		return false;
 	}
@@ -358,8 +358,8 @@ public class LlvmToolOptionPathUtil {
 			//get LLVM Linker Libraries option
 			IOption librariesOption = getLlvmLinkerLibrariesOption(cf);
 			//add library to LLVM linker's Libraries Option type
-			addLibraryToToolOption(cf, llvmLinker, librariesOption, lib);
-			return true;
+			boolean val = addLibraryToToolOption(cf, llvmLinker, librariesOption, lib);
+			return val;
 		} 
 		//adding the library failed
 		return false;
@@ -402,8 +402,8 @@ public class LlvmToolOptionPathUtil {
 			//get LLVM Linker Library search path option
 			IOption libDirOption = getLlvmLinkerLibrarySearchPathOption(cf);
 			//add library search path to LLVM linker's Library Search Path Option type
-			addLibrarySearchPathToToolOption(cf, llvmLinker, libDirOption, libDir);
-			return true;
+			boolean val = addLibrarySearchPathToToolOption(cf, llvmLinker, libDirOption, libDir);
+			return val;
 		} 
 		//adding library failed
 		return false;
@@ -439,14 +439,22 @@ public class LlvmToolOptionPathUtil {
 	 * @param option Tool Option type
 	 * @param newIncludePath Include path to be added to Tool's Include path option
 	 */
-	private static void addIncludePathToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newIncludePath) {
+	private static boolean addIncludePathToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newIncludePath) {
 		try {
+			//add path only if it does not exists
+			String[] incPaths = option.getIncludePaths();
+			for (String inc : incPaths) {
+				if (inc.equalsIgnoreCase(newIncludePath)) {
+					return false;
+				}
+			}
 			//add a new include path to linker's Include paths option.
-			addInputToToolOption(cf, cfTool, option, newIncludePath, option.getIncludePaths());
+			addInputToToolOption(cf, cfTool, option, newIncludePath, incPaths);
 		} catch (BuildException e) {
 			//show error
 			e.printStackTrace();
 		}
+		return true;
 	}
 
 	/**
@@ -475,14 +483,22 @@ public class LlvmToolOptionPathUtil {
 	 * @param option Tool Option type
 	 * @param newLibrary Library
 	 */
-	private static void addLibraryToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newLibrary) {
+	private static boolean addLibraryToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newLibrary) {
 		try {
+			//add library only if it does not exists
+			String[] libraries = option.getLibraries();
+			for (String lib : libraries) {
+				if (lib.equalsIgnoreCase(newLibrary)) {
+					return false;
+				}
+			}
 			//add a new library to linker's Libraries option.
-			addInputToToolOption(cf, cfTool, option, newLibrary, option.getLibraries());
+			addInputToToolOption(cf, cfTool, option, newLibrary, libraries);
 		} catch (BuildException e) {
 			//show error
 			e.printStackTrace();
 		}
+		return true;
 	}
 
 	/**
@@ -510,16 +526,24 @@ public class LlvmToolOptionPathUtil {
 	 * @param cf IConfiguration Build configuration
 	 * @param cfTool ITool Tool
 	 * @param option Tool Option type
-	 * @param newSearchPath Library search path
+	 * @param newLibraryPath Library search path
 	 */
-	private static void addLibrarySearchPathToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newSearchPath) {
+	private static boolean addLibrarySearchPathToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newLibraryPath) {
 		try {
+			//add path only if it does not exists
+			String[] libPaths = option.getLibraryPaths();
+			for (String libPath : libPaths) {
+				if (libPath.equalsIgnoreCase(newLibraryPath)) {
+					return false;
+				}
+			}
 			//add a new library path to linker's Library search path option.
-			addInputToToolOption(cf, cfTool, option, newSearchPath, option.getLibraryPaths());
+			addInputToToolOption(cf, cfTool, option, newLibraryPath, libPaths);
 		} catch (BuildException e) {
 			//show error
 			e.printStackTrace();
 		}
+		return true;
 	}
 
 	/**
