@@ -22,6 +22,7 @@ import org.eclipse.cdt.managedbuilder.core.IManagedProject;
 import org.eclipse.cdt.managedbuilder.core.IOption;
 import org.eclipse.cdt.managedbuilder.core.ITool;
 import org.eclipse.cdt.managedbuilder.core.ManagedBuildManager;
+import org.eclipse.cdt.managedbuilder.llvm.ui.preferences.LlvmPreferenceStore;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -34,16 +35,16 @@ import org.eclipse.core.resources.ResourcesPlugin;
  * 
  */
 public class LlvmToolOptionPathUtil {
-	
+
 	//tool input extensions
-//	private static final String assemblerInputType = "ll"; //$NON-NLS-1$
+	//	private static final String assemblerInputType = "ll"; //$NON-NLS-1$
 	private static final String linkerInputType = "bc"; //$NON-NLS-1$
 	private static final String[] inputTypes = {"c", "cpp"};  //$NON-NLS-1$ //$NON-NLS-2$
 	//tool option values
 	public static final int INCLUDE = 1;
 	public static final int LIB = 2;
 	public static final int LIB_PATH = 3;
-	
+
 	/**
 	 * Adds new include path to LLVM Assembler's Include path option for every project
 	 * in the workspace that use LLVM Toolchain and for for every build configuration. 
@@ -63,7 +64,7 @@ public class LlvmToolOptionPathUtil {
 	public static void removeLlvmIncludePath(String includePath) {
 		removePathFromToolOption(includePath, INCLUDE);
 	}
-	
+
 	/**
 	 * Adds a new Library to LLVM linker's Libraries Option for every project
 	 * in the workspace that use LLVM Toolchain and for for every build configuration.
@@ -83,7 +84,7 @@ public class LlvmToolOptionPathUtil {
 	public static void removeLlvmLib(String lib) {
 		removePathFromToolOption(lib, LIB);
 	}
-	
+
 	/**
 	 * Adds a new Library search path directory to LLVM linker's Library search path Option
 	 * for every project in the workspace that use LLVM Toolchain and for for every
@@ -91,7 +92,7 @@ public class LlvmToolOptionPathUtil {
 	 * 
 	 * @param libDir Library search path directory for LLVM linker's Library search path Option
 	 */
-	public static void addLlvmLibSearchPath(String libDir) {
+	public static void addLlvmLibraryPath(String libDir) {
 		addPathToToolOption(libDir, LIB_PATH);
 	}
 
@@ -102,10 +103,10 @@ public class LlvmToolOptionPathUtil {
 	 * 
 	 * @param libDir Library search path directory for LLVM linker's Library search path Option
 	 */	
-	public static void removeLlvmLibSearchPath(String libDir) {
+	public static void removeLlvmLibraryPath(String libDir) {
 		removePathFromToolOption(libDir, LIB_PATH);
 	}
-	
+
 	/**
 	 * Adds a path to Tool option.
 	 * 
@@ -141,7 +142,7 @@ public class LlvmToolOptionPathUtil {
 			}			
 		}
 	}
-	
+
 	/**
 	 * Removes a path from Tool option.
 	 * 
@@ -177,7 +178,7 @@ public class LlvmToolOptionPathUtil {
 			}			
 		}
 	}
-	
+
 	/**
 	 * Add a path to specific build configuration's Tool option. 
 	 * 
@@ -219,7 +220,7 @@ public class LlvmToolOptionPathUtil {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Returns all projects in the workspace.
 	 * 
@@ -231,7 +232,7 @@ public class LlvmToolOptionPathUtil {
 		//get all projects in the workspace
 		return root.getRoot().getProjects();
 	}
-	
+
 	/**
 	 * Returns all build configurations of the project.
 	 * 
@@ -261,7 +262,7 @@ public class LlvmToolOptionPathUtil {
 		configurations = mProj.getConfigurations();
 		return configurations;
 	}
-	
+
 	/**
 	 * Adds an include path to LLVM front-end's include path option.
 	 * 
@@ -301,47 +302,47 @@ public class LlvmToolOptionPathUtil {
 		} 
 		return false;
 	}
-	
-//	/**
-//	 * Adds an include path to LLVM assembler's include path option.
-//	 * 
-//	 * @param cf IConfiguration Build configuration
-//	 * @param newIncludePath Include path to be added to LLVM assembler's Include path option
-//	 */
-//	private static boolean addLlvmIncludePathToToolOption(IConfiguration cf, String newIncludePath) {
-//		//get LLVM assembler
-//		ITool llvmAsm = getLlvmAssembler(cf);
-//		//If the LLVM assembler is found from the given build configuration
-//		if (llvmAsm != null) {
-//			//get LLVM assembler Include paths option.
-//			IOption llvmAsmIncPathOption = getLlvmAssemblerIncludePathOption(cf);
-//			//add a new include path to assembler's Include paths option.
-//			addIncludePathToToolOption(cf, llvmAsm, llvmAsmIncPathOption, newIncludePath);
-//			return true;
-//		} 
-//		return false;
-//	}
-//
-//	/**
-//	 * Removes an include path from LLVM assembler's include path option.
-//	 * 
-//	 * @param cf IConfiguration Build configuration
-//	 * @param removeIncludePath Include path to be removed from LLVM assembler's Include path option
-//	 */
-//	private static boolean removeLlvmIncludePathFromToolOption(IConfiguration cf, String removeIncludePath) {
-//		//get LLVM assembler
-//		ITool llvmAsm = getLlvmAssembler(cf);
-//		//If the LLVM assembler is found from the given build configuration
-//		if (llvmAsm != null) {
-//			//get LLVM assembler Include paths option.
-//			IOption llvmAsmIncPathOption = getLlvmAssemblerIncludePathOption(cf);
-//			//remove an include path from assembler's Include paths option.
-//			removeIncludePathFromToolOption(cf, llvmAsm, llvmAsmIncPathOption, removeIncludePath);
-//			return true;
-//		} 
-//		return false;
-//	}
-	
+
+	//	/**
+	//	 * Adds an include path to LLVM assembler's include path option.
+	//	 * 
+	//	 * @param cf IConfiguration Build configuration
+	//	 * @param newIncludePath Include path to be added to LLVM assembler's Include path option
+	//	 */
+	//	private static boolean addLlvmIncludePathToToolOption(IConfiguration cf, String newIncludePath) {
+	//		//get LLVM assembler
+	//		ITool llvmAsm = getLlvmAssembler(cf);
+	//		//If the LLVM assembler is found from the given build configuration
+	//		if (llvmAsm != null) {
+	//			//get LLVM assembler Include paths option.
+	//			IOption llvmAsmIncPathOption = getLlvmAssemblerIncludePathOption(cf);
+	//			//add a new include path to assembler's Include paths option.
+	//			addIncludePathToToolOption(cf, llvmAsm, llvmAsmIncPathOption, newIncludePath);
+	//			return true;
+	//		} 
+	//		return false;
+	//	}
+	//
+	//	/**
+	//	 * Removes an include path from LLVM assembler's include path option.
+	//	 * 
+	//	 * @param cf IConfiguration Build configuration
+	//	 * @param removeIncludePath Include path to be removed from LLVM assembler's Include path option
+	//	 */
+	//	private static boolean removeLlvmIncludePathFromToolOption(IConfiguration cf, String removeIncludePath) {
+	//		//get LLVM assembler
+	//		ITool llvmAsm = getLlvmAssembler(cf);
+	//		//If the LLVM assembler is found from the given build configuration
+	//		if (llvmAsm != null) {
+	//			//get LLVM assembler Include paths option.
+	//			IOption llvmAsmIncPathOption = getLlvmAssemblerIncludePathOption(cf);
+	//			//remove an include path from assembler's Include paths option.
+	//			removeIncludePathFromToolOption(cf, llvmAsm, llvmAsmIncPathOption, removeIncludePath);
+	//			return true;
+	//		} 
+	//		return false;
+	//	}
+
 	/**
 	 * Adds a Library to LLVM linker's Libraries Option.
 	 * 
@@ -363,7 +364,7 @@ public class LlvmToolOptionPathUtil {
 		//adding the library failed
 		return false;
 	}
-	
+
 	/**
 	 * Removes a Library from LLVM linker's Libraries Option.
 	 * 
@@ -385,7 +386,7 @@ public class LlvmToolOptionPathUtil {
 		//removing the library failed
 		return false;
 	}
-	
+
 	/**
 	 * Adds a Library search path to LLVM linker's Library search path Option.
 	 * 
@@ -429,7 +430,7 @@ public class LlvmToolOptionPathUtil {
 		//removing the library search path failed
 		return false;
 	}
-	
+
 	/**
 	 * Adds include path for given Build configuration's Tool's Include path Option.
 	 * 
@@ -465,7 +466,7 @@ public class LlvmToolOptionPathUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Adds new Library for the Linker's Libraries Option.
 	 * 
@@ -501,7 +502,7 @@ public class LlvmToolOptionPathUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	//Works only if Eclipse Bugzilla Bug 321040 fix is applied
 	/**
 	 * Adds new Library search path for the Linker's Library search path Option.
@@ -539,7 +540,7 @@ public class LlvmToolOptionPathUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Adds a new value to specific Option.
 	 * 
@@ -561,7 +562,7 @@ public class LlvmToolOptionPathUtil {
 			//log error
 		}
 	}
-	
+
 	/**
 	 * Removes a value from a specific Option.
 	 * 
@@ -586,18 +587,18 @@ public class LlvmToolOptionPathUtil {
 			//log error
 		}
 	}
-	
-//	/**
-//	 * Returns LLVM assembler.
-//	 * 
-//	 * @param cf IConfiguration Build configuration
-//	 * @return ITool LLVM assembler
-//	 */
-//	private static ITool getLlvmAssembler(IConfiguration cf) {
-//		//get LLVM assembler
-//		return getIToolByInputType(cf, assemblerInputType);
-//	}
-	
+
+	//	/**
+	//	 * Returns LLVM assembler.
+	//	 * 
+	//	 * @param cf IConfiguration Build configuration
+	//	 * @return ITool LLVM assembler
+	//	 */
+	//	private static ITool getLlvmAssembler(IConfiguration cf) {
+	//		//get LLVM assembler
+	//		return getIToolByInputType(cf, assemblerInputType);
+	//	}
+
 	/**
 	 * Return LLVM front-end according to the input type.
 	 * @param cf IConfiguration Build configuration
@@ -613,7 +614,7 @@ public class LlvmToolOptionPathUtil {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Returns LLVM linker.
 	 * 
@@ -624,7 +625,7 @@ public class LlvmToolOptionPathUtil {
 		//get LLVM linker
 		return getIToolByInputType(cf, linkerInputType);
 	}
-	
+
 	/**
 	 * Returns ITool associated with the input extension.
 	 * 
@@ -636,21 +637,21 @@ public class LlvmToolOptionPathUtil {
 		//get ITool associated with the input extension
 		return cf.getToolFromInputExtension(ext);
 	}
-	
-//	/**
-//	 * Returns LLVM Assembler Include path Option type.
-//	 * 
-//	 * @param cf IConfiguration Project build configuration
-//	 * @return IOption Tool option type
-//	 */
-//	private static IOption getLlvmAssemblerIncludePathOption(IConfiguration cf) {
-//		//get llvm assembler
-//		ITool cfTool = getLlvmAssembler(cf);
-//		//get option id for include paths
-//		String includeOptionId = getOptionId(cfTool, IOption.INCLUDE_PATH);
-//		return getIToolPathOption(cfTool, includeOptionId);
-//	}
-	
+
+	//	/**
+	//	 * Returns LLVM Assembler Include path Option type.
+	//	 * 
+	//	 * @param cf IConfiguration Project build configuration
+	//	 * @return IOption Tool option type
+	//	 */
+	//	private static IOption getLlvmAssemblerIncludePathOption(IConfiguration cf) {
+	//		//get llvm assembler
+	//		ITool cfTool = getLlvmAssembler(cf);
+	//		//get option id for include paths
+	//		String includeOptionId = getOptionId(cfTool, IOption.INCLUDE_PATH);
+	//		return getIToolPathOption(cfTool, includeOptionId);
+	//	}
+
 	/**
 	 * Returns LLVM front-end Include path Option type.
 	 * 
@@ -664,7 +665,7 @@ public class LlvmToolOptionPathUtil {
 		String includeOptionId = getOptionId(cfTool, IOption.INCLUDE_PATH);
 		return getIToolPathOption(cfTool, includeOptionId);
 	}
-	
+
 	/**
 	 * Returns LLVM Linker Libraries Option type.
 	 * 
@@ -678,7 +679,7 @@ public class LlvmToolOptionPathUtil {
 		String libOptionId = getOptionId(cfTool, IOption.LIBRARIES);
 		return getIToolPathOption(cfTool, libOptionId);
 	}
-	
+
 	/**
 	 * Returns LLVM Linker Library search path Option type.
 	 * 
@@ -692,7 +693,7 @@ public class LlvmToolOptionPathUtil {
 		String libDirOptionId = getOptionId(cfTool, IOption.LIBRARY_PATHS);
 		return getIToolPathOption(cfTool, libDirOptionId);
 	}
-	
+
 	/**
 	 * Returns Tool's option id.
 	 * 
@@ -718,7 +719,7 @@ public class LlvmToolOptionPathUtil {
 		}	
 		return optionId;
 	}
-	
+
 	/**
 	 * Returns Tool's Option type by Id.
 	 * 
@@ -730,7 +731,7 @@ public class LlvmToolOptionPathUtil {
 		//get path option with specific id for the ITool
 		return cfTool.getOptionById(optionId);
 	}
-	
+
 	/**
 	 * Adds one or more paths to the list of paths.
 	 * 
@@ -758,7 +759,7 @@ public class LlvmToolOptionPathUtil {
 		String[] newArray = newPathList.toArray(new String[0]);
 		return newArray;
 	}
-	
+
 	/**
 	 * Removes one path from the list of paths.
 	 * 
@@ -779,7 +780,7 @@ public class LlvmToolOptionPathUtil {
 		String[] newArray = newPathList.toArray(new String[0]);
 		return newArray;
 	}
-	
+
 	/**
 	 * Split paths to a String array.
 	 * 
@@ -789,7 +790,7 @@ public class LlvmToolOptionPathUtil {
 	public static String[] stringToArray(String str) {
 		return str.split(System.getProperty("path.separator")); //$NON-NLS-1$
 	}
-	
+
 	/**
 	 * Append an array of Strings to a String separated by a path separator.
 	 * 
@@ -818,5 +819,77 @@ public class LlvmToolOptionPathUtil {
 		//return true if path exists.
 		return new File(path).exists();
 	}
+
+	/**
+	 * Get all include paths in a String array.
+	 * 
+	 * @return String[] A String array of include paths
+	 */
+	private static String[] getAllIncludePaths() {
+		//get all include paths
+		String includePathList = LlvmPreferenceStore.getIncludePath();
+		//split paths to String array
+		String[] incPaths = includePathList.split(Separators.getPathSeparator());
+		return incPaths;
+	}
+
+	/**
+	 * Get all libraries in a String array.
+	 * 
+	 * @return String[] A String array of libraries
+	 */
+	private static String[] getAllLibraries() {
+		//get all libraries
+		String libList = LlvmPreferenceStore.getLibraries();
+		//split values to String array
+		String[] libs = libList.split(Separators.getPathSeparator());
+		return libs;
+	}
+
+	/**
+	 * Get all library paths in a String array.
+	 * 
+	 * @return String[] A String array of library paths
+	 */
+	private static String[] getAllLibraryPaths() {
+		//get all library paths
+		String libPathList = LlvmPreferenceStore.getLibraryPath();
+		//split paths to String array
+		String[] libPaths = libPathList.split(Separators.getPathSeparator());
+		return libPaths;
+	}
 	
+	/**
+	 * Add all include paths found in LLVM preference page to
+	 * every project's build configurations.
+	 */
+	public static void addAllIncludesToBuildConf() {
+		String[] includes = getAllIncludePaths();
+		for(String inc : includes) {
+			addLlvmIncludePath(inc);			
+		}
+	}
+	
+	/**
+	 * Add all libraries found in LLVM preference page to
+	 * every project's build configurations.
+	 */
+	public static void addAllLibsToBuildConf() {
+		String[] libs = getAllLibraries();
+		for(String lib : libs) {
+			addLlvmLib(lib);			
+		}
+	}
+	
+	/**
+	 * Add all library paths found in LLVM preference page to
+	 * every project's build configurations. 
+	 */
+	public static void addAllLibPathsToBuildConf() {
+		String[] libPaths = getAllLibraryPaths();
+		for(String libPath : libPaths) {
+			addLlvmLibraryPath(libPath);			
+		}
+	}
+
 }
