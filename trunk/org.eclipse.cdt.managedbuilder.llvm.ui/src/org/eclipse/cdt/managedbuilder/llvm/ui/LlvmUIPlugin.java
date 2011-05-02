@@ -63,8 +63,8 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 		IResourceChangeListener listener = new ProjectRefresher();
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(
 				listener, IResourceChangeEvent.POST_BUILD);
-//		ResourcesPlugin.getWorkspace().addResourceChangeListener(
-//				listener, IResourceChangeEvent.PRE_BUILD);
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(
+				listener, IResourceChangeEvent.PRE_BUILD);
 	}
 
 	/*
