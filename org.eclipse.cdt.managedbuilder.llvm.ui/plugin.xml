@@ -1088,15 +1088,13 @@
       </toolChain>
       <toolChain
             archList="all"
-            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.with.linker.base"
             isAbstract="true"
-            isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm.with.linker"
             osList="all"
             secondaryOutputs="cdt.managedbuild.tool.llvm.c.linker.output.exe.bc"
             superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.cpp.linker;cdt.managedbuild.tool.llvm.c.linker;cdt.managedbuild.tool.llvm.archiver">
+            targetTool="cdt.managedbuild.tool.llvm.c.linker.base; cdt.managedbuild.tool.llvm.cpp.linker.base">
          <tool
                id="cdt.managedbuild.tool.llvm.c.linker.base"
                isAbstract="true"
@@ -1140,7 +1138,6 @@
          </tool>
       </toolChain>      
       <toolChain
-            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.clang.base"
             isAbstract="true"
             name="%ToolChainName.llvm.clang"
@@ -1205,7 +1202,6 @@
          </targetPlatform>
       </toolChain>
       <toolChain
-            configurationEnvironmentSupplier="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier"
             id="cdt.managedbuild.toolchain.llvm.gnu.base"
             isAbstract="true"
             name="%ToolChainName.llvm.gnu"
@@ -1296,7 +1292,7 @@
             name="%ToolChainName.llvm.with.static.compiler"
             osList="all"
             superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.llc;cdt.managedbuild.tool.llvm.archiver">
+            targetTool="cdt.managedbuild.tool.llvm.llc.base">
          <tool
                id="cdt.managedbuild.tool.llvm.llc.base"
                isAbstract="true"
@@ -1308,6 +1304,7 @@
       <toolChain
             archList="all"
             id="cdt.managedbuild.toolchain.llvm.static.compiler.linux.base"
+            isAbstract="true"
             name="%ToolChainName.llvm.static.compiler.linux"
             osList="linux,hpux,aix,qnx"
             superClass="cdt.managedbuild.toolchain.llvm.with.static.compiler.base">
@@ -1359,7 +1356,7 @@
             name="%ToolChainName.llvm.jit"
             osList="all"
             superClass="cdt.managedbuild.toolchain.llvm.base"
-            targetTool="cdt.managedbuild.tool.llvm.lli;cdt.managedbuild.tool.llvm.archiver">
+            targetTool="cdt.managedbuild.tool.llvm.lli.base">
          <tool
                id="cdt.managedbuild.tool.llvm.lli.base"
                isAbstract="true"
