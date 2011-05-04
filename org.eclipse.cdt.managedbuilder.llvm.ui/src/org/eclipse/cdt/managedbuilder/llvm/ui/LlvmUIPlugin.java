@@ -62,9 +62,6 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	public LlvmUIPlugin() {
 		super();
 		plugin = this;
-		//add resource change listener to the workspace
-		ResourcesPlugin.getWorkspace().addResourceChangeListener(
-				this.listener, IResourceChangeEvent.PRE_BUILD);
 	}
 
 	/*
@@ -75,9 +72,11 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		//add resource change listener to the workspace
+		//add resource change listeners to the workspace TODO: Doesn't accept two
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(
-				this.listener, IResourceChangeEvent.POST_BUILD);
+				this.listener, IResourceChangeEvent.PRE_BUILD);
+//		ResourcesPlugin.getWorkspace().addResourceChangeListener(
+//				this.listener, IResourceChangeEvent.POST_BUILD);
 	}
 
 	/*
