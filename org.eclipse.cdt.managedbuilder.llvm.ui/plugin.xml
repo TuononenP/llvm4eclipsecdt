@@ -1061,7 +1061,8 @@
             isAbstract="true"
             isToolChainSupported="org.eclipse.cdt.managedbuilder.llvm.ui.LlvmIsToolChainSupported"
             name="%ToolChainName.llvm"
-            osList="all">
+            osList="all"
+            targetTool="cdt.managedbuild.tool.llvm.archiver">
          <builder
                id="cdt.managedbuild.target.llvm.builder.base"
                isAbstract="true"

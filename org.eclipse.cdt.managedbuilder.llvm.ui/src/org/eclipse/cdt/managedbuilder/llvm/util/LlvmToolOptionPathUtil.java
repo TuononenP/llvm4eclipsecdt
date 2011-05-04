@@ -189,11 +189,11 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static boolean addPathToSelectedToolOptionBuildConf(IConfiguration cf, String path, int var) {
 		switch (var) {
-		case 1:
+		case INCLUDE:
 			return addLlvmIncludePathToToolOption(cf, path);
-		case 2:
+		case LIB:
 			return addLlvmLibToToolOption(cf, path);
-		case 3:
+		case LIB_PATH:
 			return addLlvmLibSearchPathToToolOption(cf, path);
 		default:
 			return false;
@@ -210,11 +210,11 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static boolean removePathFromSelectedToolOptionBuildConf(IConfiguration cf, String path, int var) {
 		switch (var) {
-		case 1:
+		case INCLUDE:
 			return removeLlvmIncludePathFromToolOption(cf, path);
-		case 2:
+		case LIB:
 			return removeLlvmLibFromToolOption(cf, path);
-		case 3:
+		case LIB_PATH:
 			return removeLlvmLibSearchPathFromToolOption(cf, path);
 		default:
 			return false;
