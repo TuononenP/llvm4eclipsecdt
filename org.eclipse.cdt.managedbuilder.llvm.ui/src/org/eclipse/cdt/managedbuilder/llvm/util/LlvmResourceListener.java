@@ -17,7 +17,7 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.runtime.CoreException;
 
-public class ProjectRefresher implements IResourceChangeListener {
+public class LlvmResourceListener implements IResourceChangeListener {
 
 	/**
 	 * Defines what happens when resources have changed.

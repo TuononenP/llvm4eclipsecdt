@@ -17,7 +17,7 @@ import java.util.MissingResourceException;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.eclipse.cdt.managedbuilder.llvm.util.ProjectRefresher;
+import org.eclipse.cdt.managedbuilder.llvm.util.LlvmResourceListener;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -54,7 +54,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	private PropertyResourceBundle properties;
 	
 	//Resource listener
-	private IResourceChangeListener listener = new ProjectRefresher();
+	private IResourceChangeListener listener = new LlvmResourceListener();
 	
 	/**
 	 * Constructor.
