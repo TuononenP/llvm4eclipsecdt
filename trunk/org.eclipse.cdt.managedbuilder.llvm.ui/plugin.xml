@@ -4638,7 +4638,6 @@
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
-         <open></open>
          <scannerInfoConsoleParser
                class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
@@ -4653,6 +4652,58 @@
          <scannerInfoConsoleParser
                class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"
                compilerCommands="clang">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="LLVMManagedMakePerProjectProfileCPP"
+         name="%extension.name"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="llvm-g++">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"
+               compilerCommands="llvm-gcc,llvm-g++">
+         </scannerInfoConsoleParser>
+      </scannerInfoProvider>
+   </extension>
+   <extension
+         id="LLVMManagedMakePerProjectProfileC"
+         name="%extension.name.0"
+         point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
+      <scannerInfoCollector
+            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
+            scope="project">
+      </scannerInfoCollector>
+      <buildOutputProvider>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
+         </scannerInfoConsoleParser>
+      </buildOutputProvider>
+      <scannerInfoProvider
+            providerId="specsFile">
+         <run
+               arguments="-E -P -v -dD ${plugin_state_location}/specs.c"
+               class="org.eclipse.cdt.make.internal.core.scannerconfig2.GCCSpecsRunSIProvider"
+               command="llvm-gcc">
+         </run>
+         <scannerInfoConsoleParser
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"
+               compilerCommands="llvm-gcc">
          </scannerInfoConsoleParser>
       </scannerInfoProvider>
    </extension>
