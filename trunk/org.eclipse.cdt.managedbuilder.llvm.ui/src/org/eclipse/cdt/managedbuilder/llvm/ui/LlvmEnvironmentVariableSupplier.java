@@ -23,6 +23,7 @@ import org.eclipse.cdt.managedbuilder.gnu.cygwin.GnuCygwinConfigurationEnvironme
 import org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier;
 import org.eclipse.cdt.managedbuilder.llvm.ui.preferences.LlvmPreferenceStore;
 import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 
 /**
@@ -56,7 +57,7 @@ public class LlvmEnvironmentVariableSupplier implements
 	/**
 	 * Initializes llvm environment variable paths from the system environment variables.
 	 */
-	private static void initializePaths() {
+	public static void initializePaths() { //TODO: Is this actually called anywhere?
 		//get bin path
 		String binPath = getBinPath();
 		//set LLVM bin path environment variable
@@ -90,6 +91,8 @@ public class LlvmEnvironmentVariableSupplier implements
 					if (mingwPath != null) {
 						//form full path
 						pathStr = pathStr + System.getProperty("path.separator") + mingwPath.getValue(); //$NON-NLS-1$
+						//add mingw stdc++ libary TODO: make it working
+//						pathStr = pathStr + System.getProperty("path.separator") + getMinGWStdLib(); //$NON-NLS-1$
 					}
 					//if cygwin found
 					if (cygwinPath != null) {
@@ -310,6 +313,26 @@ public class LlvmEnvironmentVariableSupplier implements
 			}
 		}
 		return null;
+	}
+	
+	/**
+	 * Get stdc++ library path located in MinGW installation.
+	 * 
+	 * @return stdc++ library path for MinGW
+	 */
+	protected static String getMinGWStdLib() {
+		//get mingw bin path
+		IPath mingwBinPath = MingwEnvironmentVariableSupplier.getBinDir();
+		StringBuilder sB = new StringBuilder(mingwBinPath.toOSString());
+		//drop bin
+		sB.delete(sB.length()-3, sB.length());
+		//append mingw lib subdir
+		sB.append("lib\\gcc\\mingw32\\"); //$NON-NLS-1$
+		//get all files in the directory
+		File f = new File(sB.toString());
+		//append the first dir
+		sB.append(f.list()[0]);	
+		return sB.toString();
 	}
 	
 	/**
