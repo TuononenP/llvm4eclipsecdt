@@ -17,6 +17,9 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.runtime.CoreException;
 
+/**
+ * Implements Resource listener.
+ */
 public class LlvmResourceListener implements IResourceChangeListener {
 
 	/**
