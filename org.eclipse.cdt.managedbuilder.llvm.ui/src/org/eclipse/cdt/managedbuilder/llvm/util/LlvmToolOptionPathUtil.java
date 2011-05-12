@@ -38,7 +38,7 @@ public class LlvmToolOptionPathUtil {
 
 	//tool input extensions
 	private static final String linkerInputType = "bc"; //$NON-NLS-1$
-	private static final String[] inputTypes = {"c", "cpp"};  //$NON-NLS-1$ //$NON-NLS-2$
+	private static final String[] inputTypes = {"cpp", "c"};  //$NON-NLS-1$ //$NON-NLS-2$
 	//tool option values
 	public static final int INCLUDE = 1;
 	public static final int LIB = 2;
