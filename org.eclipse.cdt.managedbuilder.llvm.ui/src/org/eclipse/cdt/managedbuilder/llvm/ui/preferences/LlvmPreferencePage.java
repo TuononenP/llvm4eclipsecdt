@@ -37,7 +37,7 @@ public class LlvmPreferencePage
 
 	/**
 	 * Constructor.
-	 * Sets a preference store to use the LLVM preference store.
+	 * Set preference page to use the LLVM preference store.
 	 */
 	public LlvmPreferencePage() {
 		setPreferenceStore(LlvmUIPlugin.getDefault().getPreferenceStore());
@@ -48,7 +48,6 @@ public class LlvmPreferencePage
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	public void init(IWorkbench workbench) {
-		// Nothing here.
 	}
 
 	@Override
