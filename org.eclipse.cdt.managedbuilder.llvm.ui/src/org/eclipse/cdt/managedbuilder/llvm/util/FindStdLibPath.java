@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Nokia Siemens Networks Oyj, Finland.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *      Nokia Siemens Networks - initial implementation
+ *      Petri Tuononen - Initial implementation
+ *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.util;
 
 import java.io.BufferedReader;
@@ -7,25 +18,37 @@ import java.lang.ProcessBuilder;
 
 /**
  * The purpose is to find a path where stdc++ library is located.
+ * Currently the shell script is only for Linux.
  * 
- * NOTE: The script file must have execution rights.
- *
+ * TODO: It might not be able to execute scripts therefore place the command into a variable.
  */
 public class FindStdLibPath {
 
-	private static final String SCRIPT = "scripts/stdlib_path.sh"; //$NON-NLS-1$
+	private static final String UNIX_SCRIPT = "scripts/stdlib_path.sh"; //$NON-NLS-1$
+	private static final String WIN_SCRIPT = "scripts/find_path.bat"; //$NON-NLS-1$
+	private static final String STD_LIB = "libstdc++.a"; //$NON-NLS-1$
 	
 	public static void main(String[] args) { //TODO: Remove after testing
 		System.out.println(find());	
 	}
 	
 	/**
-	 * Find stdc++ library path in Linux.
+	 * Find stdc++ library path.
 	 * 
 	 * @return Stdc++ library path.
 	 */
 	public static String find() {
-		ProcessBuilder pb = new ProcessBuilder("bash", "-c", SCRIPT);    //$NON-NLS-1$//$NON-NLS-2$
+		ProcessBuilder pb = null;
+		String os = System.getProperty("os.name").toLowerCase(); //$NON-NLS-1$
+		if (os.indexOf("win") >= 0) { //$NON-NLS-1$
+			pb = new ProcessBuilder("cmd", "/c", WIN_SCRIPT + " " + STD_LIB);    //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
+		} else if (os.indexOf( "nix") >=0 || os.indexOf( "nux") >=0) { //$NON-NLS-1$ //$NON-NLS-2$
+			pb = new ProcessBuilder("bash", "-c", UNIX_SCRIPT);    //$NON-NLS-1$//$NON-NLS-2$
+		} else if (os.indexOf( "mac" ) >= 0) { //$NON-NLS-1$
+			pb = new ProcessBuilder("bash", "-c", UNIX_SCRIPT);    //$NON-NLS-1$//$NON-NLS-2$
+		} else {
+			return null;
+		}
 		try {
 			Process p = pb.start();
 			String line;
