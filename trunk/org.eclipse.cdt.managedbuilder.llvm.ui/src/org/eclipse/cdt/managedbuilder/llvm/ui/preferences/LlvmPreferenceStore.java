@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.cdt.managedbuilder.llvm.ui.preferences;
 
+import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmEnvironmentVariableSupplier;
 import org.eclipse.cdt.managedbuilder.llvm.ui.LlvmUIPlugin;
 import org.eclipse.cdt.managedbuilder.llvm.util.LlvmToolOptionPathUtil;
 import org.eclipse.cdt.managedbuilder.llvm.util.Separators;
@@ -297,4 +298,14 @@ public class LlvmPreferenceStore {
 		removeValue(PreferenceConstants.P_LLVM_LIBRARIES, lib);
 	}
 
+	public static void addMinGWStdLib() {
+		String path = LlvmEnvironmentVariableSupplier.getMinGWStdLib();
+		String lib = "stdc++"; //$NON-NLS-1$
+		//add to preference store
+		appendLibraryPath(path);
+		appendLibrary(lib);
+		//add to Tools's Options
+		appendLibraryPath(path);
+		appendLibrary(lib);
+	}
 }

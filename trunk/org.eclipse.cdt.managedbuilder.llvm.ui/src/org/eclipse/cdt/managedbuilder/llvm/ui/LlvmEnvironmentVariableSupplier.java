@@ -48,13 +48,6 @@ public class LlvmEnvironmentVariableSupplier implements
 	private static final String ENV_VAR_NAME_LIBRARIES 		= "LIBRARIES"; //$NON-NLS-1$
 	
 	/**
-	 * Constructor.
-	 */
-	public LlvmEnvironmentVariableSupplier() {
-		initializePaths();
-	}
-	
-	/**
 	 * Initializes llvm environment variable paths from the system environment variables.
 	 */
 	public static void initializePaths() { //TODO: Is this actually called anywhere?
@@ -65,7 +58,6 @@ public class LlvmEnvironmentVariableSupplier implements
 		//if bin path exists
 		if (binPath != null && binPath.length()!=0) {
 			String pathStr = binPath;
-			//clang on Windows requires also MinGW GCC
 			//if OS is Windows (Windows specific settings)
 			if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) { //$NON-NLS-1$ //$NON-NLS-2$
 				try {
@@ -311,7 +303,7 @@ public class LlvmEnvironmentVariableSupplier implements
 				//return path where llvm-ar exists
 				return binPathTemp;
 			}
-		}
+		}			
 		return null;
 	}
 	
@@ -320,7 +312,7 @@ public class LlvmEnvironmentVariableSupplier implements
 	 * 
 	 * @return stdc++ library path for MinGW
 	 */
-	protected static String getMinGWStdLib() {
+	public static String getMinGWStdLib() {
 		//get mingw bin path
 		IPath mingwBinPath = MingwEnvironmentVariableSupplier.getBinDir();
 		StringBuilder sB = new StringBuilder(mingwBinPath.toOSString());
@@ -377,7 +369,7 @@ public class LlvmEnvironmentVariableSupplier implements
 	 * @param oldPath Old paths/preference values
 	 * @param path New path to be added to the environment variable
 	 */
-	private static void appendLlvmEnvironmentVariable(String name, String oldPath, String path) {
+	public static void appendLlvmEnvironmentVariable(String name, String oldPath, String path) {
 		String newPath = null;
 		boolean ok = false;
 		//if oldPath exists
