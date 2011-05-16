@@ -17,6 +17,7 @@ import java.util.MissingResourceException;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
+import org.eclipse.cdt.managedbuilder.llvm.ui.preferences.LlvmPreferenceStore;
 import org.eclipse.cdt.managedbuilder.llvm.util.LlvmResourceListener;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
@@ -73,6 +74,10 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+//		LlvmEnvironmentVariableSupplier.initializePaths();
+		if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) { //$NON-NLS-1$ //$NON-NLS-2$
+			LlvmPreferenceStore.addMinGWStdLib();
+		}
 		//add resource change listeners to the workspace
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(
 				this.listener, IResourceChangeEvent.PRE_BUILD);
