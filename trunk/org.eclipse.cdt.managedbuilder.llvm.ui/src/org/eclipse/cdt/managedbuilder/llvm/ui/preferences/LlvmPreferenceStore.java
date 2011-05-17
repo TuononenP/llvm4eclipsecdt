@@ -304,8 +304,5 @@ public class LlvmPreferenceStore {
 		//add to preference store
 		appendLibraryPath(path);
 		appendLibrary(lib);
-		//add to Tools's Options
-		appendLibraryPath(path);
-		appendLibrary(lib);
 	}
 }
