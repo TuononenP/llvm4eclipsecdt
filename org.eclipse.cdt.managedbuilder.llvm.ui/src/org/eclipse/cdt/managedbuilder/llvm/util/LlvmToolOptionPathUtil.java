@@ -835,7 +835,9 @@ public class LlvmToolOptionPathUtil {
 	public static void addAllLibsToBuildConf() {
 		String[] libs = getAllLibraries();
 		for(String lib : libs) {
-			addLlvmLib(lib);			
+//			if (!lib.equalsIgnoreCase("stdc++")) { //$NON-NLS-1$ //C++ specific
+				addLlvmLib(lib);
+//			}
 		}
 	}
 	
@@ -846,7 +848,9 @@ public class LlvmToolOptionPathUtil {
 	public static void addAllLibPathsToBuildConf() {
 		String[] libPaths = getAllLibraryPaths();
 		for(String libPath : libPaths) {
-			addLlvmLibraryPath(libPath);			
+//			if (!libPath.equalsIgnoreCase(LlvmEnvironmentVariableSupplier.getMinGWStdLib())) { //C++ specific
+				addLlvmLibraryPath(libPath);	
+//			}
 		}
 	}
 
