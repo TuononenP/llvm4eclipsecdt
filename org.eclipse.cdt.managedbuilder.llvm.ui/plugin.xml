@@ -396,7 +396,6 @@
       </tool>
       <tool
             command="llc"
-            errorParsers="org.eclipse.cdt.core.GASErrorParser"
             id="cdt.managedbuild.tool.llvm.llc"
             isAbstract="true"
             name="%ToolName.llc.llvm"
@@ -550,7 +549,6 @@
       </tool>
       <tool
             command="lli"
-            errorParsers="org.eclipse.cdt.core.GASErrorParser"
             id="cdt.managedbuild.tool.llvm.lli"
             isAbstract="true"
             name="%ToolName.lli.llvm"
