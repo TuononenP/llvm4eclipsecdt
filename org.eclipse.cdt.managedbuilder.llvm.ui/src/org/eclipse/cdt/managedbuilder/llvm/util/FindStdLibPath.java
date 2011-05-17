@@ -24,13 +24,10 @@ import java.lang.ProcessBuilder;
  */
 public class FindStdLibPath {
 
-	private static final String UNIX_SCRIPT = "scripts/stdlib_path.sh"; //$NON-NLS-1$
+//	private static final String UNIX_SCRIPT = "scripts/stdlib_path.sh"; //$NON-NLS-1$
 	private static final String WIN_SCRIPT = "scripts/find_path.bat"; //$NON-NLS-1$
 	private static final String STD_LIB = "libstdc++.a"; //$NON-NLS-1$
-	
-	public static void main(String[] args) { //TODO: Remove after testing
-		System.out.println(find());	
-	}
+	private static final String UNIX_SCRIPT = " echo `locate libstdc++.a | sort -r | head -1 | sed \"s/libstdc++.a$//\"` "; //$NON-NLS-1$
 	
 	/**
 	 * Find stdc++ library path.

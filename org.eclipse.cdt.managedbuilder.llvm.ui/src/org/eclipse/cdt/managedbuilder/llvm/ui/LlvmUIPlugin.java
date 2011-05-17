@@ -75,8 +75,11 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 //		LlvmEnvironmentVariableSupplier.initializePaths();
-		if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) { //$NON-NLS-1$ //$NON-NLS-2$
+		String os = System.getProperty("os.name").toLowerCase(); //$NON-NLS-1$
+		if (os.indexOf("win") >= 0) { //$NON-NLS-1$
 			LlvmPreferenceStore.addMinGWStdLib();
+		} else if (os.indexOf( "nix") >=0 || os.indexOf( "nux") >=0) { //$NON-NLS-1$ //$NON-NLS-2$
+			LlvmPreferenceStore.addStdLibLinux();
 		}
 		//add resource change listeners to the workspace
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(
