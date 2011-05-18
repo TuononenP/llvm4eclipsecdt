@@ -4605,7 +4605,7 @@
          name="%extension.name"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGCCScannerInfoCollector"
+            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
@@ -4630,7 +4630,7 @@
          name="%extension.name.0"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGCCScannerInfoCollector"
+            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
@@ -4655,7 +4655,7 @@
          name="%extension.name"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGCCScannerInfoCollector"
+            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
@@ -4680,7 +4680,7 @@
          name="%extension.name.0"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGCCScannerInfoCollector"
+            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
