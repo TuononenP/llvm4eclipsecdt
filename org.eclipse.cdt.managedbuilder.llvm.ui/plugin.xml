@@ -4605,12 +4605,12 @@
          name="%extension.name"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
+            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGCCScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
+               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -4621,8 +4621,7 @@
                command="clang++">
          </run>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"
-               compilerCommands="clang,clang++">
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
          </scannerInfoConsoleParser>
       </scannerInfoProvider>
    </extension>
@@ -4631,12 +4630,12 @@
          name="%extension.name.0"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
+            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGCCScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
+               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -4647,8 +4646,7 @@
                command="clang">
          </run>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"
-               compilerCommands="clang">
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
          </scannerInfoConsoleParser>
       </scannerInfoProvider>
    </extension>
@@ -4657,12 +4655,12 @@
          name="%extension.name"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
+            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGCCScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
+               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -4673,8 +4671,7 @@
                command="llvm-g++">
          </run>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"
-               compilerCommands="llvm-gcc,llvm-g++">
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
          </scannerInfoConsoleParser>
       </scannerInfoProvider>
    </extension>
@@ -4683,12 +4680,12 @@
          name="%extension.name.0"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
-            class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
+            class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.DefaultGCCScannerInfoCollector"
             scope="project">
       </scannerInfoCollector>
       <buildOutputProvider>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.ManagedLlvmScannerInfoConsoleParser">
+               class="org.eclipse.cdt.managedbuilder.internal.scannerconfig.ManagedGCCScannerInfoConsoleParser">
          </scannerInfoConsoleParser>
       </buildOutputProvider>
       <scannerInfoProvider
@@ -4699,8 +4696,7 @@
                command="llvm-gcc">
          </run>
          <scannerInfoConsoleParser
-               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser"
-               compilerCommands="llvm-gcc">
+               class="org.eclipse.cdt.make.internal.core.scannerconfig.gnu.GCCSpecsConsoleParser">
          </scannerInfoConsoleParser>
       </scannerInfoProvider>
    </extension>
