@@ -3,18 +3,11 @@
 
 = Introduction =
 
-Bear in mind that in order to make this plugin to work, you need to check that your computer environment meets the specified requisites mentioned on the Wiki plugin requirements page.
+Bear in mind that in order to make this plugin to work, you need to check that your computer environment meets the specified requisites mentioned on the Wiki [[PluginRequirements]].
 
 = Details =
 
-There are two methods to install the plug-in.
-
-<b>Method 1:</b><br />
 The easiest way is to use Eclipse update site at:
 http://petrituononen.com/llvm4eclipsecdt/update 
 
 Help->Install New Software...->Add and just copy the link provided above and name it e.g. llvm4eclipsecdt or LLVM plugin or similar.
-
-<b>Method 2:</b><br />
-Download the jar file from the Downloads section from this project website.
-Copy the jar packet inside the Eclipse installation directory's plugins folder. You may need to start/restart eclipse with a -clean command to erase Eclipse's cache and make the new plugin visible for the IDE.
