@@ -1,4 +1,5 @@
 #summary Describes how you can install the LLVM toolchain support plugin for Eclipse
+#labels Featured
 
 = Introduction =
 
