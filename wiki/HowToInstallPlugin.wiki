@@ -3,7 +3,7 @@
 
 = Introduction =
 
-Bear in mind that in order to make this plugin to work, you need to check that your computer environment meets the specified requisites mentioned on the Wiki [[PluginRequirements]].
+Bear in mind that in order to make this plugin to work, you need to check that your computer environment meets the specified requisites mentioned on the Wiki [PluginRequirements].
 
 = Details =
 
