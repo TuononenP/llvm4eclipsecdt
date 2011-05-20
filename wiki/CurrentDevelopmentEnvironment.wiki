@@ -6,13 +6,9 @@ LLVM plugin for Eclipse is developed against the latest build of Eclipse and CDT
 
 = Details =
 
-Eclipse 3.7 Stream Stable Build (3.7M4)
+Eclipse 3.7RC1
 <br />
-CDT 8.0 
-
-export org.eclipse.cdt.managedbuilder.gnu.mingw.MingwEnvironmentVariableSupplier 
-<br />
-(Before CD 8.0: apply CDT bug patch 321040)
+CDT 8.x 
 
 = Links =
 http://download.eclipse.org/eclipse/downloads/
