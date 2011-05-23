@@ -81,15 +81,15 @@ public class LibraryListEditor extends LlvmListEditor {
 	protected void removePressed() {
 		List libList = getList();
         setPresentsDefaultValue(false);
-        int index = libList.getSelectionIndex();
-        //remove a library from the LLVM preference store
-        LlvmPreferenceStore.removeLibrary(libList.getItem(index).toString());
-        //remove a library from LLVM linker's option
-        LlvmToolOptionPathUtil.removeLlvmLib(libList.getItem(index).toString());
-		//inform LLVM environment variable supplier that there has been a change
-		LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
-        if (index >= 0) {
-        	libList.remove(index);
+        String[] selected = libList.getSelection();
+        for (String s : selected) {
+            //remove a library from the LLVM preference store
+            LlvmPreferenceStore.removeLibrary(s);
+            //remove a library from LLVM linker's option
+            LlvmToolOptionPathUtil.removeLlvmLib(s);
+            //inform LLVM environment variable supplier that there has been a change
+            LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
+            libList.remove(s);
             selectionChanged();
         }
 	}
