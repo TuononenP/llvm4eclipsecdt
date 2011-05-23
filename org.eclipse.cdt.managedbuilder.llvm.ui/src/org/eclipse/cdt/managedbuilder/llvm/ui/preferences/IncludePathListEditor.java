@@ -84,16 +84,16 @@ public class IncludePathListEditor extends LlvmListEditor {
 	protected void removePressed() {
 		List incList = getList();
         setPresentsDefaultValue(false);
-        int index = incList.getSelectionIndex();
-        //remove an include path from the LLVM preference store
-        LlvmPreferenceStore.removeIncludePath(incList.getItem(index).toString());
-        //remove an include path from the LLVM assembler's option
-        LlvmToolOptionPathUtil.removeLlvmIncludePath(incList.getItem(index).toString());
-		//inform LLVM environment variable supplier that there has been a change
-		LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
-        if (index >= 0) {
-        	incList.remove(index);
-            selectionChanged();
+        String[] selected = incList.getSelection();
+        for (String s : selected) {
+            //remove an include path from the LLVM preference store
+            LlvmPreferenceStore.removeIncludePath(s);
+            //remove an include path from the LLVM assembler's option
+            LlvmToolOptionPathUtil.removeLlvmIncludePath(s);
+    		//inform LLVM environment variable supplier that there has been a change
+    		LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
+    		incList.remove(s);
+    		selectionChanged();
         }
 	}
 	

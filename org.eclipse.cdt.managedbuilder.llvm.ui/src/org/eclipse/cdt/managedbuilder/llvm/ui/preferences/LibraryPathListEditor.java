@@ -84,16 +84,16 @@ public class LibraryPathListEditor extends LlvmListEditor {
 	protected void removePressed() {
 		List libPathList = getList();
         setPresentsDefaultValue(false);
-        int index = libPathList.getSelectionIndex();
-        //remove a library path from the LLVM preference store
-        LlvmPreferenceStore.removeLibraryPath(libPathList.getItem(index).toString());
-        //remove a library path from LLVM linker's option
-        LlvmToolOptionPathUtil.removeLlvmLibraryPath(libPathList.getItem(index).toString());
-		//inform LLVM environment variable supplier that there has been a change
-		LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
-        if (index >= 0) {
-        	libPathList.remove(index);
-            selectionChanged();
+        String[] selected = libPathList.getSelection();
+        for (String s : selected) {
+            //remove a library path from the LLVM preference store
+            LlvmPreferenceStore.removeLibraryPath(s);
+            //remove a library path from LLVM linker's option
+            LlvmToolOptionPathUtil.removeLlvmLibraryPath(s);
+    		//inform LLVM environment variable supplier that there has been a change
+    		LlvmEnvironmentVariableSupplier.notifyPreferenceChange();
+    		libPathList.remove(s);
+    		selectionChanged();
         }
 	}
 	

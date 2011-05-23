@@ -214,7 +214,7 @@ public abstract class LlvmListEditor extends ListEditor {
     @Override
 	public List getListControl(Composite parent) {
         if (this.list == null) {
-            this.list = new List(parent, SWT.BORDER | SWT.SINGLE | SWT.V_SCROLL
+            this.list = new List(parent, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL
                     | SWT.H_SCROLL);
             this.list.setFont(parent.getFont());
             this.list.addSelectionListener(getSelectionListener());
