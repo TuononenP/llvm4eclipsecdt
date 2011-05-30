@@ -24,10 +24,10 @@ import java.lang.ProcessBuilder;
  */
 public class FindStdLibPath {
 
-//	private static final String UNIX_SCRIPT = "scripts/stdlib_path.sh"; //$NON-NLS-1$
 	private static final String WIN_SCRIPT = "scripts/find_path.bat"; //$NON-NLS-1$
 	private static final String STD_LIB = "libstdc++.a"; //$NON-NLS-1$
 	private static final String UNIX_SCRIPT = " echo `locate libstdc++.a | sort -r | head -1 | sed \"s/libstdc++.a$//\"` "; //$NON-NLS-1$
+	private static final String MAC_SCRIPT = " echo `locate libstdc++.dylib | sort -r | head -1 | sed \"s/libstdc++.dylib$//\"` "; //$NON-NLS-1$
 	
 	/**
 	 * Find stdc++ library path.
@@ -42,7 +42,7 @@ public class FindStdLibPath {
 		} else if (os.indexOf( "nix") >=0 || os.indexOf( "nux") >=0) { //$NON-NLS-1$ //$NON-NLS-2$
 			pb = new ProcessBuilder("bash", "-c", UNIX_SCRIPT);    //$NON-NLS-1$//$NON-NLS-2$
 		} else if (os.indexOf( "mac" ) >= 0) { //$NON-NLS-1$
-			pb = new ProcessBuilder("bash", "-c", UNIX_SCRIPT);    //$NON-NLS-1$//$NON-NLS-2$
+			pb = new ProcessBuilder("bash", "-c", MAC_SCRIPT);    //$NON-NLS-1$//$NON-NLS-2$
 		} else {
 			return null;
 		}
