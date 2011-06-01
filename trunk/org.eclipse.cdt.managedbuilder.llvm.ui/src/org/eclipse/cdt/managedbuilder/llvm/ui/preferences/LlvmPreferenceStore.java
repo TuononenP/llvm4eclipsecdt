@@ -309,7 +309,7 @@ public class LlvmPreferenceStore {
 		}
 	}
 	
-	public static void addStdLibLinux() {
+	public static void addStdLibUnix() {
 		String path = FindStdLibPath.find();
 		String lib = "stdc++"; //$NON-NLS-1$
 		if (path != null) {
