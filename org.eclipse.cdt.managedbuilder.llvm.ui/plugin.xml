@@ -942,7 +942,7 @@
          <option
                category="llvm.c_cpp.compiler.category.other"
                defaultValue="-c -fmessage-length=0"
-               id="llvm.c_cpp.compiler.option.other.other"
+               id="llvm.c_cpp.compiler.option.misc.other"
                name="%Option.OtherFlags"
                valueType="string">
          </option>
