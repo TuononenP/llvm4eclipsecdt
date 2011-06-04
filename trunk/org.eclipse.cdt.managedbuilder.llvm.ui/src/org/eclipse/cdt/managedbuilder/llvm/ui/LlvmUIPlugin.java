@@ -79,7 +79,7 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 		if (os.indexOf("win") >= 0) { //$NON-NLS-1$
 			LlvmPreferenceStore.addMinGWStdLib();
 		} else if (os.indexOf( "nix") >=0 || os.indexOf( "nux") >=0 || os.indexOf( "mac") >=0) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-//			LlvmPreferenceStore.addStdLibUnix(); //produces "Unable to create the selected preference page." error for some
+			LlvmPreferenceStore.addStdLibUnix();
 		}
 		//add resource change listeners to the workspace
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(
