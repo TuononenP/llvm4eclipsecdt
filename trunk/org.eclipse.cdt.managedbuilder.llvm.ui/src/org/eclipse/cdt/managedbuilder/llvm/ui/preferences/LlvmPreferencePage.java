@@ -58,7 +58,17 @@ public class LlvmPreferencePage
 	public String getDescription() {
 		return null;
 	}
-
+	
+//	@Override
+//	public boolean performOk() {
+//		//rebuilt the index of all projects 
+//		IProject[] projects = LlvmToolOptionPathUtil.getProjectsInWorkspace();
+//		for (IProject proj : projects) {
+//			ProjectIndex.rebuiltIndex(proj);
+//		}
+//		return true;
+//	}
+	
 	@Override
 	/**
 	 * Creates field editors for the preference page.

@@ -1127,7 +1127,6 @@
                </not>
             </enablement>
             <option
-                  defaultValue="-lstdc++"
                   id="llvm.c.link.base.option.ldflags"
                   isAbstract="true"
                   name="%Option.Posix.Linker.Flags"

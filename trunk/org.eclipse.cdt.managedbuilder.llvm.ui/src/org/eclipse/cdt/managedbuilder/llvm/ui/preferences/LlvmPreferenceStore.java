@@ -305,6 +305,7 @@ public class LlvmPreferenceStore {
 		if (path != null) {
 			//add to preference store
 			appendLibraryPath(path);
+//			ProjectIndex.rebuiltIndex(proj);
 			appendLibrary(lib);
 		}
 	}
@@ -315,6 +316,7 @@ public class LlvmPreferenceStore {
 		if (path != null) {
 			//add to preference store
 			appendLibraryPath(path);
+//			ProjectIndex.rebuiltIndex(proj);
 			appendLibrary(lib);
 		}
 	}
