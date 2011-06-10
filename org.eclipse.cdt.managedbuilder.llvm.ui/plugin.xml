@@ -4727,7 +4727,7 @@
                      superClass="cdt.managedbuild.tool.llvm.lli">
                </tool>
                <tool
-                     id="cdt.managedbuild.tool.llvm.jit.linux.assembler.so.debug"
+                     id="cdt.managedbuild.tool.llvm.jit.macosx.assembler.so.debug"
                      superClass="cdt.managedbuild.tool.llvm.assembler.base">
                </tool>
             </toolChain>
