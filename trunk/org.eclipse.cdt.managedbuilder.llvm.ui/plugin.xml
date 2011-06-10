@@ -978,7 +978,7 @@
                dependencyExtensions="h"
                id="cdt.managedbuild.tool.llvm.c.compiler.input"
                languageId="org.eclipse.cdt.core.gcc"
-               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileC|org.eclipse.cdt.make.core.LLVMStandardMakePerFileProfile"
+               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang|org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"
                sourceContentType="org.eclipse.cdt.core.cSource"
                sources="c">
          </inputType>
@@ -1001,7 +1001,7 @@
                dependencyExtensions="h,H,hpp"
                id="cdt.managedbuild.tool.llvm.cpp.compiler.input"
                languageId="org.eclipse.cdt.core.g++"
-               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP|org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfile"
+               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++|org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"
                sourceContentType="org.eclipse.cdt.core.cxxSource"
                sources="c,C,cc,cxx,cpp">
          </inputType>
@@ -1024,7 +1024,7 @@
                dependencyExtensions="h"
                id="cdt.managedbuild.tool.llvm.gcc.compiler.input"
                languageId="org.eclipse.cdt.core.gcc"
-               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileC|org.eclipse.cdt.make.core.LLVMStandardMakePerFileProfile"
+               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileLLVMGCC|org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"
                sourceContentType="org.eclipse.cdt.core.cSource"
                sources="c">
          </inputType>
@@ -1047,7 +1047,7 @@
                dependencyExtensions="h,H,hpp"
                id="cdt.managedbuild.tool.llvm.g++.compiler.input"
                languageId="org.eclipse.cdt.core.g++"
-               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP|org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfile"
+               scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileLLVMG++|org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"
                sourceContentType="org.eclipse.cdt.core.cxxSource"
                sources="c,C,cc,cxx,cpp">
          </inputType>
@@ -4600,7 +4600,7 @@
       </language>
    </extension>
    <extension
-         id="LLVMManagedMakePerProjectProfileCPP"
+         id="LLVMManagedMakePerProjectProfileClang++"
          name="%extension.name"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
@@ -4625,7 +4625,7 @@
       </scannerInfoProvider>
    </extension>
    <extension
-         id="LLVMManagedMakePerProjectProfileC"
+         id="LLVMManagedMakePerProjectProfileClang"
          name="%extension.name.0"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
@@ -4650,8 +4650,8 @@
       </scannerInfoProvider>
    </extension>
    <extension
-         id="LLVMManagedMakePerProjectProfileCPP"
-         name="%extension.name"
+         id="LLVMManagedMakePerProjectProfileLLVMG++"
+         name="%extension.name.1"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
@@ -4675,8 +4675,8 @@
       </scannerInfoProvider>
    </extension>
    <extension
-         id="LLVMManagedMakePerProjectProfileC"
-         name="%extension.name.0"
+         id="LLVMManagedMakePerProjectProfileLLVMGCC"
+         name="%extension.name.2"
          point="org.eclipse.cdt.make.core.ScannerConfigurationDiscoveryProfile">
       <scannerInfoCollector
             class="org.eclipse.cdt.managedbuilder.llvm.scannerconfig.LlvmScannerInfoCollector"
