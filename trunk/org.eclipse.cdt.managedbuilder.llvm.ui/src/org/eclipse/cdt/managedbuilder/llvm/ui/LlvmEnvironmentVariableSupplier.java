@@ -83,8 +83,6 @@ public class LlvmEnvironmentVariableSupplier implements
 					if (mingwPath != null) {
 						//form full path
 						pathStr = pathStr + System.getProperty("path.separator") + mingwPath.getValue(); //$NON-NLS-1$
-						//add mingw stdc++ libary TODO: make it working
-//						pathStr = pathStr + System.getProperty("path.separator") + getMinGWStdLib(); //$NON-NLS-1$
 					}
 					//if cygwin found
 					if (cygwinPath != null) {
