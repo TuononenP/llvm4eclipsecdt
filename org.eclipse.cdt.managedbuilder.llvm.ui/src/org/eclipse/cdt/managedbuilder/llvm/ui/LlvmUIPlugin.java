@@ -17,7 +17,6 @@ import java.util.MissingResourceException;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.eclipse.cdt.managedbuilder.llvm.ui.preferences.LlvmPreferenceStore;
 import org.eclipse.cdt.managedbuilder.llvm.util.LlvmResourceListener;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
@@ -75,12 +74,6 @@ public class LlvmUIPlugin extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 //		LlvmEnvironmentVariableSupplier.initializePaths();
-		String os = System.getProperty("os.name").toLowerCase(); //$NON-NLS-1$
-		if (os.indexOf("win") >= 0) { //$NON-NLS-1$
-			LlvmPreferenceStore.addMinGWStdLib();
-		} else if (os.indexOf( "nix") >=0 || os.indexOf( "nux") >=0 /*|| os.indexOf( "mac") >=0 */) { //$NON-NLS-1$ //$NON-NLS-2$
-			LlvmPreferenceStore.addStdLibUnix();
-		}
 		//add resource change listeners to the workspace
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(
 				this.listener, IResourceChangeEvent.PRE_BUILD);
