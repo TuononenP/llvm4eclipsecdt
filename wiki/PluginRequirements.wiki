@@ -7,7 +7,7 @@ LLVM toolchain plugin for Eclipse CDT has certain requirements that must be met.
 = Details =
 
    * Eclipse CDT 8.x is the minimum CDT version
-   * Java 5 JRE or newer (also a Eclipse requisition)
+   * Java 5 JRE or newer (also Eclipse requisition)
    * LLVM with Clang (follow the build instructions on http://clang.llvm.org/get_started.html)
    * llvm-gcc compiler (if you're planning to use LLVM with GCC toolchain)
    * PATH system environment variable containing path to LLVM with Clang binaries (in order for LLVM tool executables to be found)
