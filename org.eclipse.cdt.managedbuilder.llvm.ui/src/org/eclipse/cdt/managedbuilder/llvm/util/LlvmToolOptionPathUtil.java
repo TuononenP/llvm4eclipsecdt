@@ -514,15 +514,17 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static boolean addLibraryToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newLibrary) {
 		try {
-			//add library only if it does not exists
-			String[] libraries = option.getLibraries();
-			for (String lib : libraries) {
-				if (lib.equalsIgnoreCase(newLibrary)) {
-					return false;
+			if(option != null) {
+				//add library only if it does not exists
+				String[] libraries = option.getLibraries();
+				for (String lib : libraries) {
+					if (lib.equalsIgnoreCase(newLibrary)) {
+						return false;
+					}
 				}
+				//add a new library to linker's Libraries option.
+				addInputToToolOption(cf, cfTool, option, newLibrary, libraries);
 			}
-			//add a new library to linker's Libraries option.
-			addInputToToolOption(cf, cfTool, option, newLibrary, libraries);
 		} catch (BuildException e) {
 			//show error
 			e.printStackTrace();
@@ -559,15 +561,17 @@ public class LlvmToolOptionPathUtil {
 	 */
 	private static boolean addLibrarySearchPathToToolOption(IConfiguration cf, ITool cfTool, IOption option, String newLibraryPath) {
 		try {
-			//add path only if it does not exists
-			String[] libPaths = option.getLibraryPaths();
-			for (String libPath : libPaths) {
-				if (libPath.equalsIgnoreCase(newLibraryPath)) {
-					return false;
+			if(option != null) {
+				//add path only if it does not exists
+				String[] libPaths = option.getLibraryPaths();
+				for (String libPath : libPaths) {
+					if (libPath.equalsIgnoreCase(newLibraryPath)) {
+						return false;
+					}
 				}
+				//add a new library path to linker's Library search path option.
+				addInputToToolOption(cf, cfTool, option, newLibraryPath, libPaths);
 			}
-			//add a new library path to linker's Library search path option.
-			addInputToToolOption(cf, cfTool, option, newLibraryPath, libPaths);
 		} catch (BuildException e) {
 			//show error
 			e.printStackTrace();
