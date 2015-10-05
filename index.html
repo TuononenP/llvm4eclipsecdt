@@ -27,6 +27,25 @@
           <li><a href="https://github.com/TuononenP/llvm4eclipsecdt">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
+      
+      <section>
+        <h3>Introduction</h3>
+        <p>
+          Compiles C/C++ program code with Clang and LLVM-GCC using LLVM as a backend. Takes advantage of LLVM e.g. faster compile time. Makes C/C++ developers more eager to take advantage of Eclipse CDT.
+        </p>
+        <h3>Features</h3>
+        <ul>
+          <li>LLVM tools included in the plugin: assembler, archiver, linker, compilers Clang, llvm-gcc, llvm static linker and JIT.</li>
+          <li>CDT Internal builder and GNU make builder work in co-operation with LLVM toolchain.</li>
+          <li>Plugin has an user interface for LLVM specific configuration (e.g. adding include and library paths and library files).</li>
+        </ul>
+        <h3>Note</h3>
+        <p>
+          Currently builds C and C++ projects on Linux and C projects on Windows. Building C++ projects on Windows is on the way. Support for Mac OS X is included but no testing has been done. LLVM static linker and JIT doesn't show up on new project wizard yet.
+
+          <b>Does not yet work with LLVM 3.2. Works with older versions. This is, because llvm-ld (linker) tool was removed from 3.2.</b>
+        </p>
+      </section>
 <!--
       <section>
         <h3>
