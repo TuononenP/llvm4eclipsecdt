@@ -1,5 +1,7 @@
 # llvm4eclipsecdt
 
+<b>Now deprecated since I have contributed this plugin to Eclipse organization and it is build-in Eclipse CDT via installation option. This project is thus no longer maintained.</b>
+
 LLVM4EclipseCDT provides LLVM toolchain support for Eclipse CDT. It can compile C and C++ program code with Clang or llvm-gcc front-ends using LLVM as a back-end.
 
 LLVM tools such as assembler, archiver, linker, static compiler (llc), JIT/Interpreter (lli) are featured and can be configured via graphical user interface (Project->Properties->C/C++ Build->Settings).
